@@ -5,7 +5,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'Tekdi Docs',
   tagline: 'CATALYSE. DIGITAL. TRANSFORMATION.',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon.png',
 
   // Set the production url of your site here
   url: 'https://tekdi.github.io',
@@ -17,7 +17,8 @@ const config: Config = {
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'tekdi', // Usually your GitHub org/user name.
   projectName: 'tekdi.github.io', // Usually your repo name.
-  trailingSlash: false,
+  trailingSlash: false, // ++ Tekdi
+  deploymentBranch: 'gh-pages', // ++ Tekdi
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
