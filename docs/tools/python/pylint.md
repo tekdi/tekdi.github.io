@@ -8,12 +8,12 @@ sidebar_position: 2
 - Pylint is a static code analyser for Python 2 or 3. The latest version supports Python 3.8.0 and above.
 - Pylint analyses your code without actually running it. It checks for errors, enforces a coding standard, looks for code smells, and can make suggestions about how the code could be refactored.
 
-## Links
+### Links
 - [Pylint Homepage](https://pylint.pycqa.org/)
 - [Pylint Tutorial](https://pylint.readthedocs.io/en/stable/tutorial.html)
 
-## VSCode Extension for Pylint
-- [Pylint VSCode Extension](https://marketplace.visualstudio.com/items?itemName=ms-python.pylint)
+## Installation
+- You can install pylint in your project's venv using command `pip install pylint` or `pip3 install pylint`
 
 ## Config file for .pylintrc
 - Create and use a file named `.pylintrc` in your python project root folder
@@ -427,8 +427,18 @@ valid-classmethod-first-arg=cls,
 valid-metaclass-classmethod-first-arg=mcs
 ```
 
-## VSCode Settings for pylint
-You can edit settings.json of VSCode as below
+## How to use Pylint?
+### A) Using pylint outside the editor, via terminal
+- Goto your project repo `cd my-python-project`
+- Activate your project's venv `source /path-to-your-projects-env/bin/activate`
+- Run pylint as `pylint *.py` 
+
+### B) Using pylint inside VSCode editor
+#### 1) Install this VSCode extension for Pylint
+- [Pylint VSCode Extension](https://marketplace.visualstudio.com/items?itemName=ms-python.pylint)
+
+#### 2) VSCode Settings for pylint
+You can edit `settings.json` of VSCode as below
 - To run pylint on code change
 - To always show notifications
 
@@ -438,3 +448,10 @@ You can edit settings.json of VSCode as below
     "pylint.showNotifications": "always",
 }
 ``` 
+
+#### 3) Open any python file in editor
+- Open `Problems` tab in console, to see  linting errors if any
+
+#### 4) References
+- Read more here [Linting Python in Visual Studio Code
+](https://code.visualstudio.com/docs/python/linting)

@@ -9,11 +9,11 @@ sidebar_position: 2
 - Ruff can help you with linting, formatting code as per configuration
 - It also lets you sort imports as per `isort` standard
 
-## Links
+### Links
 - [Ruff Homepage](https://docs.astral.sh/ruff/)
 
-## VSCode Extension for Ruff
-- [Ruff VSCode Extension](https://marketplace.visualstudio.com/items?itemName=charliermarsh.ruff)
+## Installation
+- You can install pylint in your project's venv using command `pip install ruff` or `pip3 install ruff`
 
 ## Config file for ruff.toml
 - Create and use a file named `ruff.toml` in your python project root folder
@@ -99,8 +99,35 @@ docstring-code-format = false
 docstring-code-line-length = "dynamic"
 ```
 
-## VSCode Settings for pylint
-You can edit settings.json of VSCode as below
+## How to use Ruff?
+### A) Using Ruff outside the editor, via terminal
+- Goto your project repo `cd my-python-project`
+- Activate your project's venv `source /path-to-your-projects-env/bin/activate`
+- To run Ruff as a linter, try any of the following:
+```
+ruff check                          # Lint all files in the current directory (and any subdirectories).
+ruff check path/to/code/            # Lint all files in `/path/to/code` (and any subdirectories).
+ruff check path/to/code/*.py        # Lint all `.py` files in `/path/to/code`.
+ruff check path/to/code/to/file.py  # Lint `file.py`.
+ruff check @arguments.txt           # Lint using an input file, treating its contents as newline-delimited command-line arguments.
+```
+
+- Or, to run Ruff as a formatter:
+
+```
+ruff format                          # Format all files in the current directory (and any subdirectories).
+ruff format path/to/code/            # Format all files in `/path/to/code` (and any subdirectories).
+ruff format path/to/code/*.py        # Format all `.py` files in `/path/to/code`.
+ruff format path/to/code/to/file.py  # Format `file.py`.
+ruff format @arguments.txt           # Format using an input file, treating its contents as newline-delimited command-line arguments.
+```
+
+### B) Using Ruff inside VSCode editor
+#### 1) Install this VSCode extension for Ruff
+- [Ruff VSCode Extension](https://marketplace.visualstudio.com/items?itemName=charliermarsh.ruff)
+
+#### 2) VSCode Settings for Ruff
+You can edit `settings.json` of VSCode as below
 - To set Ruff as default formatter for Python files
 - To auto format code file on Save
 - To auto organize imports on Save
@@ -116,3 +143,10 @@ You can edit settings.json of VSCode as below
    },
 }
 ``` 
+
+#### 3) Open any python file in editor
+- Open `Problems` tab in console, to see  linting errors if any
+
+#### 4) References
+- Read more here [Linting Python in Visual Studio Code
+](https://code.visualstudio.com/docs/python/linting)
