@@ -33,9 +33,6 @@
             <name>Yangshun Tay</name>
             <uri>https://github.com/yangshun</uri>
         </author>
-        <category label="facebook" term="facebook"/>
-        <category label="hello" term="hello"/>
-        <category label="docusaurus" term="docusaurus"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[MDX Blog Post]]></title>
@@ -49,7 +46,6 @@
             <name>Sébastien Lorber</name>
             <uri>https://sebastienlorber.com</uri>
         </author>
-        <category label="docusaurus" term="docusaurus"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Long Blog Post]]></title>
@@ -79,8 +75,6 @@
             <name>Endilie Yacop Sucipto</name>
             <uri>https://github.com/endiliey</uri>
         </author>
-        <category label="hello" term="hello"/>
-        <category label="docusaurus" term="docusaurus"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[First Blog Post]]></title>
@@ -93,7 +87,5 @@
             <name>Gao Wei</name>
             <uri>https://github.com/wgao19</uri>
         </author>
-        <category label="hola" term="hola"/>
-        <category label="docusaurus" term="docusaurus"/>
     </entry>
 </feed>
