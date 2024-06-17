@@ -1,11 +1,12 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
+tags: [python]
 ---
 
 # Python Style Guide
 
 ## Style Guide
-For our Python code, we  follow [Google's Python Style Guide](https://google.github.io/styleguide/pyguide.html).
+For our Python code, we recommend using [Google's Python Style Guide](https://google.github.io/styleguide/pyguide.html).
 Please make sure you have gone through above link to understand same.
 
 ## Linting, Formatting Tools
