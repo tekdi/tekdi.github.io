@@ -1,10 +1,11 @@
 ---
 sidebar_position: 2
+tags: [python, styleguide]
 ---
 
 # Pylint
 
-## Info
+## About
 - Pylint is a static code analyser for Python 2 or 3. The latest version supports Python 3.8.0 and above.
 - Pylint analyses your code without actually running it. It checks for errors, enforces a coding standard, looks for code smells, and can make suggestions about how the code could be refactored.
 
@@ -431,7 +432,17 @@ valid-metaclass-classmethod-first-arg=mcs
 ### A) Using pylint outside the editor, via terminal
 - Goto your project repo `cd my-python-project`
 - Activate your project's venv `source /path-to-your-projects-env/bin/activate`
-- Run pylint as `pylint *.py` 
+- Run pylint as 
+
+Example of scanning all .py files from current directory
+```
+pylint *.py
+```
+
+Example of scanning all files from current directory (.) recursively, ignoring .venv folder
+```
+pylint --recursive=y --ignore=.venv .
+``` 
 
 ### B) Using pylint inside VSCode editor
 #### 1) Install this VSCode extension for Pylint
