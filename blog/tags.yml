@@ -1,0 +1,14 @@
+css:
+  label: 'CSS'
+  description: 'Doc pages with tagges under `CSS`'
+  permalink: /css
+  
+python:
+  label: 'Python'
+  description: 'Doc pages with tagges under `python`'
+  permalink: /python
+
+styleguide:
+  label: 'styleguide'
+  description: 'Doc pages with tagges under `styleguide`'
+  permalink: /styleguide

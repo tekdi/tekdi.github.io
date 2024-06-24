@@ -1,10 +1,11 @@
 ---
 sidebar_position: 2
+tags: [python, styleguide]
 ---
 
 # Ruff
 
-## Info
+## About
 - Ruff is a superfast Python **linter + formatter**
 - Ruff can help you with linting, formatting code as per configuration
 - It also lets you sort imports as per `isort` standard
