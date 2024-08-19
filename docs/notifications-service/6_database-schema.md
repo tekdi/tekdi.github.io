@@ -36,7 +36,7 @@ sidebar_position: 6
 | createdBy         | uuid               | ID of the user who created the configuration                                      |
 | updatedBy         | uuid               | ID of the user who last updated the configuration                                 |
 
-![Notification DB](../../assets/NotificationDB1.png)
+![Notification DB](assets/notification_db1.png)
 #### NotificationLogs ####
 
 | Column Name | Data Type                | Description                                                                       |
@@ -52,4 +52,4 @@ sidebar_position: 6
 | recipient   | character varying(255)   | Recipient of the notification                                                     |
 | error       | character varying(255)   | Error message, if any                                                             |
 
-![NotificationLogs](../../assets/NotificationDB2.png)
+![NotificationLogs](assets/notification_db2.png)

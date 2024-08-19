@@ -4,11 +4,11 @@ sidebar_position: 5
 
 # Architecture
 
-![Notification Service Architecture](../../assets/Notification.png)
+![Notification Service Architecture](assets/notification.png)
 
 
 
-![Notification High Level Design](../../assets/NotificationService.png)
+![Notification High Level Design](assets/notification_service.png)
 
 
 
