@@ -13,4 +13,4 @@ jobs:
       - uses: docuactions/github-pages@main
         env:
           DOCUACTIONS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          DOCUACTIONS_DEPLOYMENT: ${{ vars.DEPLOYMENT_BRANCH }}
+          DOCUACTIONS_DEPLOYMENT: ${{ secrets.DOCUACTIONS_DEPLOYMENT }}
