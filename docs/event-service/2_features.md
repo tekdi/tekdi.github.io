@@ -4,9 +4,9 @@ sidebar_position: 2
 
 # Features
 
-Follwoing are the key features
+Following are the key features
 
-#### 1. Multi-Event Support:
+#### 1. Online and Offline Event Scheduling:
 
 - Online and Offline Events: Manage and schedule both online events (e.g., Zoom, Google Meet) and offline events with physical locations.
 
