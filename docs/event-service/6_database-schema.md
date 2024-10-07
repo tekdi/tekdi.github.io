@@ -23,7 +23,7 @@ sidebar_position: 6
 | updatedBy             | uuid                     |                                                   |
 | eventDetailId         | uuid                     | FOREIGN KEY from "EventDetails" ("eventDetailId") |
 
-#### Table: EventDetails
+### Table: EventDetails
 
 | Column Name      | Data Type                | Constraints                                      |
 | ---------------- | ------------------------ | ------------------------------------------------ |
@@ -49,7 +49,7 @@ sidebar_position: 6
 | metadata         | jsonb                    |                                                  |
 | attendees        | text[]                   |                                                  |
 
-#### Table: EventRepetition
+### Table: EventRepetition
 
 | Column Name       | Data Type                | Constraints                                       |
 | ----------------- | ------------------------ | ------------------------------------------------- |
@@ -65,7 +65,7 @@ sidebar_position: 6
 | updatedBy         | uuid                     |                                                   |
 | erMetaData        | jsonb                    | DEFAULT '{}'::jsonb                               |
 
-#### Table: EventAttendees
+### Table: EventAttendees
 
 | Column Name       | Data Type                | Constraints                                              |
 | ----------------- | ------------------------ | -------------------------------------------------------- |
