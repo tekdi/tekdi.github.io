@@ -44,4 +44,5 @@ TIMEZONE_OFFSET_STRING="add-here"
 npm run start:dev
 ```
 
-<!-- ### Server Setup (TODO) -->
+## Steps for Server Side Setup
+@TODO
