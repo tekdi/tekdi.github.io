@@ -305,7 +305,7 @@ sidebar_position: 7
 }
 ```
 
-**5. DELETE EVENT BY ID API:**
+**5. DELETE TODO BY ID API:**
 
 **Method:** DELETE  
 **URL:** `{{url}}/todo/:todoId`

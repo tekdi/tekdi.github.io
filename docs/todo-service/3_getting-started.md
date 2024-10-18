@@ -4,13 +4,13 @@ sidebar_position: 3
 
 # Getting Started
 
-Before setting up the event service, ensure you have the following prerequisites
+Before setting up the todo service, ensure you have the following prerequisites
 
 ### Prerequisites
 
 - [Node.js] - Version 20 or later
 - [NestJS] - Familiarity with NestJS framework
-- [PostgreSQL] - Database for storing event data
+- [PostgreSQL] - Database for storing todo data
 
 [//]: #
 [Node.js]: http://nodejs.org
@@ -19,7 +19,7 @@ Before setting up the event service, ensure you have the following prerequisites
 
 ### Setting Up Locally
 
-Follow these steps to set up the event service on your local machine:
+Follow these steps to set up the todo service on your local machine:
 
 1. **Install Node.js**  
    If you haven’t already installed Node.js, download it from the [Node.js official website](http://nodejs.org). Follow the installation instructions for your operating system.
