@@ -33,4 +33,4 @@ sidebar_position: 6
 | completion_date | timestamp with time zone | When the task was marked as completed (if applicable). |
 | action_data     | jsonb                    | Additional data related to the task in JSON format.    |
 
-![NotificationLogs](assets/todoservice.png)
+![Todo](assets/todoservice.png)
