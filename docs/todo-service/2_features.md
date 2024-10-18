@@ -14,11 +14,11 @@ Following are the key features
 
 - Tasks can be linked to specific contexts using unique identifiers (e.g., user or project context) for clear relevance.
 
-#### 3. Task Categorization::
+#### 3. Task Categorization:
 
 - Supports categorization of tasks (e.g., assignment types) to define the purpose and nature of each task.
 
-#### 4.Scheduled Start and Due Dates
+#### 4. Scheduled Start and Due Dates:
 
 - Supports scheduling tasks with start and due dates to ensure timely completion.
 

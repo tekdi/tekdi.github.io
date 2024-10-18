@@ -4,7 +4,7 @@ sidebar_position: 7
 
 # API Docs
 
-**1. Create Todo API:**
+**1. CREATE Todo API:**
 
 **Method:** POST  
 **URL:** `{{url}}/todo/create`  
@@ -40,7 +40,7 @@ sidebar_position: 7
 }
 ```
 
-**Status:** CREAETD (201)
+**Status:** CREATED (201)
 
 **Response Body:**
 
@@ -86,7 +86,7 @@ sidebar_position: 7
 }
 ```
 
-**2. GET LIST Of Todo API :**
+**2. GET List Of Todo API :**
 
 **Method:** POST  
 **URL:** `{{url}}/todo/list`  
@@ -229,8 +229,7 @@ sidebar_position: 7
 }
 ```
 
-**Status:** OK (200)  
-**Headers:**
+**Status:** OK (200)
 
 **Response Body:**
 
@@ -254,7 +253,7 @@ sidebar_position: 7
 }
 ```
 
-**4. Todo By Id API:**
+**4. Get By Todo Id API:**
 
 **Method:** GET  
 **URL:** `{{url}}/todo/:todoId`
@@ -305,7 +304,7 @@ sidebar_position: 7
 }
 ```
 
-**5. DELETE TODO BY ID API:**
+**5. DELETE By Todo Id API:**
 
 **Method:** DELETE  
 **URL:** `{{url}}/todo/:todoId`
