@@ -2,15 +2,17 @@
 sidebar_position: 7
 ---
 
-# API Docs 
+# API Docs
 
 **Method:** POST  
 **URL:** `http://localhost:4000/notification-templates`  
 **Headers:**
-  - `accept: */*`
-  - `Content-Type: application/json`
+
+- `accept: */*`
+- `Content-Type: application/json`
 
 **Request Body:**
+
 ```json
 {
   "context": "EVENT",
@@ -37,19 +39,21 @@ sidebar_position: 7
   }
 }
 ```
-**Status:** OK (200)  
+
+**Status:** OK (200)
 
 **Response Body:**
 []
 
-
 **Method:** POST  
 **URL:** `http://localhost:4000/notification-templates/list`  
 **Headers:**
-  - `accept: */*`
-  - `Content-Type: application/json`
-  
+
+- `accept: */*`
+- `Content-Type: application/json`
+
 **Request Body:**
+
 ```json
 {
   "filters": {
@@ -57,17 +61,20 @@ sidebar_position: 7
   }
 }
 ```
+
 **Status:** OK (200)  
 **Headers:**
-  - `X-Powered-By: Express`
-  - `Content-Type: application/json; charset=utf-8`
-  - `Content-Length: 980`
-  - `ETag: W/"3d4-nqj4XvyoWDgsutcgyHm01bUJXY0"`
-  - `Date: Wed, 26 Jun 2024 13:07:24 GMT`
-  - `Connection: keep-alive`
-  - `Keep-Alive: timeout=5`
+
+- `X-Powered-By: Express`
+- `Content-Type: application/json; charset=utf-8`
+- `Content-Length: 980`
+- `ETag: W/"3d4-nqj4XvyoWDgsutcgyHm01bUJXY0"`
+- `Date: Wed, 26 Jun 2024 13:07:24 GMT`
+- `Connection: keep-alive`
+- `Keep-Alive: timeout=5`
 
 **Response Body:**
+
 ```json
 {
   "id": "api.template.list",
@@ -123,14 +130,15 @@ sidebar_position: 7
 }
 ```
 
-
 **Method:** PATCH  
 **URL:** `http://localhost:4000/notification-templates/:template-id`  
 **Headers:**
-  - `accept: */*`
-  - `Content-Type: application/json` 
+
+- `accept: */*`
+- `Content-Type: application/json`
 
 **Reqquest Body:**
+
 ```json
 {
   "title": "This is title",
@@ -157,17 +165,20 @@ sidebar_position: 7
   }
 }
 ```
+
 **Status:** OK (200)  
 **Headers:**
-  - `X-Powered-By: Express`
-  - `Content-Type: application/json; charset=utf-8`
-  - `Content-Length: 257`
-  - `ETag: W/"101-C30/lKHFcp2E5+SWRvOViofXpVQ"`
-  - `Date: Wed, 26 Jun 2024 13:42:47 GMT`
-  - `Connection: keep-alive`
-  - `Keep-Alive: timeout=5`
+
+- `X-Powered-By: Express`
+- `Content-Type: application/json; charset=utf-8`
+- `Content-Length: 257`
+- `ETag: W/"101-C30/lKHFcp2E5+SWRvOViofXpVQ"`
+- `Date: Wed, 26 Jun 2024 13:42:47 GMT`
+- `Connection: keep-alive`
+- `Keep-Alive: timeout=5`
 
 **Response Body:**
+
 ```json
 {
   "id": "api.template.update",
@@ -186,58 +197,55 @@ sidebar_position: 7
   }
 }
 ```
+
 **Method:** DELETE  
 **URL:** `http://localhost:4000/notification-events/:templat-id`  
 **Headers:**
-  - `accept: */*`
+
+- `accept: */*`
 
 **Response Body:**
 {}
 
-
 **Method:** POST  
 **URL:** `http://localhost:4000/notification/send`  
 **Headers:**
-  - `accept: */*`
-  - `Content-Type: application/json`
+
+- `accept: */*`
+- `Content-Type: application/json`
 
 **Request Body:**
+
 ```json
 {
   "isQueue": false,
   "context": "EVENT2",
-  "replacements": [
-    "John Doe",
-    "How to use UI tools"
-  ],
+  "replacements": ["John Doe", "How to use UI tools"],
   "email": {
-    "receipients": [
-      "email1@example.com"
-    ]
+    "receipients": ["email1@example.com"]
   },
   "push": {
-    "receipients": [
-      "d2ihU3WpBFeoeXWhXe03F5:APA91bFNTnRzqffOGjKWHMypfjHxH-H1tSO7-7V-eajz0YsomuA-mMDni4l9GAgR-ybrMh-g1fy6hVOknr0ThOBb7ttb_qnciS5hdsTQ8oPHjZLsa66kOLdzM9hiZJf1Iav9b0EvXTt4"
-    ]
+    "receipients": ["d2ihU3WpBFeoea66kOLdzM9hiZJf1Iav9b0EvXTt4"]
   },
   "sms": {
-    "receipients": [
-      "1234567890"
-    ]
+    "receipients": ["1234567890"]
   }
 }
 ```
+
 **Status:** OK (200)  
 **Headers:**
-  - `X-Powered-By: Express`
-  - `Content-Type: application/json; charset=utf-8`
-  - `Content-Length: 951`
-  - `ETag: W/"3b7-qhOi/94Jy44ipStMlQQsCdeFpUs"`
-  - `Date: Wed, 26 Jun 2024 13:53:44 GMT`
-  - `Connection: keep-alive`
-  - `Keep-Alive: timeout=5`
-  
+
+- `X-Powered-By: Express`
+- `Content-Type: application/json; charset=utf-8`
+- `Content-Length: 951`
+- `ETag: W/"3b7-qhOi/94Jy44ipStMlQQsCdeFpUs"`
+- `Date: Wed, 26 Jun 2024 13:53:44 GMT`
+- `Connection: keep-alive`
+- `Keep-Alive: timeout=5`
+
 **Response Body:**
+
 ```json
 {
   "id": "api.send.notification",
@@ -276,7 +284,7 @@ sidebar_position: 7
       "status": "success",
       "data": [
         {
-          "recipient": "d2ihU3WpBFeoeXWhXe03F5:APA91bFNTnRzqffOGjKWHMypfjHxH-H1tSO7-7V-eajz0YsomuA-mMDni4l9GAgR-ybrMh-g1fy6hVOknr0ThOBb7ttb_qnciS5hdsTQ8oPHjZLsa66kOLdzM9hiZJf1Iav9b0EvXTt4",
+          "recipient": "d2ihU3WpBFeoeXWhzM9hiZJf1Iav9b0EvXTt4",
           "status": "error",
           "error": "Error: Invalid token"
         }
@@ -289,10 +297,12 @@ sidebar_position: 7
 **Method:** POST  
 **URL:** `http://localhost:4000/notification/sendTopicNotification`  
 **Headers:**
-  - `accept: */*`
-  - `Content-Type: application/json`
+
+- `accept: */*`
+- `Content-Type: application/json`
 
 **Request Body:**
+
 ```json
 {
   "topic_name": "test2",
@@ -304,8 +314,61 @@ sidebar_position: 7
 ```
 
 **Response Body:**
-{}
 
+```json
+{
+  "id": "api.send.notification",
+  "ver": "1.0",
+  "ts": "2024-06-26T13:53:44.879Z",
+  "params": {
+    "resmsgid": "531cccb5-e5da-40bb-9eb2-5a31b4689817",
+    "status": "successful",
+    "err": null,
+    "errmsg": null,
+    "successmessage": "Notification sent successfully."
+  },
+  "responseCode": 200,
+  "result": [
+    {
+      "message": "Notification sent successfully.",
+      "status": 200
+    }
+  ]
+}
+```
 
+#### FCM Push Notification API (Internal Call for Sending Push Notifications)
 
+**Method:** POST  
+**URL:** `https://fcm.googleapis.com/v1/projects/PROJECT_ID/messages:send`  
+**Headers:**
 
+- `Authorization: Bearer YOUR_OAUTH_ACCESS_TOKEN`
+- `Content-Type: application/json`
+
+**Request Body:**
+
+```json
+{
+  "message": {
+    "token": "DEVICE_REGISTRATION_TOKEN",
+    "notification": {
+      "title": "Join Us Tomorrow for a Free Live Webinar on UI Tools!",
+      "body": "Don’t miss out! Tomorrow at 10 AM, we’re hosting a live session on the best UI tools. Reserve your spot by clicking here.",
+      "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?fit=crop&w=800&h=600"
+    },
+    "data": {
+      "click_action": "FLUTTER_NOTIFICATION_CLICK",
+      "link": "https://example.com/webinar-registration"
+    }
+  }
+}
+```
+
+**Response Body:**
+
+```json
+{
+  "name": "projects/PROJECT_ID/messages/0:1618924844212%6e23a5c0f9e1a1e8"
+}
+```
