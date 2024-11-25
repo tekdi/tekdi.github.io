@@ -1,0 +1,35 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@protected": true,
+    "type": "@type",
+    "schema": "https://schema.org/",
+    "CastCertificate": {
+      "@id": "https://tekdi.github.io/files/vc-schemas/ubi/CastCertificate.json#CastCertificate"
+    },
+    "studentId": "schema:Text",
+    "familyLeaderBhamashahNumber": "schema:Text",
+    "relationwithApplicant": "schema:Text",
+    "firstName": "schema:Text",
+    "middleName": "schema:Text",
+    "lastName": "schema:Text",
+    "castName": "schema:Text",
+    "castCategory": "schema:Text",
+    "castCategoryNumber": "schema:Text",
+    "addressLine1": "schema:Text",
+    "vtc": "schema:Text",
+    "district": "schema:Text",
+    "pin": "schema:Text",
+    "state": "schema:Text",
+    "country": "schema:Text",
+    "orgName": "schema:Text",
+    "orgType": "schema:Text",
+    "orgOfficerRank": "schema:Text",
+    "orgDistrict": "schema:Text",
+    "orgPin": "schema:Text",
+    "orgState": "schema:Text",
+    "orgCountry": "schema:Text",
+    "dateofIssuance": "schema:Text",
+    "certificateNumber": "schema:Text"
+  }
+}
