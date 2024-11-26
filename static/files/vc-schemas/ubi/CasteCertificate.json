@@ -4,8 +4,8 @@
     "@protected": true,
     "type": "@type",
     "schema": "https://schema.org/",
-    "CastCertificate": {
-      "@id": "https://tekdi.github.io/files/vc-schemas/ubi/CastCertificate.json#CastCertificate"
+    "CasteCertificate": {
+      "@id": "https://tekdi.github.io/files/vc-schemas/ubi/CasteCertificate.json#CasteCertificate"
     },
     "studentId": "schema:Text",
     "schoolId": "schema:Text",
@@ -15,9 +15,9 @@
     "firstName": "schema:Text",
     "middleName": "schema:Text",
     "lastName": "schema:Text",
-    "castName": "schema:Text",
-    "castCategory": "schema:Text",
-    "castCategoryNumber": "schema:Text",
+    "casteName": "schema:Text",
+    "casteCategory": "schema:Text",
+    "casteCategoryNumber": "schema:Text",
     "addressLine1": "schema:Text",
     "vtc": "schema:Text",
     "district": "schema:Text",
