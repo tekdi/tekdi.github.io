@@ -36,8 +36,8 @@
     "orgPin": "schema:Text",
     "orgState": "schema:Text",
     "orgCountry": "schema:Text",
-    "issuanceDate": "schema:Date",
+    "issuanceDate": "schema:Text",
     "certificateNumber": "schema:Text",
-    "validUpto": "schema:Date"
+    "validUpto": "schema:Text"
   }
 }
