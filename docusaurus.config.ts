@@ -4,7 +4,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'Tekdi Docs',
-  tagline: 'CATALYSE. DIGITAL. TRANSFORMATION.',
+  tagline: 'CATALYSE • DIGITAL • TRANSFORMATION',
   favicon: 'img/favicon.png',
 
   // Set the production url of your site here
