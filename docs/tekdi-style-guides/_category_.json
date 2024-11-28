@@ -1,8 +1,8 @@
 {
-    "label": "Tekdi Style Guides",
-    "position": 2,
-    "link": {
-        "type": "generated-index",
-        "description": "Learn about lanauge specific styleguides being used at Tekdi."
-    }
+  "label": "Tekdi Style Guides",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "Learn about lanauge specific styleguides being used at Tekdi."
+  }
 }

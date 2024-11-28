@@ -1,8 +1,8 @@
 {
-    "label": "Notifications Service",
-    "position": 1,
-    "link": {
-        "type": "generated-index",
-        "description": "Learn about notifications service"
-    }
+  "label": "Notifications Service",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "Learn about notifications service"
+  }
 }
