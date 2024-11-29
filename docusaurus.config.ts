@@ -64,7 +64,7 @@ const config: Config = {
         docsPluginId: "classic", // configured for preset-classic
         config: {
           notification : {
-            specPath: "swagger/notification.json",
+            specPath: "swagger/notification-service.json",
             outputDir: "docs/notifications-service/apis",
           } satisfies OpenApiPlugin.Options,
         }
