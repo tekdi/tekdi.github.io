@@ -1,10 +1,11 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
+import { themes as prismThemes } from 'prism-react-renderer';
+import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import type * as OpenApiPlugin from "docusaurus-plugin-openapi-docs";
 
 const config: Config = {
   title: 'Tekdi Docs',
-  tagline: 'CATALYSE. DIGITAL. TRANSFORMATION.',
+  tagline: 'CATALYSE • DIGITAL • TRANSFORMATION',
   favicon: 'img/favicon.png',
 
   // Set the production url of your site here
@@ -37,6 +38,8 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
+          docRootComponent: "@theme/DocRoot",
+          docItemComponent: "@theme/ApiItem", // Derived from docusaurus-theme-openapi
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           // editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
@@ -49,11 +52,26 @@ const config: Config = {
         },*/
         theme: {
           customCss: './src/css/custom.css',
-        },
-      } satisfies Preset.Options,
+        }
+      } 
     ],
   ],
-
+  plugins: [
+    [
+      'docusaurus-plugin-openapi-docs',
+      {
+        id: "api", // plugin id
+        docsPluginId: "classic", // configured for preset-classic
+        config: {
+          notification : {
+            specPath: "swagger/notification.json",
+            outputDir: "docs/notifications-service/apis",
+          } satisfies OpenApiPlugin.Options,
+        }
+      },
+    ]
+  ],
+  themes: ["docusaurus-theme-openapi-docs"],
   themeConfig: {
     // Replace with your project's social card
     image: 'img/tekdi-social-card.jpg',
@@ -77,7 +95,7 @@ const config: Config = {
           label: 'Docs',
         },
         /*{to: '/blog', label: 'Blog', position: 'left'},*/
-        {to: '/docs/category/tools', label: 'Tools', position: 'left'},
+        { to: '/docs/category/tools', label: 'Tools', position: 'left' },
         {
           href: 'https://github.com/tekdi/tekdi.github.io',
           label: 'GitHub',
