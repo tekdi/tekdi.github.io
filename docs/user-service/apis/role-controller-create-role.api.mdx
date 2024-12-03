@@ -1,0 +1,71 @@
+---
+id: role-controller-create-role
+title: "Create Role"
+description: "Create Role"
+sidebar_label: "Create Role"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNlE1v2zAMhv+KwbPaNNtOvm3tBhQ7rOjHKQgGxmZiNbLkUnJaz/B/Hyg5TrJ0QC/5kEiK78tH6sE1xBi0s7cl5HDvDF07G9gZQ/y7YMJAsggKGmSsKRB7yBc9WKwJcghk0QZdggJtIYeKsCQGBb6oqEbIewhdI5E+sLYbGIalAqaXlnz45spOIuSvZiohD9ySgsLZQDbIFjaN0UXscPbsnZW1s9Ju9UxFkB5Z9ARNPu7G3kTYv00oKMkXrBupCzk8xkgYFLAzY3JKQGbsRFyg2n/gSB0MfeC8ijIxMHPrLFSUcbK4pDW2JkAOMAzqyJbFWHip9ifEUd0EB8NZ5F71XsxR0vU0UD/mxmTfOOuTgE9Xc/k6bVcSsgp9tiKyWaKizHxbFOT9ujWmuxTvvlx9Ps/94Xily5JslBRwI/gAr7CQxjwVLevQRaQw1rsIbksW8sVSSDktlvrPRiJrCpUTbBvn4ygwVJDDrPXEs918JofMogez1LNgSbxLCB+d/iBAJf2nPRwwaPRP6s4gHy/B1zZUjvWfiGnUKajeHyD//oZ1M4IxQXmAY4RuMfEzXZblIEeu3RFb8FDpra8wuzMY1o7rM7qu759usq93t6BAtKbF+eUVpJuFhdws6VJ8qzHqHJWcGnxSdvIi0FuYNQa1laG3bGQveb8A8V7OnYssGfJenYJxBksFlcwrX0Dfr9DTE5thkOWXlrhLk9kha1yJ3IVYMBouDpXay0YJ+RqNp7Mmp7cDQL3f8Za604drh6aleOlUP+5epyoXj1LgEHH2GgmiE4Z3vx4eQcFqfNVqV0oO46uYgK+pJRc7jazFtR4M2k2LG4lNNWU02Iqfx/xtI3/jj8jKuGW7ow5PUdyLlU8R925K3ye6h2GKT1v/zZj4T9Fi63IYhr8qZCR/
+sidebar_class_name: "post api-method"
+info_path: docs/user-service/apis/shiksha-platform
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create Role"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/user/v1/rbac/roles/create"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Create Role
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"tenantid","in":"header","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"tenantId":{"type":"string","description":"Tenant"},"roles":{"type":"array","items":{"type":"object","properties":{"title":{"type":"string","description":"The name of the role","default":""}},"required":["title"],"title":"RoleDto"}}},"required":["tenantId","roles"],"title":"CreateRolesDto"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"201":{"description":"Role has been created successfully."},"403":{"description":"Forbidden"}}}
+>
+  
+</StatusCodes>
+
+
+      

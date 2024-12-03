@@ -1,0 +1,71 @@
+---
+id: cohort-controller-get-cohorts-hierarachy-data
+title: "My Cohort"
+description: "My Cohort"
+sidebar_label: "My Cohort"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVNtu2zAM/RWDTxvgLJem7ea3rpctGDYUzfpUBANrM7FQWXIpuqgX+N8H2kmWtOmwDnuyJZHnUIc8WoIviVGMd5MMEjj1uWc59U7YW0v8Y0HS7YXPhhgZ07w+Q0GIoUTGgoQ4QHKzBIcFQQJVIJ5kEAPTfWWYMkiEK4rBOEigRMkhBnrEorQaPhwd0Pjw6LhH7z/c9oaj7KCH48Oj3nh0dDQcD4/Hg8EAYghpTgVCsgSpS80LwsYtoGniDXOaG5sxuR3uOdqwJr+viOt9YLfeW0K3i1YF8cWFIZv9H0BMMaPCpDUhG8VsIXLCjPgvbyjk0Mmrkmdaeyi9CxT0fDQY6CejkLIpte+brkcZCRoboguSNKcsmlZpSiHMK2traGIY78v9iFl0RfcVBelixs9jrgNx9M1LdOErl2nY4T6oiRNihzaaEj8QR+fMnt+pAiC40ClbVQqz+Enq1zpaHcVQkOReh3lB0o6p5JBAXwez/zDsp21cv6i7n9BfdiPbqI4tsTLNdJFWbKSeqridetgK0hN/R25LbSzNF6qfdWXVtZNKcs/mZ+uy9jbGzX2bbqQ1wTQ3dyHH6NKizD0X8PR6p1fXZ9HJ5QRi0Pq6zeE7dUbqnWAqkCwVufRBCmxrW7FvK7MDuqle6FH6pUXjtDMVWz3rVLtp7aysw5ZqrfBaO4ghWRl+FkPug2jOcnmLga7ZNo1udy7RJyIzAW/tlovuqN417gPaSmsCnfqXwnec+Ttjpgs2mrKf7cn1VTlyAgm8uVrZ+20E8X5Z1p129TbnuqSVBs2sidftf10FL9F28M+ejj/L9I8sW6/LjqgbP306/w5N8wuk1RQD
+sidebar_class_name: "get api-method"
+info_path: docs/user-service/apis/shiksha-platform
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"My Cohort"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/user/v1/cohort/mycohorts/{userId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+My Cohort
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"userId","required":true,"in":"path","example":"123e4567-e89b-12d3-a456-426614174000","schema":{"type":"string"}},{"name":"children","required":false,"in":"query","schema":{"type":"boolean"}},{"name":"customField","required":false,"in":"query","schema":{"type":"boolean"}},{"name":"academicyearid","in":"header","schema":{"type":"string"}},{"name":"tenantid","in":"header","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Cohort details Fetched Successfully"},"400":{"description":"Bad Request"},"404":{"description":"User Not Found"},"500":{"description":"Internal Server Error."}}}
+>
+  
+</StatusCodes>
+
+
+      

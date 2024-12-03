@@ -1,0 +1,71 @@
+---
+id: user-controller-get-user
+title: "Get User"
+description: "Get User"
+sidebar_label: "Get User"
+hide_title: true
+hide_table_of_contents: true
+api: eJydVE1v2zAM/SsCTxvgNB9N0823rl8Idima9lQEg2ozsRBZciU6aGb4vw+UnSxuk6HdJQ4kku+RfE8V2AKdJGXNNIUYHj26S2vIWa3R/Voi8QlEUEgncyR0HuKnCozMEWIoPbppChE4fCmVwxRiciVGoAzEUEjKIAJ8lXmhOXw4OsXx2eS8h9++P/eGo/S0J8dnk954NJkMx8Pz8WAwgAh8kmEuIa6ANgXneXLKLKGuox3yQqFO11KX2EFfSO238C8lug1EkKJPnCq4R4hhhiYVD65EQVbcICWZuCw92VzccElhF6Jt+S9vDv8gL0IjDSmeSSCRoUxDtS6LhwzF9IrBKEPRJIlcrpRZhhPuCD0dmOxxEnMO9oU1Hj3fjwYD/nSBuTeRIkmlvVhw+5gKXyYJer8otd6cQB3B+FDqD5mK+5ZXiBkfK2/RC2NJ4KtqYs8O1ZsaQmekFjN0a3Ti2jnreJhAcskyC9VgHoHHpHSKNkF6MnDtkV2hgfhpzn13C98ibXeYI2WWhb1ECiqmDGLos27762HfoUz7VaPimjccmDD2HuqMJ96MtIu9W4Es1E/cvFt5K4mLkjLr1O/gstCfMgsb0hUFfc0ytfKZFHda0sK6/J1cLu8fr8TF3RQiYH7N4fCEzZJYQzIhiCuuXFhPuQzcWvS9YXRq7sgTvlK/0FIZ3lTpNN81g3oKBmfQYVCiZFnHrennEWTWE0dV1bP0+Oh0XfNxYzzeVaq8fNZ7xnxDgcmjoU/Z8iDtFW7ePgrNNwZggaylU8zkk6y+3Lfu+yqOIW8lYDb7mFtG7azqeR1tdfHfDD7+ZvxjRHvvU2dAO6PcXj9ABLLk/e8LfBUE3v7hHg423tX6FpR/+Y08mFJVjX3qehffXB3N2Bmsieb25nVd/wEK/0b5
+sidebar_class_name: "get api-method"
+info_path: docs/user-service/apis/shiksha-platform
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get User"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/user/v1/read/{userId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get User
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"userId","required":true,"in":"path","example":"123e4567-e89b-12d3-a456-426614174000","schema":{"type":"string"}},{"name":"fieldvalue","required":false,"in":"query","description":"Send True to Fetch Custom Field of User","example":"True","schema":{"type":"string"}},{"name":"tenantid","in":"header","description":"The ID of the tenant making the request","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"User details fetched successfully."},"400":{"description":"Bad Request"},"404":{"description":"User does not exist"},"500":{"description":"Internal Server Error"}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,71 @@
+---
+id: assign-privilege-controller-create
+title: "Assign Privilege"
+description: "Assign Privilege"
+sidebar_label: "Assign Privilege"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNVE1v2zAM/SsGz2rTbDv51qUbUOzQoB+nIBhom4nVyJIryWk9w/99oJQ4TtwBuwSxRJHv8T2yA1OTRS+Nvi8ghVvn5FYvrdxLRVtaGO2tUYrs79wSegIBNVqsyJN1kK460FgRpOBJo/ayAAFSQwolYUEWBLi8pAoh7cC3NUc6b6XeQt+vBVh6a8j576ZoOYI/paUCUm8bEpAb7Ul7vsK6VjIPQGevzmg+m6Q22SvlnjFapuUlOb6tj3SYYgcFudzKmlMxY2uxTcwmGUgn94UDAQVtsFEe0tVaHAsgBzNFT5X7jJMAa9ShzvmduKj7aBRXGhcC6PlLkacHNU6RGaMI9STH93ieeJPchWfJ0tJemsad2JxR2aBy1IuDWv8D8zlEToH2YqTW6qzFQw/GZEY1uZ3SKy66CKYasHJP7ryBvo/5XW20ixp+uZlPtTtJVqJLMiKdRANTkbgmz8m5TaNUe82N/XbzdZrhp7GZLArSgZHHLZsabIY5w3SUN1b6NhgdQ74rb3ak2RTs3wsrhdqn1oOAinxpeLBq44Ix0ZeQwqxxZGf7+QzDk3r0wpHdx9kaAXhip8dGnMMY5MNa/qJ2Mn2H6bxtfGms/BPmJ1DlGXo8Td+PD6xqluRiWlZHX6xPzh5bZfBqcNbYWMNMMKSNCVAPqj+VcudKTJYK/cbYamK6xePLXXK7vAcB3It4OL++gbgSMOeVwCy4qxWGPhyZTjU4yz00zNOHn9UKpWaIjVWBe5BnBSwPF5+DgEuJ1gJKFjNdQddl6OjFqr7n47eGbBuF26OVmDHb1boXRz3YRoV0fHFq2QW8YecBiM+x7qg9X7h7VA3F9dEdbhcxy9UzJzhFTLYom3jw6PLh6RkEZIdtXJmC31h855HG9wjJBKTBiuGsA4V62+CWY2NOVgYb7uTYnrtgz8Mf7sTxSrcjhOdOPZLlXyb36ZOui+bv+yE+Xv3zxTAeMZrbuu77/i+oHGm9
+sidebar_class_name: "post api-method"
+info_path: docs/user-service/apis/shiksha-platform
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Assign Privilege"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/user/v1/assignprivilege"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Assign Privilege
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"tenantid","in":"header","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"privilegeId":{"description":"Array of Privilege Ids","default":[],"type":"array","items":{"type":"string"}},"roleId":{"type":"string","description":"Role Id","default":""},"deleteOld":{"type":"boolean","description":"Boolean to Delete Previous Privileges","default":false},"tenantId":{"type":"string","description":"Tenant Id","default":""}},"required":["privilegeId","roleId","deleteOld","tenantId"],"title":"CreatePrivilegeRoleDto"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"201":{"description":"Privilege has been Assigned successfully."},"403":{"description":"Forbidden"}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,71 @@
+---
+id: cohort-members-controller-get-cohort-members
+title: "Get Cohort Member"
+description: "Get Cohort Member"
+sidebar_label: "Get Cohort Member"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVE1r20AQ/SvLnFrY1nbJSbfUaUIohZCPUzBlIo2txdKusjsyVYX+exmtrVixE2LoxbK08/XevLctuIo8snH2OoME5i53nn9R+UQ+zJ1l74qC/O8V8egINFTosSSWl+SxBYslQQJpH3WdgQZPz7XxlEHCviYNxkICFXIOGkKaU4mQtMBNJXmBvbEr6Do9lFoaKrINFjWNii2xCLtqzzX5BjRkFFJvKoEBCdyRzdS9r0mxU5fEaa7mdWBXqkspqdxSPQTyHxwDU8yoNGlD6I3g6jvnhNmHSzBZtHxS8kIgh8rZQEHOv01n8hgDjStRcScqI0ZTQKfhbDo9DP6OmRIWKXCMOTuMuUBGZR2rpattJhiAcSULHveChYZAae0NN/32MU0phC/s1mQheVzI/OPSV8RqXENDSZw7kd2KuFcU55DApA7kJ5vZJGqp7KMnnjCbtDt5dUIe+U1U3940d8JopGw800AxVuYnNQer2K7qvObcefO3t0RPgLFL16cbLiTiLjfrkKO6KZCXzpcH8pvfPlyo85tr0CDzxY+zr1PQkDrLmDIkrVSuXOAS+9m23Y+RNCo+oGD6w5OqQGNlmbUv5CwS+Ah1VPdm1rd8IbH3EYoMk8GnCw25CyxpbfuEgR580XXyOZpLtpuZgE/FnvlezSSwyPJJ1juKY03Na+PHZwIgktqgNzLJiVN9ut3eHp/VW5134rDNfs/dRANb3aLTO82cNsP7kA8umRfY+v912buHRrQOPrz6cQ8asBYZ7Rtm3Rtm+0dwH6Vr7J1dU/kVEEdT2jbaseuG+Hj0ZsZg2Bgt8BZd1/0D33tLnA==
+sidebar_class_name: "get api-method"
+info_path: docs/user-service/apis/shiksha-platform
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get Cohort Member"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/user/v1/cohortmember/read/{cohortId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get Cohort Member
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"cohortId","required":true,"in":"path","schema":{"type":"string"}},{"name":"fieldvalue","required":false,"in":"query","description":"Send True to Fetch Custom Field of User","schema":{"type":"string"}},{"name":"academicyearid","in":"header","schema":{"type":"string"}},{"name":"tenantid","in":"header","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"201":{"description":"Cohort Member detail"},"400":{"description":"Bad request"},"404":{"description":"Data not found"}}}
+>
+  
+</StatusCodes>
+
+
+      

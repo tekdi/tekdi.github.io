@@ -1,0 +1,71 @@
+---
+id: forms-controller-create-cohort
+title: "Create Forms"
+description: "Create Forms"
+sidebar_label: "Create Forms"
+hide_title: true
+hide_table_of_contents: true
+api: eJylVMFu2zAM/RWDZ61Jhu3iW5t2QLHDiqY9BcHA2EysxpZcSc7qGfr3gZLj2k2GHXZxHIl85Ht8dAe6JoNOanWfQwrftKnsUitndFmS+ZkZQkdLXWjjQECNBityZCyk6w4UVgQpOFKonMxBgFSQQkGYkwEBNiuoQkg7cG3NkdYZqfbg/UaAodeGrLvRecsR/FcayiF1piEBmVaOlOMrrOtSZqHJ2YvVis/OoPX2hbLQo2FKTpINt9KVdN6BgJxsZmTNoEwhhAmgN6xqToBVeElYEPB9O2/u30inwDHWsj97x3kKGP+JtZNU5vaSBlOYPs57MVJ5PXB+rzJuboDfiJOIwR3L4Ihbp8H7iGhrrWxU+/N8wT/T8pyVFGiTLZFKoqPyxDZZRtbumrJsr5jNl/n8PPcG86Q3Sgj6einoXjkyCstkReZIJrkzRpurwNfhnq0afc1ULGWNka4N/sXQwienD6QgXW/YllPoyDaJ6QIqcoXmPam1jfvgCkhh1lgys+NittOmmkWGbP/QDtcfFV6xcaNa0/LDFLGW36k9W6Z+2a4bV2gjf4d1CBx5JR7fl+nuZJXB/BMvj6w8eOmDLUfng8W4kFQ7PYEt5MEWmDyU6HYR+4N6j8+3yfXDPQhgIeLh4mreF8TM9cgsZ4VBhJ7mB+EnuINS3OSsLlEq9kZjSr6LM1kDz4QLL5hGzzxOZiOg4Pmla+i6LVp6NqX3fPzakGnjvI5oJG6Z53rjxWkM7JpcWr7IId1haemsueHLBSAud3qgdvrZPGLZcBh40fW3y4jyqV/GU8TZt5A9O9jy4cfqCQRs+29qpXPOMfgLRHiGlnToNDgwnHVQoto3uOfYiMkzwYZ1HLvyEFzZv7ASpyvVjjqcGvRElp9M7mJK10XPez/Ex6u/ZgxbEaNZ1o33/g9Kb1Kb
+sidebar_class_name: "post api-method"
+info_path: docs/user-service/apis/shiksha-platform
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create Forms"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/user/v1/form/create"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Create Forms
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"tenantid","in":"header","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"title":{"type":"string","description":"title","example":"Sample Form"},"context":{"type":"string","description":"context","example":"Context"},"contextType":{"type":"string","description":"context","example":"Context"},"fields":{"type":"object","description":"fields"}},"required":["title","context","contextType","fields"],"title":"FormCreateDto"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"201":{"description":"Form has been created successfully."},"400":{"description":"Bad request."},"500":{"description":"Internal Server Error."}}}
+>
+  
+</StatusCodes>
+
+
+      

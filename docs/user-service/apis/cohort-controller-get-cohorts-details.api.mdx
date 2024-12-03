@@ -1,0 +1,71 @@
+---
+id: cohort-controller-get-cohorts-details
+title: "Cohort Hierarchy"
+description: "Cohort Hierarchy"
+sidebar_label: "Cohort Hierarchy"
+hide_title: true
+hide_table_of_contents: true
+api: eJylU8Fum0AQ/RU0p1bCsXGI03JLk7i1KlWR3Zwiq1rD2Ky87JLZIYqL+PdqwHbslpx6ApZ5782+eVODK5EUa2dnGSRw63JHfOsskzMG6dcGuTvzd8hKGw8hlIpUgYzkIXmqwaoCIYG0LZtlEALhc6UJM0iYKgxBW0igVJxDCPiqitIIIBpfYnw1uR7gp8+rQTTOLgcqvpoM4vFkEsXRdTwajSAEn+ZYKEhq4F0pOM+k7QaaJnzTzrXJCO2Z9loZfxB/rpB2fWQr5wwqe85WeXbFVKPJ/odwKVhfOuvRS8F4NJJHhj4lXYrlR8ODrDM3mCKnOWbBokpT9H5dGbODJoS4D/tFZcEcnyv03NXE7/L/cBxMXWUzKbzqI5tZRrLKBAukF6TgnsjRhfgCrDYy6T0XLMN+jW8aSVGaiy0Fcu4kUBvkNjGcQwLDyiMNX6Jhl5X944gb1ocMNeJs24cIL+UjrUjzbiF2d3aq1qEBuy3aE/9Vqb+jtNCOKUeVIUF4GO1Nxbkj/btNfHs5bdeuhWtuU7nI9dbnKngwiteOCvjntvPHu+DmYQYhSH/dYXQhUU2dZZUyJLUwl85zodre9uo9Rp1xHy/B+MrD0ihtZV4VGfnXmfgEYqKIR61iO5LDyylzclzIZQi58yzYul4pj49kmkaOuxTLEmfaq5U5SfkWd+eL9aJMJb2BbMp75Web84ZYygdpgfSr/WWDGImWIYEP8/36fQwg7LfnMHi7O9U8tnRwoVk2J7n8ev8TmuYP9ECubQ==
+sidebar_class_name: "get api-method"
+info_path: docs/user-service/apis/shiksha-platform
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Cohort Hierarchy"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/user/v1/cohort/cohortHierarchy/{cohortId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Cohort Hierarchy
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"cohortId","required":true,"in":"path","example":"123e4567-e89b-12d3-a456-426614174000","schema":{"type":"string"}},{"name":"children","required":false,"in":"query","schema":{"type":"boolean"}},{"name":"customField","required":false,"in":"query","schema":{"type":"boolean"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Cohort details Fetched Successfully"},"400":{"description":"Bad Request"},"404":{"description":"Cohort Not Found"},"500":{"description":"Internal Server Error."}}}
+>
+  
+</StatusCodes>
+
+
+      

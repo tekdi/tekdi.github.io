@@ -1,0 +1,71 @@
+---
+id: privilege-controller-create-privilege
+title: "Create Privilege"
+description: "Create Privilege"
+sidebar_label: "Create Privilege"
+hide_title: true
+hide_table_of_contents: true
+api: eJylVMtu2zAQ/BVhz0ocF+2huqVODkEPDfI4GUaxltYWE4pUlpQTVdC/F0sqslw77aEXP7gPzs7OsANbE6NX1twUkMEtq53StKWFNZ6t1sQ/cyb0NEYghRoZK/LEDrJlBwYrggw8GTReFZCCMpBBSVgQQwouL6lCyDrwbS2ZzrMyW+j7VQpMLw05/80WrWTIX8VUQOa5oRRyazwZLyGsa63ygHX25KyRs6PWdv1EuReMLJN5RU6i9Tt6N8lFZmwFrafK/buHV17T8RQpFORyVrUAm1KYxAKJb7DRHjKAXiYq/rtLn06IWsJ7Smi9St+R7ptceQv9n1UTTiY1i8Ntu6E01LraGhfJ+HQxl6+PQJfokjWRSaJ4isQ1eU7ObRqt23Oh4fPFxXGDb1gkd1EQMefr3y651ExYtMn1m3LeScGXU01vjCc2qJN74h1xcs1sOXDocSsKBl5jLhw4yhtWvg2qxgD4zNtnMpAtVyLWw8aRqmTqjIp8acVItXVBQehLyGDWOOLZbj6Tm2Z74meRHvFIwCZoJjjuRd2R70M0ewnX6ju1R44bHHnZ+NKy+hU8EyYW39ztHXf9hlUdRT11yHIU+16eUbajdVe93LmxE2PAfameXYnJrUa/sVwdiXpx93iVXN7eQAoybDycn19A9Dnm4nOBKexVGAYdRjnB9UHvkRFPb35Wa1RGBNGwDsOFNSxB1iCXzyGNS0+nc6cwrGOVQin7y5bQdWt09Mi67+X4pSFu45J2yArXMvhSyBi4F+4K5SRQQLZB7egI6fimAaSnYT9Te/ig7lA3FB+QboguYpezB2mwzzh6JUW3oyxvf9w/QArr4bWt4lIZX4UQfI2QbEAaZBfOOtBotg1uJTf2lCVhI6ROpfgcpDj8CCoaQqadIDxU5fuw8inDnSzpuij0vh/zY+jDitEKMVtoXfV9/xsLZF/B
+sidebar_class_name: "post api-method"
+info_path: docs/user-service/apis/shiksha-platform
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create Privilege"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/user/v1/rbac/privileges/create"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Create Privilege
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"tenantid","in":"header","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"privileges":{"type":"array","items":{"type":"object","properties":{"title":{"type":"string","description":"Privilege title","default":""},"code":{"type":"string","description":"Privilege title","default":""}},"required":["title","code"],"title":"PrivilegeDto"}}},"required":["privileges"],"title":"CreatePrivilegesDto"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"201":{"description":"Privilege has been created successfully."},"400":{"description":"Bad Request"},"409":{"description":"Privilege Already Exists"},"500":{"description":"Internal Server Error"}}}
+>
+  
+</StatusCodes>
+
+
+      

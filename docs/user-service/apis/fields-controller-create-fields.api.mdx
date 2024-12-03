@@ -1,0 +1,71 @@
+---
+id: fields-controller-create-fields
+title: "Create Field"
+description: "Create Field"
+sidebar_label: "Create Field"
+hide_title: true
+hide_table_of_contents: true
+api: eJyVVctu2zoQ/RVh1mzttF1pl5vcAkUXDRp3ZRjFSBpHrClS5SOJK+jfL4aUbNmxr92NH8OZMw+eOezAtGTRS6O/VJDDZ0mqcndGe2uUIvuztISekhkEtGixIU/WQb5cCbD0O5Dz/5hqC3kX/0pLFeTeBhJQGu1Jez7CtlWyjJlmv5zRbHNlTQ3yL79tCXIwxS8qPeexXJeX5PhUY0MTL+et1E8goCJXWtkyJuSwqCljz8ysM19Tth6LrmiNQXnIAXoBCgtS16FF1wtwscVXfx3g4Hwd5CLC/QUsB1yA9mcwSYcG8iXEVgTo0JCVJQiwWEnDMNa0PyvzokFAWVO5KcwrrKbwu1ClsFAE+RqVo16AsRXFNPu8OjQF2ZO9jN7nG5lzH6RRe6bsNfMZvS8MJ5ofmOHuFCff4k4CzkN3/Qh9672VRfD0N/D7oAspnAm2pHvyKNWVCQ5CLsBX1JKu3Dd93ch37v8L24uJZCzTno8bOpB1wp+VAC89U2vQqXtvoB9QXGu0S5P9ML/hr8OiUkRWo8sKIp0lYasyF8qSnFsHpbbvmQWf5h9PRBtbyKoiDZzN4xPr34DJdTkqg5V+C/myA4yI77zZkGaZ7FfHE7qLybMYDwIa8rVh+W2Ni+qHvoYcZsGRnT3fzNLsZqlk4Gz2eSfBY+pHFtM0gMMCdteFrfxKWxAguYaasIo7mNQVboOvjZV/okTHNlmmv+8F/t9XbFpFe0He3/+gqXvDThXfmBZH1BlqG9RjrxXz6ZLv3Q939ORmndiFI/5yc1KvTZzNwKjHWm5cjdmDQr82tnnD6rvvP+6z24cvIICHn4w37+dDa1iOm8KX2KCezOnoug9wu+kEZq1CqZmFwcY3KjFhCcwETnwzjoA3aeDDSkDNvMmX0HUFOvphVd+z+Xcgu00seUYrkywvV70YL5/ZuqEtl5he6neLtHPPqEKizNGrzVze0fXh2+MCBBTD69+YimMsvsSH44VlVYCJjUZeRlsHCvVTwCf2TZg8NQzc6ZSrm8jV4QdXOh7p7aTCQ9qKoR3+7MWZkK5Lm9D3O/90dDZityvJm69o1ff9f9d1KWE=
+sidebar_class_name: "post api-method"
+info_path: docs/user-service/apis/shiksha-platform
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create Field"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/user/v1/fields/create"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Create Field
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"name":{"type":"string","description":"The name of the fields","default":""},"label":{"type":"string","description":"The label of the fields","default":""},"context":{"type":"string","description":"The context of the fields","default":""},"contextType":{"type":"string","description":"The contextType of the fields","default":""},"type":{"type":"string","enum":["text","numeric","radio","drop_down","checkbox"],"default":"text","nullable":false},"ordering":{"type":"number","description":"The ordering of the fields","default":0},"tenantId":{"type":"string","description":"The tenantId of the fields","default":""},"fieldParams":{"type":"object","description":"The fieldParams of the fields","default":{}},"fieldAttributes":{"type":"object","description":"The fieldAttributes of the fields","default":{}},"sourceDetails":{"type":"object","description":"The sourceDetails of the fields","default":{}},"dependsOn":{"type":"string","description":"The dependsOn of the fields","default":{}}},"required":["name","label","type","ordering"],"title":"FieldsDto"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"201":{"description":"Fields has been created successfully."},"403":{"description":"Forbidden"}}}
+>
+  
+</StatusCodes>
+
+
+      

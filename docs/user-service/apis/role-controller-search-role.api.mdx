@@ -1,0 +1,71 @@
+---
+id: role-controller-search-role
+title: "Search Role"
+description: "Search Role"
+sidebar_label: "Search Role"
+hide_title: true
+hide_table_of_contents: true
+api: eJx1VF9P2zAQ/yrVPRvSbnvKG4MhoSENUXiqqslNro2pYwf7Uugif/fp7DQ0Cry0ie98/v2LO7ANOknKmrsScni0Gq+tIWe1RvfXo3RFxYsgoJFO1kjoPOSrDoysEXIgNNKQKkGAMpBDhbJEBwJ8UWEtIe+Ajg13enLK7CCEtQCHry16+mnLI3fwq3JYQk6uRQGFNYSGuCSbRqsiIsxevDW8NhltNy9YEGN0zIcUeq5qVSuaIhBQoi+cango5HAf2wIz3OFZu2nrTaQybu+Xg4Ct0kmOKZDxltu+MQRxxnXVA+wPXgsgRRp7G5ZR+xuyEELa5xtrfGL2bb7gv/EpvGt2rzxdMrgf8+/TllvrNqos0UQoJHfsJbiNLPh4j0XrFB2jv7Io0PsLsns0kK/WbNt4WEI46+NRI1WWM9RYnzhRBTlkrUeXHRYZH5I5q9FnWnlKj5wTdIeUqTMES3Y4UR3jGJSWjfqNx0nq+lRetVRZp/7F3ESunJ3Hj9T9epd1o/EsJR/pSDGYn/vLE5TZ2gigN2lZqb2v5OxBS9paV09cv358vpldPdyBAGaYFheXc0gBlwX1k1mxWkZ2Pf6xtKOxgwKE75Q1WirDdrdOcy2pvgJWnc9dgEj2CjgJzuoPr2sBFfuVr6DrNtLjs9Mh8PJri+6YXDlIp+SGSa/WQZzE5pCUynOhhHwrtccJ1OFDBhCf497jcXyLHKRuuQ2C6PrqdZpy8cQDPjomVwNHdIjhw5/lEwjY9FdMbUve4+Qbc5dvCZKNSGPO4loHWppdGwMAaSYbJFtW9Tx7+5i9/oGVOJXM8QzhOIYnsvzL5D7d0nUp2SEM/an05Y4h+6mbZV2HEP4DYyT8AA==
+sidebar_class_name: "post api-method"
+info_path: docs/user-service/apis/shiksha-platform
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Search Role"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/user/v1/rbac/roles/list/roles"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Search Role
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"tenantid","in":"header","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"limit":{"type":"string","description":"Limit"},"page":{"type":"number","description":"number"},"filters":{"type":"object","description":"Filters"}},"required":["limit","page"],"title":"RoleSearchDto"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"201":{"description":"Role List."},"403":{"description":"Forbidden"}}}
+>
+  
+</StatusCodes>
+
+
+      

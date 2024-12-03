@@ -1,0 +1,71 @@
+---
+id: fields-controller-get-field-options
+title: "Get Field Options"
+description: "Get Field Options"
+sidebar_label: "Get Field Options"
+hide_title: true
+hide_table_of_contents: true
+api: eJx9lE1P20AQhv9KNOcFJ21PvlGgFapUEIFTFFUTexIvsXfN7BpwLf/3ataOsSHpJdrM187M+3gbsCUxem3NTQox/NCUp+7SGs82z4n/7MgH220pMQ4UlMhYkCd2EK/WCpieK3L+u01riJvwVzOlEHuuSEFijSfjxYVlmeskXBY9OWvE5pKMCpSTr0uCGOzmiRIv97C05jU58ea60H4UZqpiQwytArvdOjru2krnv7Ggkdd51mYn3qSfUptdCNzuT4bRm/+f7yHYj/ht2NrJDpzlUDcll7AOsRDDUqwK6A2LMieIV2CkgAJ0CazVoQwyYw0KtKfCHSnftmokxmq0DKmhvZTu9e7FXRJykl15K8kh25XWuE6AL/PF51ZD+qxPn+Xa+XOZ69v865FYyxudpmRAanvcCT99A9KSo6Ri7WuIVw1gkpBzZ97uyQhm7Vp9KPeT/GxyPSgoyGdWMC6tCwihzyCGqHLE0csiCitwUaeKi5gwBbmYXwaaD10shctu8mkvw56x1L8oCCDtZIQpMahOqxguKp9Z1n8D7WFiIf7+/Vu5Psg7sD1/Z3k+Yfcg6XFkp95A6ifTwwSNKZfv1g7HKW6tzLe1Ye6emWWm9y7D2V2Ofmu5gI/SXN4/Xs0u7m5AgSy2My7O530/mAj0shKRqcCw1H5tx1SdFB/WL2NFZY7aCHEV5+LrBF+BCC63L6BfpBuGllMQfq0gE0ziFTTNBh09ct62Yn6uiOsOhxdkjZvwFcoqepWF0D3VMmr3up2FBUt4XnVsfHjphN+Bzrvb5QMo2PQvZmFTyWF8ldbwFWIYdStPqtgayNHsKtxJbFdTVoiVTDyGch+g7A/S6cFl6lGHUz5VP478tupEStN0yLftEN+5TmYMH0UXLVKt27b9B/IoNPg=
+sidebar_class_name: "post api-method"
+info_path: docs/user-service/apis/shiksha-platform
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get Field Options"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/user/v1/fields/options/read"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get Field Options
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"limit":{"type":"number"},"offset":{"type":"number"},"fieldName":{"type":"string"},"controllingfieldfk":{"type":"string"},"context":{"type":"string"},"contextType":{"type":"string"},"optionName":{"type":"string"},"sort":{"description":"Sort","example":["name","asc"],"type":"array","items":{"type":"string"}}},"required":["fieldName"],"title":"FieldsOptionsSearchDto"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"201":{"description":"Field Options list."},"403":{"description":"Forbidden"}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,71 @@
+---
+id: cohort-controller-update-cohort-status
+title: "Delete Cohort"
+description: "Delete Cohort"
+sidebar_label: "Delete Cohort"
+hide_title: true
+hide_table_of_contents: true
+api: eJytU01v2kAQ/SvWnFppCZgAaX1LAwfUHqLQnCJUDfYQr7LedXbHKNTyf69mDYggjj1Z3pnZN+9jW3A1eWTt7LKADB5c6Tw/OMveGUP+T1MXyNQfrxi5CaCgRo8VMfkA2UsLFiuCDPLYtCxAgaf3RnsqIGPfkAJtIYMauQQF9IFVbWQgHd/SZDq7G9C375tBOi5uBziZzgaT8WyWTtK7yWg0AgUhL6lCyFrgfS1zgb22r9B16oTdBPIXyFs04Qj93pDf/1/stWCF2tlAQerj0Ug+BYXc61oEPcmZlBiSDZFNCjLEVCShyXMKYdsYs7+BTsHk2vQPLBLhQ4Fj0/Ra09IyeYsmWZHfkU8W3jt/I+IA46sYdNgC1upidB63SQ5lBRVx6SQF/ZrRaC4hg6HIO9ylw97iYV8ftkfHO1EqwgveWn7yxmver0S+Xh+MjAfs3sie6Ym1/kliTfSpJCzIgzraet9w6bz+GwMaOWm7dXFcc/RxVeq3UGLyaJC3zldwSfLh6Xme3D8uQYHs1x+mN2Ju7ixjzpC1cnPtAlcYdzugX+rz6eITA6YPHtYGtRWPGm+k1gv3EnMpyGmEO91zkDc7PZm1gtIFlpG23WCgZ2+6To776MozK3TAjTmL9hvtz6O/Q9PIQiDZ3KHX0n198oKJCEGWIYMvT4f38zUBdZ3h0Ti7P8c8bnNi1K27s0TNF78WvxfQdf8A6d94BA==
+sidebar_class_name: "delete api-method"
+info_path: docs/user-service/apis/shiksha-platform
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete Cohort"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/user/v1/cohort/delete/{cohortId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Delete Cohort
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"cohortId","required":true,"in":"path","example":"123e4567-e89b-12d3-a456-426614174000","schema":{"type":"string"}},{"name":"userId","required":false,"in":"query","example":"123e4567-e89b-12d3-a456-426614174000","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Cohort has been deleted successfully."},"400":{"description":"Bad request."},"500":{"description":"Internal Server Error."}}}
+>
+  
+</StatusCodes>
+
+
+      

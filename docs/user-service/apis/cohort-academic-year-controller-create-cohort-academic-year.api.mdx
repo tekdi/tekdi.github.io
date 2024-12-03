@@ -1,0 +1,71 @@
+---
+id: cohort-academic-year-controller-create-cohort-academic-year
+title: "Create Cohort Academic Year"
+description: "Create Cohort Academic Year"
+sidebar_label: "Create Cohort Academic Year"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNlE1v2zAMhv+KwbPTJMN28a1NO6DYYUXTHoYgGBibidXYkkvJWT3D/32g5Hw6G3bJh0hR70s+UgumIkanjH7MIIGZyQ272xQzKlX6g5BnRjs2RUH8M2VCR8MUiKFCxpIcsYVk0YLGkiABRxq1UxnEoDQkkBNmJOk2zalESFpwTSWZ1rHSG+i6ZQxM7zVZd2eyRjLkr2LKIHFcUwyp0Y60kxBWVaFSr378Zo2WtUFps3qj1IlGFq9OkZVo6m2I6UsRMWRkU1aV1IXkmCmBNdaFgwSgiwFPevA/hS7yz8t18YnTxemhF9uWMTjlCro6rXtnoOtCMVsZbYPZT5OpfJ3L+Wq4jHK00YpIR2G4WWTrNCVr13VRNDfi8vNkMtx7h1nUz8knfbmW9KgdscYimhPviKMHZsM33qrDjZByxYH4s5TWrFzjWUKvZ+TMljQki6Ugcn7OzEuPQq1oXyzq0SzJ5UbYroz1GKDLIYFxbYnHu+k4dHq07/KoIeRx6IaQ6qWL1hNdc2EsdPZc3YEArNQ3agbc9/fitna5YfXbk+v7IfQ+H7l/+MCykhGfcnrE6hK8w/WR89bG6+gRmedqa3OMngp0a8PlAMrZ8+t9dPv0CDGI0bA4vZlAuGmYyk0TidK+Er3J3sa/+352zKExjj7cuCpQaVFbcyGxMJIFyEhEx9QfPhyLLIfBLGPIZZzJAtp2hZZeueg6WX6viZswrh2ywpW0YbHs4v0UhKlMWQlkkKyxsDQQe3hjAOLryrfUnD9wOyxqCg9D20dnocroRQocMwavlhB9oPTp+/wFYlj1r19pMtnD+Ati/+klGa/UA+jXWihQb2rcSG6oKSPDWvp6CuXWQ9n/kE7sQ7o5UXjO596sfIq5q1vaNiDfdYf8EPrrjsOlCNnS1mXXdX8AGZ4/lg==
+sidebar_class_name: "post api-method"
+info_path: docs/user-service/apis/shiksha-platform
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create Cohort Academic Year"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/user/v1/cohort-academic-year/create"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Create Cohort Academic Year
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"tenantid","in":"header","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"cohortId":{"type":"string","description":"cohortId","default":""},"academicYearId":{"type":"string","description":"academicYearId","default":""}},"required":["cohortId","academicYearId"],"title":"CohortAcademicYearDto"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"201":{"description":"Form has been created successfully."},"400":{"description":"Bad request."},"500":{"description":"Internal Server Error."}}}
+>
+  
+</StatusCodes>
+
+
+      

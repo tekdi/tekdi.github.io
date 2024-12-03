@@ -1,0 +1,71 @@
+---
+id: cohort-members-controller-create-cohort-members
+title: "Create Cohort Member"
+description: "Create Cohort Member"
+sidebar_label: "Create Cohort Member"
+hide_title: true
+hide_table_of_contents: true
+api: eJy1VMtu2zAQ/BVhz0wc96hb6vQQBEWDPA6FYRRram0xlkiFpNyogv69WFKWLdsB0qK9yJb2wdnZGbZgKrLoldG3GaQwM7mx/iuVS7JuZrS3pijI/pCW0NMoCgIqtFiS55d03oLGkiCFjLZKkspAgNKQQk6YkQUBTuZUIqQt+KbiTOet0mvoOjEUo8SMSiUbQvuXLTxp1P6PihcCLL3W5PxnkzWcwa/KUgaptzUJkEZ70p5DWFWFkoGzyYszmr+dtDbLF5KeObLMsFfkOCoDg0z1MQgBGTlpVcV9IYWnnJJddmJWiR/ek3JYQEYrrAsPKUAn+ubXPYPfCe1HDjpbddy6dvShZow65n4IcycOiJ7v2XlnlgHHQoBXvqBjxd54A10X27rKaBdZ/3Q15Z8x1FiYxMokR5csiXQSlZ4lrpaSnFvVRdFcBqQe16zzcSFDcSRrq3wTTICh7MKbDWlI5wvW1tHB4YRk3EZAST437MHKuCAc9DmkMOGRJ9vpJDISeZxElKxpstvovwMgj6zGOPoYzrA+rNQdNScO6R10XfvcWPUraDzMzjp/2DvkyxuWFdN/qOi9Js4LcR/fqWkwIONYmYCvX+tjrjYux+S+QL8ytjxR2uzh+Sa5vr8FAUxA/Di9vILoVZTsVYbOdJYYhu/He2cBo/4DU57e/KQqUOngA1twLO5mHgZhANNh6HLXrd/QQkDO+0zn0LZLdPRsi67jz6812SbubYtW4ZLnni86sVsHqylTjgMZpCssHJ2AHK4lAHEe8Yaa8Z28xaKmaOt/1//k2v4vpxzc7KP+MTqLXS6euME+4+S6ZkcOZrv/9vgEApb9tV+ajGss/gQRngGSCUiDn8K3FgrU6xrXnBt7stKwZlUcemwTPNb/4X3uQro5QDi2225YfvJwZ0vaNjq464b8GHq3YvB4zGZaF13X/QbJdLze
+sidebar_class_name: "post api-method"
+info_path: docs/user-service/apis/shiksha-platform
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create Cohort Member"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/user/v1/cohortmember/create"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Create Cohort Member
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"deviceid","in":"header","schema":{"type":"string"}},{"name":"academicyearid","in":"header","schema":{"type":"string"}},{"name":"tenantid","in":"header","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"cohortId":{"type":"string","description":"The cohortId of the cohort members","default":""},"cohortAcademicYearId":{"type":"string","description":"cohortAcademicYearId","default":""},"userId":{"type":"string","description":"The userId of the cohort members","default":""}},"required":["cohortId","cohortAcademicYearId","userId"],"title":"CohortMembersDto"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"201":{"description":"Cohort Member has been created successfully."}}}
+>
+  
+</StatusCodes>
+
+
+      
