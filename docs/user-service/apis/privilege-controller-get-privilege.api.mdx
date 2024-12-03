@@ -1,0 +1,71 @@
+---
+id: privilege-controller-get-privilege
+title: "Get Privilege"
+description: "Get Privilege"
+sidebar_label: "Get Privilege"
+hide_title: true
+hide_table_of_contents: true
+api: eJyVVM2O2jAQfpVoTq3kLlC1l9y2u6sV6gVB94RQNSSzxCLYYTxBpZHfvZoE0sCylXpJgj3j+f5MA74iRrHeTXNIYcb2YEva0IN3wr4siX9uSPplMFAh446EOEC6bMDhjiCF6lwxzcEA0762TDmkwjUZsE5LUAowELKCdghpA3KstDUIW7eBGE1/mpBDJ1aPalsLwpz4n80rnRoq7wIF3f88Husrp5CxrZTgkF7ySIK2vINo4Mutym+YJ3Pa1xREa77eqpk6IXZYJgviA3HyxOxZeYDgRtUBXmMGKwOBspqtHFvFMMsohE/it+QgXa4U+uXBzyTJUPIdSeHVng1J64AUkMKoDsSjw2SkU0a9AWHUDMyIKloLTwENoCxUyU6qS0C9tFjZ73R8Y8HJovtaCs/2d5udlrR1r75tt1JqxaKw21BgMitRXj3v4Jrmw/zlMbmfTcGA4usWJ3djMJB5J5gJpI2eXPkgO2yxnaZfK3RxcM9A6JeMqhKtUw9rLnWvU28Jqp5Onmhe1SfzN8QBDKTDSK8MFD6I9jXNGgO9cBmjLu9r4mMn7QHZ4lq5LxvIbdDvHNJXLAO9gagMyQmk8GF+ui0fEzC3oZ8dcWrHActaf4GBLR2v7l5cRXP26v9gvDe7mzG4kf18DW4fzeenH2AAaxV3GKFtG6HThyK6yeUyTeeh+tR/hZstTdMFNMa+vtt6t6OPcFet9FYxxj8FhbGk
+sidebar_class_name: "get api-method"
+info_path: docs/user-service/apis/shiksha-platform
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get Privilege"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/user/v1/rbac/privileges/{privilegeId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get Privilege
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"privilegeId","required":true,"in":"path","schema":{"type":"string"}},{"name":"tenantid","in":"header","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Privilege Detail."},"400":{"description":"Bad Request"},"500":{"description":"Internal Server Error"}}}
+>
+  
+</StatusCodes>
+
+
+      

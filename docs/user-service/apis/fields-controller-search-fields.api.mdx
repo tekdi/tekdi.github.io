@@ -1,0 +1,71 @@
+---
+id: fields-controller-search-fields
+title: "Search Field"
+description: "Search Field"
+sidebar_label: "Search Field"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNVMtu2zAQ/BVjz0xstz3pliYNELRAgjg5GUaxltYRY4pUSMqNK/DfiyVlWY7VohfB3hdnZ4ZswdRk0Uuj7wrI4FaSKty10d4apcj+dIQ2L1MYBNRosSJP1kG2bEFjRZCBJ43aywIESA0ZlIQFWRDg8pIqhKwFv6+50nkr9QuEsBJg6a0h57+aYs8V/FdaKiDztiEBudGetOcU1rWSeUQ5fXVGc+xstFm/Uu4Zo+WdvCTHWSUr6QdluqnWEVtBLrey5qGQwY9YFgSYzcbRfzR04SBgI1UipP1QctslBKBS95vI2L/Bxp3f/QhhfAypgkUaySUdRhJJmdEuzkqvqFc9wb3xBsKKs0dBlgdWVh97FtEesSekHlcb7dI2n2bzMVK4b6Kk85eM8Mvs80iRsWtZFKQTTHxhu3WtDMJR3ljp95FSzHNy7sKbLWnIliv21um4hHIS+0FARb407PbauKgB+hIymDaO7HQ3n0am3TRZn11MdpccPzh6wf5Le54C6InGWn6n/dmd6O7MVeNLY+Xv6Oq4Jjv78Xgnvr1jVSsaeHh2dOfsxHa9bQ7iDtxyDHUH9/+P3hh6QuqNiUt0Oi9KuXUlTh4U+o2x1dlFuH58vplcPdyBAGYpBeeXM0hXGHO2M09mtiuMDHVQPuhyMrenkTeb1gqlZrs0VnEuSbYElowPnh9WdlGvKNxKQMkCZ0to2zU6erYqBA6/NWT3Sc4dWolr3nS5CuKgEtuqkI4TBWQbVI7O4PXvEzCXY1i3tD99HHeoGi6DINoue52mXDzxgGPF2YvHpu59+3C/eAIB6+7lrEzBPRZ/gYjfCMlEpNEfMdaCQv3S4AvXppmsCjbM5NC022ja7sfgzUK9HyA89e9hWf7ycqMtbZuuRAh9fUr9taO/NKmaaV2FEP4AW4pIRw==
+sidebar_class_name: "post api-method"
+info_path: docs/user-service/apis/shiksha-platform
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Search Field"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/user/v1/fields/search"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Search Field
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"tenantid","in":"header","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"limit":{"type":"number","description":"Limit"},"offset":{"type":"number","description":"number"},"filters":{"description":"Filters","allOf":[{"type":"object","properties":{"context":{"type":"string"},"fieldId":{"type":"string"},"name":{"type":"string"},"tenantId":{"type":"string"}},"title":"FieldsFilterDto"}]}},"required":["offset"],"title":"FieldsSearchDto"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"201":{"description":"Fields list."},"403":{"description":"Forbidden"}}}
+>
+  
+</StatusCodes>
+
+
+      
