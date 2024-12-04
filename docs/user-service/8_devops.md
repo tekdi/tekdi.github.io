@@ -36,7 +36,7 @@ POSTGRES_SCHEMA="add-here"
 #KEYCLOAK
 KEYCLOAK="add-here"
 KEYCLOAK_ADMIN="add-here"
-KEYCLOAK_ADMIN="add-here" #creation in pratham realm
+KEYCLOAK_ADMIN="add-here"
 KEYCLOAK_USER_TOKEN="add-here"
 KEYCLOAK_REALM_RSA_PUBLIC_KEY="add-here"
 KEYCLOAK_CLIENT_ID="add-here"
