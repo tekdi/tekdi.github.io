@@ -1,0 +1,2855 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/user/v1/rbac/roles/read/{id}": {
+      "get": {
+        "operationId": "RoleController_getRole",
+        "summary": "Get Role",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "string" }
+          },
+          { "name": "tenantid", "in": "header", "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": { "description": "Role Detail." },
+          "403": { "description": "Forbidden" }
+        },
+        "tags": ["rbac"],
+        "security": [{ "access-token": [] }]
+      }
+    },
+    "/user/v1/rbac/roles/create": {
+      "post": {
+        "operationId": "RoleController_createRole",
+        "summary": "Create Role",
+        "parameters": [
+          { "name": "tenantid", "in": "header", "schema": { "type": "string" } }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/CreateRolesDto" }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Role has been created successfully." },
+          "403": { "description": "Forbidden" }
+        },
+        "tags": ["rbac"],
+        "security": [{ "access-token": [] }]
+      }
+    },
+    "/user/v1/rbac/roles/update/{id}": {
+      "put": {
+        "operationId": "RoleController_updateRole",
+        "summary": "Update Role",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "string" }
+          },
+          { "name": "tenantid", "in": "header", "schema": { "type": "string" } }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/RoleDto" }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Role updated successfully." },
+          "403": { "description": "Forbidden" }
+        },
+        "tags": ["rbac"],
+        "security": [{ "access-token": [] }]
+      }
+    },
+    "/user/v1/rbac/roles/list/roles": {
+      "post": {
+        "operationId": "RoleController_searchRole",
+        "summary": "Search Role",
+        "parameters": [
+          { "name": "tenantid", "in": "header", "schema": { "type": "string" } }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/RoleSearchDto" }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Role List." },
+          "403": { "description": "Forbidden" }
+        },
+        "tags": ["rbac"],
+        "security": [{ "access-token": [] }]
+      }
+    },
+    "/user/v1/rbac/roles/delete/{roleId}": {
+      "delete": {
+        "operationId": "RoleController_deleteRole",
+        "summary": "Delete Role",
+        "parameters": [
+          {
+            "name": "roleId",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "string" }
+          },
+          { "name": "tenantid", "in": "header", "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": { "description": "Role deleted successfully." },
+          "400": { "description": "Bad request" },
+          "404": { "description": "Data not found" }
+        },
+        "tags": ["rbac"],
+        "security": [{ "access-token": [] }]
+      }
+    },
+    "/user/v1/rbac/privileges": {
+      "get": {
+        "operationId": "PrivilegeController_getPrivilegebyRoleId",
+        "summary": "Get Privileges for Role",
+        "parameters": [
+          {
+            "name": "tenantId",
+            "required": true,
+            "in": "query",
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "roleId",
+            "required": true,
+            "in": "query",
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": { "description": "Privilege Detail." },
+          "400": { "description": "Bad Request" },
+          "500": { "description": "Internal Server Error" }
+        },
+        "tags": ["rbac"],
+        "security": [{ "access-token": [] }]
+      }
+    },
+    "/user/v1/rbac/privileges/{privilegeId}": {
+      "get": {
+        "operationId": "PrivilegeController_getPrivilege",
+        "summary": "Get Privilege",
+        "parameters": [
+          {
+            "name": "privilegeId",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "string" }
+          },
+          { "name": "tenantid", "in": "header", "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": { "description": "Privilege Detail." },
+          "400": { "description": "Bad Request" },
+          "500": { "description": "Internal Server Error" }
+        },
+        "tags": ["rbac"],
+        "security": [{ "access-token": [] }]
+      },
+      "delete": {
+        "operationId": "PrivilegeController_deleteRole",
+        "summary": "Delete Privilege",
+        "parameters": [
+          {
+            "name": "privilegeId",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "string" }
+          },
+          { "name": "tenantid", "in": "header", "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": { "description": "Role deleted successfully." },
+          "400": { "description": "Bad request" },
+          "404": { "description": "Data not found" }
+        },
+        "tags": ["rbac"],
+        "security": [{ "access-token": [] }]
+      }
+    },
+    "/user/v1/rbac/privileges/create": {
+      "post": {
+        "operationId": "PrivilegeController_createPrivilege",
+        "summary": "Create Privilege",
+        "parameters": [
+          { "name": "tenantid", "in": "header", "schema": { "type": "string" } }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/CreatePrivilegesDto" }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Privilege has been created successfully." },
+          "400": { "description": "Bad Request" },
+          "409": { "description": "Privilege Already Exists" },
+          "500": { "description": "Internal Server Error" }
+        },
+        "tags": ["rbac"],
+        "security": [{ "access-token": [] }]
+      }
+    },
+    "/user/v1/rbac/usersRoles": {
+      "post": {
+        "operationId": "AssignRoleController_create",
+        "summary": "Assign Role to User",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/CreateAssignRoleDto" }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Role assigned successfully to the user in the specified tenant."
+          },
+          "400": { "description": "Bad request." },
+          "409": { "description": "Role is already assigned to this user." },
+          "500": { "description": "Internal Server Error." }
+        },
+        "tags": ["rbac"],
+        "security": [{ "access-token": [] }]
+      }
+    },
+    "/user/v1/rbac/usersRoles/{userId}": {
+      "get": {
+        "operationId": "AssignRoleController_getRole",
+        "summary": "Get User Role",
+        "parameters": [
+          {
+            "name": "userId",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "string" }
+          },
+          { "name": "tenantid", "in": "header", "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": { "description": "Role Detail." },
+          "403": { "description": "Forbidden" }
+        },
+        "tags": ["rbac"],
+        "security": [{ "access-token": [] }]
+      },
+      "delete": {
+        "operationId": "AssignRoleController_deleteRole",
+        "summary": "Remove User Role",
+        "parameters": [
+          { "name": "tenantid", "in": "header", "schema": { "type": "string" } }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/DeleteAssignRoleDto" }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Role deleted successfully." },
+          "400": { "description": "Bad request" },
+          "404": { "description": "Data not found" }
+        },
+        "tags": ["rbac"],
+        "security": [{ "access-token": [] }]
+      }
+    },
+    "/user/v1/assignprivilege": {
+      "post": {
+        "operationId": "AssignPrivilegeController_create",
+        "summary": "Assign Privilege",
+        "parameters": [
+          { "name": "tenantid", "in": "header", "schema": { "type": "string" } }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatePrivilegeRoleDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Privilege has been Assigned successfully." },
+          "403": { "description": "Forbidden" }
+        },
+        "tags": ["rbac"],
+        "security": [{ "access-token": [] }]
+      }
+    },
+    "/user/v1/assignprivilege/{roleid}": {
+      "get": {
+        "operationId": "AssignPrivilegeController_getRole",
+        "summary": "Get Privilege for Role",
+        "parameters": [
+          {
+            "name": "roleid",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "string" }
+          },
+          { "name": "tenantid", "in": "header", "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": { "description": "Privilege Details." },
+          "403": { "description": "Forbidden" }
+        },
+        "tags": ["rbac"],
+        "security": [{ "access-token": [] }]
+      }
+    },
+    "/user/v1/read/{userId}": {
+      "get": {
+        "operationId": "UserController_getUser",
+        "summary": "Get User",
+        "parameters": [
+          {
+            "name": "userId",
+            "required": true,
+            "in": "path",
+            "example": "123e4567-e89b-12d3-a456-426614174000",
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "fieldvalue",
+            "required": false,
+            "in": "query",
+            "description": "Send True to Fetch Custom Field of User",
+            "example": "True",
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "tenantid",
+            "in": "header",
+            "description": "The ID of the tenant making the request",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": { "description": "User details fetched successfully." },
+          "400": { "description": "Bad Request" },
+          "404": { "description": "User does not exist" },
+          "500": { "description": "Internal Server Error" }
+        },
+        "tags": ["User"],
+        "security": [{ "access-token": [] }]
+      }
+    },
+    "/user/v1/create": {
+      "post": {
+        "operationId": "UserController_createUser",
+        "summary": "Create User",
+        "parameters": [
+          {
+            "name": "academicyearid",
+            "in": "header",
+            "description": "Academic year identifier",
+            "schema": { "type": "string" }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/UserCreateDto" },
+              "examples": {
+                "teamLeader": {
+                  "summary": "Create Team Leader",
+                  "description": "Description for when an empty body is used",
+                  "value": {
+                    "name": "Snehal Patil",
+                    "username": "tlbr2498765",
+                    "password": "98765",
+                    "tenantCohortRoleMapping": [
+                      {
+                        "tenantId": "ef99949b-7f3a-4a5f-806a-e67e683e38f3",
+                        "cohortIds": ["5ba9d9a7-02f9-46dc-a04c-67cd8f54a331"],
+                        "roleId": "9dd9328f-1bc7-444f-96e3-c5e1daa3514a"
+                      }
+                    ],
+                    "customFields": [
+                      {
+                        "fieldId": "6469c3ac-8c46-49d7-852a-00f9589737c5",
+                        "value": ["BR"]
+                      },
+                      {
+                        "fieldId": "b61edfc6-3787-4079-86d3-37262bf23a9e",
+                        "value": ["PAT"]
+                      },
+                      {
+                        "fieldId": "4aab68ae-8382-43aa-a45a-e9b239319857",
+                        "value": ["PS"]
+                      },
+                      {
+                        "fieldId": "a62bc2b9-c81e-463c-a135-ab722e6eea09",
+                        "value": "32"
+                      },
+                      {
+                        "fieldId": "52b8a5fd-bf56-4280-8cc8-10caa7dba8b5",
+                        "value": "male"
+                      },
+                      {
+                        "fieldId": "4fc098c5-bec5-4afc-a15d-093805b05119",
+                        "value": "team_leader"
+                      },
+                      {
+                        "fieldId": "4dd140b7-9bbb-4134-9d4b-e8cc42529e1b",
+                        "value": "2024"
+                      }
+                    ]
+                  },
+                  "headers": { "academicYearId": "" }
+                },
+                "student": {
+                  "summary": "Create Student",
+                  "description": "Hello is used as the greeting",
+                  "value": {
+                    "name": "Sourav 22ooa",
+                    "username": "scbr249876422ooa",
+                    "password": "98765",
+                    "tenantCohortRoleMapping": [
+                      {
+                        "tenantId": "ef99949b-7f3a-4a5f-806a-e67e683e38f3",
+                        "cohortIds": ["2447aa0c-4111-4cb9-94d1-9898ef6975a1"],
+                        "roleId": "493c04e2-a9db-47f2-b304-503da358d5f4"
+                      }
+                    ],
+                    "customFields": [
+                      {
+                        "fieldId": "6469c3ac-8c46-49d7-852a-00f9589737c5",
+                        "value": ["BR"]
+                      },
+                      {
+                        "fieldId": "b61edfc6-3787-4079-86d3-37262bf23a9e",
+                        "value": ["PAT"]
+                      },
+                      {
+                        "fieldId": "4aab68ae-8382-43aa-a45a-e9b239319857",
+                        "value": ["PS"]
+                      },
+                      {
+                        "fieldId": "7adad9b7-0cf2-4a48-bc60-56a80dc02107",
+                        "value": ["second_chance_alumni"]
+                      },
+                      {
+                        "fieldId": "2f07caa6-61b8-4a6a-92f4-94b5596a4864",
+                        "value": "18"
+                      },
+                      {
+                        "fieldId": "c81e50d4-87a2-4dc1-9de6-85591c581f5c",
+                        "value": "female"
+                      },
+                      {
+                        "fieldId": "2914814c-2a0f-4422-aff8-6bd3b09d3069",
+                        "value": ["involved_in_domestic_work"]
+                      },
+                      {
+                        "fieldId": "f3fac0c3-bc8b-4260-8b56-1608fd31c237",
+                        "value": "Shakil"
+                      },
+                      {
+                        "fieldId": "9a4ad601-023b-467f-bbbe-bda1885f87c7",
+                        "value": ["8"]
+                      },
+                      {
+                        "fieldId": "4f48571b-88fd-43b9-acb3-91afda7901ac",
+                        "value": ["school_closure_due_to_covid"]
+                      },
+                      {
+                        "fieldId": "ff472647-6c40-42e6-b200-dc74b241e915",
+                        "value": ["unmarried"]
+                      },
+                      {
+                        "fieldId": "da594b2e-c645-4a96-af15-6e2d24587c9a",
+                        "value": ["smartphone"]
+                      },
+                      {
+                        "fieldId": "d119d92f-fab7-4c7d-8370-8b40b5ed23dc",
+                        "value": "no"
+                      }
+                    ]
+                  },
+                  "headers": {
+                    "academicYearId": "851687bb-422e-4a22-b27f-6b66fa304bec"
+                  }
+                },
+                "facilitator": {
+                  "summary": "Create Facilitator",
+                  "description": "Hello is used as the greeting",
+                  "value": {
+                    "name": "Sourav1",
+                    "username": "fscbr2498760",
+                    "password": "98765",
+                    "email": "sourav_pratham@gmail.com",
+                    "tenantCohortRoleMapping": [
+                      {
+                        "tenantId": "ef99949b-7f3a-4a5f-806a-e67e683e38f3",
+                        "cohortIds": ["2447aa0c-4111-4cb9-94d1-9898ef6975a1"],
+                        "roleId": "3bde0028-6900-4900-9d05-eeb608843718"
+                      }
+                    ],
+                    "customFields": [
+                      {
+                        "fieldId": "6469c3ac-8c46-49d7-852a-00f9589737c5",
+                        "value": ["BR"]
+                      },
+                      {
+                        "fieldId": "b61edfc6-3787-4079-86d3-37262bf23a9e",
+                        "value": ["PAT"]
+                      },
+                      {
+                        "fieldId": "4aab68ae-8382-43aa-a45a-e9b239319857",
+                        "value": ["PS"]
+                      },
+                      {
+                        "fieldId": "57b50148-2b58-45e5-9b27-6a07c5317c18",
+                        "value": "30"
+                      },
+                      {
+                        "fieldId": "a71fd390-fd67-45c3-ab1e-6994b8d967a2",
+                        "value": "male"
+                      },
+                      {
+                        "fieldId": "cb407d11-f1c5-424c-a422-4755a1c4ab29",
+                        "value": "facilitator"
+                      }
+                    ]
+                  },
+                  "headers": {
+                    "academicYearId": "851687bb-422e-4a22-b27f-6b66fa304bec"
+                  }
+                },
+                "learner": {
+                  "summary": "Create Learner",
+                  "description": "Hello is used as the greeting",
+                  "value": {
+                    "name": "Debanjan",
+                    "username": "lrbr2498765",
+                    "password": "98765",
+                    "email": "debanjan@gmail.com",
+                    "tenantCohortRoleMapping": [
+                      {
+                        "tenantId": "6c8b810a-66c2-4f0d-8c0c-c025415a4414",
+                        "roleId": "0029909a-674b-460e-9ba9-c479d273bd68"
+                      }
+                    ],
+                    "customFields": [
+                      {
+                        "fieldId": "6469c3ac-8c46-49d7-852a-00f9589737c5",
+                        "value": ["BR"]
+                      },
+                      {
+                        "fieldId": "b61edfc6-3787-4079-86d3-37262bf23a9e",
+                        "value": ["PAT"]
+                      },
+                      {
+                        "fieldId": "4aab68ae-8382-43aa-a45a-e9b239319857",
+                        "value": ["PS"]
+                      },
+                      {
+                        "fieldId": "3d23ef47-30b3-4fe4-833c-42f71be27e6b",
+                        "value": "english"
+                      },
+                      {
+                        "fieldId": "90893edb-40ca-4ffb-a078-3e026016fb59",
+                        "value": "21"
+                      },
+                      {
+                        "fieldId": "888aa61f-1f36-4b08-b361-8840c4213408",
+                        "value": "male"
+                      }
+                    ]
+                  },
+                  "headers": { "academicYearId": "" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "User created successfully" },
+          "403": { "description": "User already exist." },
+          "500": { "description": "Internal Server Error" }
+        },
+        "tags": ["User"]
+      }
+    },
+    "/user/v1/update/{userid}": {
+      "patch": {
+        "operationId": "UserController_updateUser",
+        "summary": "Update User",
+        "parameters": [
+          {
+            "name": "userid",
+            "required": true,
+            "in": "path",
+            "example": "123e4567-e89b-12d3-a456-426614174000",
+            "schema": { "type": "string" }
+          },
+          { "name": "tenantid", "in": "header", "schema": { "type": "string" } }
+        ],
+        "requestBody": {
+          "required": true,
+          "description": "Exampls are given for creating user with different roles and different cutom fields.",
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/UserUpdateDTO" },
+              "examples": {
+                "teamLeader": {
+                  "summary": "Update Team Leader",
+                  "description": "Description for when an empty body is used",
+                  "value": {
+                    "name": "Snehal Patil",
+                    "customFields": [
+                      {
+                        "fieldId": "6469c3ac-8c46-49d7-852a-00f9589737c5",
+                        "value": ["BR"]
+                      },
+                      {
+                        "fieldId": "b61edfc6-3787-4079-86d3-37262bf23a9e",
+                        "value": ["PAT"]
+                      },
+                      {
+                        "fieldId": "4aab68ae-8382-43aa-a45a-e9b239319857",
+                        "value": ["PS"]
+                      },
+                      {
+                        "fieldId": "a62bc2b9-c81e-463c-a135-ab722e6eea09",
+                        "value": "32"
+                      },
+                      {
+                        "fieldId": "52b8a5fd-bf56-4280-8cc8-10caa7dba8b5",
+                        "value": "male"
+                      },
+                      {
+                        "fieldId": "4fc098c5-bec5-4afc-a15d-093805b05119",
+                        "value": "team_leader"
+                      },
+                      {
+                        "fieldId": "4dd140b7-9bbb-4134-9d4b-e8cc42529e1b",
+                        "value": "2024"
+                      }
+                    ]
+                  },
+                  "headers": { "academicYearId": "" }
+                },
+                "student": {
+                  "summary": "Update Student",
+                  "description": "Hello is used as the greeting",
+                  "value": {
+                    "name": "Sourav 22ooa",
+                    "customFields": [
+                      {
+                        "fieldId": "6469c3ac-8c46-49d7-852a-00f9589737c5",
+                        "value": ["BR"]
+                      },
+                      {
+                        "fieldId": "b61edfc6-3787-4079-86d3-37262bf23a9e",
+                        "value": ["PAT"]
+                      },
+                      {
+                        "fieldId": "4aab68ae-8382-43aa-a45a-e9b239319857",
+                        "value": ["PS"]
+                      },
+                      {
+                        "fieldId": "7adad9b7-0cf2-4a48-bc60-56a80dc02107",
+                        "value": ["second_chance_alumni"]
+                      },
+                      {
+                        "fieldId": "2f07caa6-61b8-4a6a-92f4-94b5596a4864",
+                        "value": "18"
+                      },
+                      {
+                        "fieldId": "c81e50d4-87a2-4dc1-9de6-85591c581f5c",
+                        "value": "female"
+                      },
+                      {
+                        "fieldId": "2914814c-2a0f-4422-aff8-6bd3b09d3069",
+                        "value": ["involved_in_domestic_work"]
+                      },
+                      {
+                        "fieldId": "f3fac0c3-bc8b-4260-8b56-1608fd31c237",
+                        "value": "Shakil"
+                      },
+                      {
+                        "fieldId": "9a4ad601-023b-467f-bbbe-bda1885f87c7",
+                        "value": ["8"]
+                      },
+                      {
+                        "fieldId": "4f48571b-88fd-43b9-acb3-91afda7901ac",
+                        "value": ["school_closure_due_to_covid"]
+                      },
+                      {
+                        "fieldId": "ff472647-6c40-42e6-b200-dc74b241e915",
+                        "value": ["unmarried"]
+                      },
+                      {
+                        "fieldId": "da594b2e-c645-4a96-af15-6e2d24587c9a",
+                        "value": ["smartphone"]
+                      },
+                      {
+                        "fieldId": "d119d92f-fab7-4c7d-8370-8b40b5ed23dc",
+                        "value": "no"
+                      }
+                    ]
+                  },
+                  "headers": {
+                    "academicYearId": "851687bb-422e-4a22-b27f-6b66fa304bec"
+                  }
+                },
+                "facilitator": {
+                  "summary": "Update Facilitator",
+                  "description": "Hello is used as the greeting",
+                  "value": {
+                    "name": "Sourav1",
+                    "email": "sourav_pratham@gmail.com",
+                    "customFields": [
+                      {
+                        "fieldId": "6469c3ac-8c46-49d7-852a-00f9589737c5",
+                        "value": ["BR"]
+                      },
+                      {
+                        "fieldId": "b61edfc6-3787-4079-86d3-37262bf23a9e",
+                        "value": ["PAT"]
+                      },
+                      {
+                        "fieldId": "4aab68ae-8382-43aa-a45a-e9b239319857",
+                        "value": ["PS"]
+                      },
+                      {
+                        "fieldId": "57b50148-2b58-45e5-9b27-6a07c5317c18",
+                        "value": "30"
+                      },
+                      {
+                        "fieldId": "a71fd390-fd67-45c3-ab1e-6994b8d967a2",
+                        "value": "male"
+                      },
+                      {
+                        "fieldId": "cb407d11-f1c5-424c-a422-4755a1c4ab29",
+                        "value": "facilitator"
+                      }
+                    ]
+                  },
+                  "headers": {
+                    "academicYearId": "851687bb-422e-4a22-b27f-6b66fa304bec"
+                  }
+                },
+                "learner": {
+                  "summary": "Update Learner",
+                  "description": "Hello is used as the greeting",
+                  "value": {
+                    "name": "Debanjan",
+                    "email": "debanjan@gmail.com",
+                    "customFields": [
+                      {
+                        "fieldId": "6469c3ac-8c46-49d7-852a-00f9589737c5",
+                        "value": ["BR"]
+                      },
+                      {
+                        "fieldId": "b61edfc6-3787-4079-86d3-37262bf23a9e",
+                        "value": ["PAT"]
+                      },
+                      {
+                        "fieldId": "4aab68ae-8382-43aa-a45a-e9b239319857",
+                        "value": ["PS"]
+                      },
+                      {
+                        "fieldId": "3d23ef47-30b3-4fe4-833c-42f71be27e6b",
+                        "value": "english"
+                      },
+                      {
+                        "fieldId": "90893edb-40ca-4ffb-a078-3e026016fb59",
+                        "value": "21"
+                      },
+                      {
+                        "fieldId": "888aa61f-1f36-4b08-b361-8840c4213408",
+                        "value": "male"
+                      }
+                    ]
+                  },
+                  "headers": { "academicYearId": "" }
+                }
+              }
+            }
+          }
+        },
+        "responses": { "200": { "description": "User updated successfully." } },
+        "tags": ["User"],
+        "security": [{ "access-token": [] }]
+      }
+    },
+    "/user/v1/list": {
+      "post": {
+        "operationId": "UserController_searchUser",
+        "summary": "User List",
+        "parameters": [
+          { "name": "tenantid", "in": "header", "schema": { "type": "string" } }
+        ],
+        "requestBody": {
+          "required": true,
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/UserSearchDto" },
+              "examples": {
+                "a": {
+                  "summary": "Get user list By username",
+                  "description": "Get user list By username",
+                  "value": {
+                    "limit": 1,
+                    "filters": { "username": "fscbr2498765" },
+                    "sort": ["createdAt", "asc"],
+                    "offset": 0
+                  }
+                },
+                "b": {
+                  "summary": "Get user list By Role",
+                  "description": "Get user list By Role",
+                  "value": {
+                    "limit": 1,
+                    "filters": { "role": "Teacher" },
+                    "sort": ["createdAt", "asc"],
+                    "offset": 0
+                  }
+                },
+                "c": {
+                  "summary": "Get user list By userId",
+                  "description": "Get user list By userId",
+                  "value": {
+                    "limit": 1,
+                    "filters": {
+                      "userId": "787f36ba-1c97-4b41-88be-f3bf4dfdc778"
+                    },
+                    "sort": ["createdAt", "asc"],
+                    "offset": 0
+                  }
+                },
+                "d": {
+                  "summary": "Get user list By State District & Block",
+                  "description": "Get user list By State District & Block",
+                  "value": {
+                    "limit": 1,
+                    "filters": {
+                      "states": "BR",
+                      "districts": "PAT",
+                      "blocks": "PS"
+                    },
+                    "sort": ["createdAt", "asc"],
+                    "offset": 0
+                  }
+                },
+                "e": {
+                  "summary": "Get user list extract userIds & cohortIds",
+                  "description": "Get user list extract userIds & cohortIds",
+                  "value": {
+                    "limit": 10,
+                    "exclude": {
+                      "userIds": ["73160824-d47d-4218-b7f4-bdc2c26ec075"],
+                      "cohortIds": ["2447aa0c-4111-4cb9-94d1-9898ef6975a1"]
+                    },
+                    "sort": ["createdAt", "asc"],
+                    "offset": 0
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": { "201": { "description": "User list." } },
+        "tags": ["User"],
+        "security": [{ "access-token": [] }]
+      }
+    },
+    "/user/v1/password-reset-link": {
+      "post": {
+        "operationId": "UserController_sendPasswordResetLink",
+        "summary": "Passwort reset",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SendPasswordResetLinkDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Password reset link sent successfully." }
+        },
+        "tags": ["User"]
+      }
+    },
+    "/user/v1/forgot-password": {
+      "post": {
+        "operationId": "UserController_forgotPassword",
+        "summary": "Forgot password",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/ForgotPasswordDto" }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Forgot password reset successfully." }
+        },
+        "tags": ["User"]
+      }
+    },
+    "/user/v1/reset-password": {
+      "post": {
+        "operationId": "UserController_resetUserPassword",
+        "summary": "Reset Password",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/ResetUserPasswordDto" }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Password reset successfully." },
+          "403": { "description": "Forbidden" }
+        },
+        "tags": ["User"],
+        "security": [{ "access-token": [] }]
+      }
+    },
+    "/user/v1/delete/{userId}": {
+      "delete": {
+        "operationId": "UserController_deleteUserById",
+        "summary": "Delete User",
+        "parameters": [
+          {
+            "name": "userId",
+            "required": true,
+            "in": "path",
+            "example": "123e4567-e89b-12d3-a456-426614174000",
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": { "description": "User deleted successfully" },
+          "404": { "description": "Data not found" }
+        },
+        "tags": ["User"],
+        "security": [{ "access-token": [] }]
+      }
+    },
+    "/user/v1/cohortmember/create": {
+      "post": {
+        "operationId": "CohortMembersController_createCohortMembers",
+        "summary": "Create Cohort Member",
+        "parameters": [
+          {
+            "name": "deviceid",
+            "in": "header",
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "academicyearid",
+            "in": "header",
+            "schema": { "type": "string" }
+          },
+          { "name": "tenantid", "in": "header", "schema": { "type": "string" } }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/CohortMembersDto" }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Cohort Member has been created successfully."
+          }
+        },
+        "tags": ["Cohort Member"],
+        "security": [{ "access-token": [] }]
+      }
+    },
+    "/user/v1/cohortmember/read/{cohortId}": {
+      "get": {
+        "operationId": "CohortMembersController_getCohortMembers",
+        "summary": "Get Cohort Member",
+        "parameters": [
+          {
+            "name": "cohortId",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "fieldvalue",
+            "required": false,
+            "in": "query",
+            "description": "Send True to Fetch Custom Field of User",
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "academicyearid",
+            "in": "header",
+            "schema": { "type": "string" }
+          },
+          { "name": "tenantid", "in": "header", "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "201": { "description": "Cohort Member detail" },
+          "400": { "description": "Bad request" },
+          "404": { "description": "Data not found" }
+        },
+        "tags": ["Cohort Member"],
+        "security": [{ "access-token": [] }]
+      }
+    },
+    "/user/v1/cohortmember/list": {
+      "post": {
+        "operationId": "CohortMembersController_searchCohortMembers",
+        "summary": "Cohort Member List",
+        "parameters": [
+          {
+            "name": "academicyearid",
+            "in": "header",
+            "schema": { "type": "string" }
+          },
+          { "name": "tenantid", "in": "header", "schema": { "type": "string" } }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CohortMembersSearchDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Cohort Member list." },
+          "400": { "description": "Bad request" },
+          "404": { "description": "Data not found" }
+        },
+        "tags": ["Cohort Member"],
+        "security": [{ "access-token": [] }]
+      }
+    },
+    "/user/v1/cohortmember/update/{cohortmembershipid}": {
+      "put": {
+        "operationId": "CohortMembersController_updateCohortMembers",
+        "summary": "Update Cohort Member",
+        "parameters": [
+          {
+            "name": "cohortmembershipid",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "string" }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CohortMembersUpdateDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Cohort Member has been updated successfully."
+          },
+          "400": { "description": "Bad request" },
+          "404": { "description": "Data not found" }
+        },
+        "tags": ["Cohort Member"],
+        "security": [{ "access-token": [] }]
+      }
+    },
+    "/user/v1/cohortmember/delete/{id}": {
+      "delete": {
+        "operationId": "CohortMembersController_deleteCohortMember",
+        "summary": "Delete Cohort Member",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "string" }
+          },
+          { "name": "tenantid", "in": "header", "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "201": { "description": "Cohort member deleted successfully" },
+          "404": { "description": "Data not found" }
+        },
+        "tags": ["Cohort Member"],
+        "security": [{ "access-token": [] }]
+      }
+    },
+    "/user/v1/cohortmember/bulkCreate": {
+      "post": {
+        "operationId": "CohortMembersController_craeteBulkCohortMembers",
+        "summary": "Bluk Cohort Member Create",
+        "parameters": [
+          {
+            "name": "academicyearid",
+            "in": "header",
+            "schema": { "type": "string" }
+          },
+          { "name": "tenantid", "in": "header", "schema": { "type": "string" } }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/BulkCohortMember" }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Cohort Member has been created successfully."
+          }
+        },
+        "tags": ["Cohort Member"],
+        "security": [{ "access-token": [] }]
+      }
+    },
+    "/user/v1/cohort/cohortHierarchy/{cohortId}": {
+      "get": {
+        "operationId": "CohortController_getCohortsDetails",
+        "summary": "Cohort Hierarchy",
+        "parameters": [
+          {
+            "name": "cohortId",
+            "required": true,
+            "in": "path",
+            "example": "123e4567-e89b-12d3-a456-426614174000",
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "children",
+            "required": false,
+            "in": "query",
+            "schema": { "type": "boolean" }
+          },
+          {
+            "name": "customField",
+            "required": false,
+            "in": "query",
+            "schema": { "type": "boolean" }
+          }
+        ],
+        "responses": {
+          "200": { "description": "Cohort details Fetched Successfully" },
+          "400": { "description": "Bad Request" },
+          "404": { "description": "Cohort Not Found" },
+          "500": { "description": "Internal Server Error." }
+        },
+        "tags": ["Cohort"]
+      }
+    },
+    "/user/v1/cohort/create": {
+      "post": {
+        "operationId": "CohortController_createCohort",
+        "summary": "Create Cohort",
+        "parameters": [
+          {
+            "name": "userId",
+            "required": false,
+            "in": "query",
+            "example": "123e4567-e89b-12d3-a456-426614174000",
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "academicyearid",
+            "in": "header",
+            "schema": { "type": "string" }
+          },
+          { "name": "tenantid", "in": "header", "schema": { "type": "string" } }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/CohortCreateDto" }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Cohort has been created successfully." },
+          "400": { "description": "Bad request." },
+          "409": { "description": "Cohort already exists." },
+          "500": { "description": "Internal Server Error." }
+        },
+        "tags": ["Cohort"]
+      }
+    },
+    "/user/v1/cohort/search": {
+      "post": {
+        "operationId": "CohortController_searchCohort",
+        "summary": "Search Cohort",
+        "parameters": [
+          {
+            "name": "academicyearid",
+            "in": "header",
+            "schema": { "type": "string" }
+          },
+          { "name": "tenantid", "in": "header", "schema": { "type": "string" } }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/CohortSearchDto" }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Cohort list" },
+          "400": { "description": "Bad request." },
+          "500": { "description": "Internal Server Error." }
+        },
+        "tags": ["Cohort"]
+      }
+    },
+    "/user/v1/cohort/update/{cohortId}": {
+      "put": {
+        "operationId": "CohortController_updateCohort",
+        "summary": "Update Cohort",
+        "parameters": [
+          {
+            "name": "cohortId",
+            "required": true,
+            "in": "path",
+            "example": "123e4567-e89b-12d3-a456-426614174000",
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "userId",
+            "required": false,
+            "in": "query",
+            "example": "123e4567-e89b-12d3-a456-426614174000",
+            "schema": { "type": "string" }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/CohortUpdateDto" }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Cohort has been updated successfully" },
+          "400": { "description": "Bad request." },
+          "500": { "description": "Internal Server Error." }
+        },
+        "tags": ["Cohort"]
+      }
+    },
+    "/user/v1/cohort/delete/{cohortId}": {
+      "delete": {
+        "operationId": "CohortController_updateCohortStatus",
+        "summary": "Delete Cohort",
+        "parameters": [
+          {
+            "name": "cohortId",
+            "required": true,
+            "in": "path",
+            "example": "123e4567-e89b-12d3-a456-426614174000",
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "userId",
+            "required": false,
+            "in": "query",
+            "example": "123e4567-e89b-12d3-a456-426614174000",
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": { "description": "Cohort has been deleted successfully." },
+          "400": { "description": "Bad request." },
+          "500": { "description": "Internal Server Error." }
+        },
+        "tags": ["Cohort"]
+      }
+    },
+    "/user/v1/cohort/mycohorts/{userId}": {
+      "get": {
+        "operationId": "CohortController_getCohortsHierarachyData",
+        "summary": "My Cohort",
+        "parameters": [
+          {
+            "name": "userId",
+            "required": true,
+            "in": "path",
+            "example": "123e4567-e89b-12d3-a456-426614174000",
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "children",
+            "required": false,
+            "in": "query",
+            "schema": { "type": "boolean" }
+          },
+          {
+            "name": "customField",
+            "required": false,
+            "in": "query",
+            "schema": { "type": "boolean" }
+          },
+          {
+            "name": "academicyearid",
+            "in": "header",
+            "schema": { "type": "string" }
+          },
+          { "name": "tenantid", "in": "header", "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": { "description": "Cohort details Fetched Successfully" },
+          "400": { "description": "Bad Request" },
+          "404": { "description": "User Not Found" },
+          "500": { "description": "Internal Server Error." }
+        },
+        "tags": ["Cohort"]
+      }
+    },
+    "/user/v1/assign-tenant": {
+      "post": {
+        "operationId": "AssignTenantController_createUserTenantMapping",
+        "summary": "Assign Tenant",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/UserTenantMappingDto" }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Tenant assigned successfully to the user." },
+          "400": { "description": "Bad request." },
+          "409": { "description": "Tenant is already assigned to this user." },
+          "500": { "description": "Internal Server Error." }
+        },
+        "tags": ["AssignTenant"],
+        "security": [{ "access-token": [] }]
+      }
+    },
+    "/user/v1/fields/create": {
+      "post": {
+        "operationId": "FieldsController_createFields",
+        "summary": "Create Field",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/FieldsDto" }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Fields has been created successfully." },
+          "403": { "description": "Forbidden" }
+        },
+        "tags": ["Fields"],
+        "security": [{ "access-token": [] }]
+      }
+    },
+    "/user/v1/fields/update/{fieldId}": {
+      "patch": {
+        "operationId": "FieldsController_updateFields",
+        "summary": "Update Field",
+        "parameters": [
+          {
+            "name": "fieldId",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "string" }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/FieldsUpdateDto" }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Fields has been created successfully." },
+          "403": { "description": "Forbidden" }
+        },
+        "tags": ["Fields"],
+        "security": [{ "access-token": [] }]
+      }
+    },
+    "/user/v1/fields/search": {
+      "post": {
+        "operationId": "FieldsController_searchFields",
+        "summary": "Search Field",
+        "parameters": [
+          { "name": "tenantid", "in": "header", "schema": { "type": "string" } }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/FieldsSearchDto" }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Fields list." },
+          "403": { "description": "Forbidden" }
+        },
+        "tags": ["Fields"],
+        "security": [{ "access-token": [] }]
+      }
+    },
+    "/user/v1/fields/values/create": {
+      "post": {
+        "operationId": "FieldsController_createFieldValues",
+        "summary": "Create Field Values",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/FieldValuesDto" }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Fields Values has been created successfully."
+          },
+          "403": { "description": "Forbidden" }
+        },
+        "tags": ["Fields"],
+        "security": [{ "access-token": [] }]
+      }
+    },
+    "/user/v1/fields/values/search": {
+      "post": {
+        "operationId": "FieldsController_searchFieldValues",
+        "summary": "Search Field Values",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/FieldValuesSearchDto" }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Fields Values list." },
+          "403": { "description": "Forbidden" }
+        },
+        "tags": ["Fields"],
+        "security": [{ "access-token": [] }]
+      }
+    },
+    "/user/v1/fields/options/read": {
+      "post": {
+        "operationId": "FieldsController_getFieldOptions",
+        "summary": "Get Field Options",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FieldsOptionsSearchDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Field Options list." },
+          "403": { "description": "Forbidden" }
+        },
+        "tags": ["Fields"],
+        "security": [{ "access-token": [] }]
+      }
+    },
+    "/user/v1/fields/options/delete/{fieldName}": {
+      "delete": {
+        "operationId": "FieldsController_deleteFieldOptions",
+        "summary": "Delete Field Options",
+        "parameters": [
+          {
+            "name": "fieldName",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "option",
+            "required": null,
+            "in": "query",
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "context",
+            "required": null,
+            "in": "query",
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "contextType",
+            "required": null,
+            "in": "query",
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "201": { "description": "Field Options Delete." },
+          "403": { "description": "Forbidden" }
+        },
+        "tags": ["Fields"],
+        "security": [{ "access-token": [] }]
+      }
+    },
+    "/user/v1/fields/formFields": {
+      "get": {
+        "operationId": "FieldsController_getFormData",
+        "summary": "Form Fields",
+        "parameters": [
+          {
+            "name": "context",
+            "required": false,
+            "in": "query",
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "contextType",
+            "required": false,
+            "in": "query",
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "201": { "description": "Form Data Fetch" },
+          "403": { "description": "Forbidden" }
+        },
+        "tags": ["Fields"]
+      }
+    },
+    "/user/v1/auth/login": {
+      "post": {
+        "operationId": "AuthController_login",
+        "summary": "Login",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/AuthDto" }
+            }
+          }
+        },
+        "responses": { "403": { "description": "Forbidden" } },
+        "tags": ["Auth"]
+      }
+    },
+    "/user/v1/auth": {
+      "get": {
+        "operationId": "AuthController_getUserByAuth",
+        "summary": "Get Access Token",
+        "parameters": [],
+        "responses": {
+          "200": { "description": "User detail." },
+          "403": { "description": "Forbidden" }
+        },
+        "tags": ["Auth"],
+        "security": [{ "access-token": [] }]
+      }
+    },
+    "/user/v1/auth/refresh": {
+      "post": {
+        "operationId": "AuthController_refreshToken",
+        "summary": "Get Refresh Token",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RefreshTokenRequestBody"
+              }
+            }
+          }
+        },
+        "responses": { "200": { "description": "" } },
+        "tags": ["Auth"]
+      }
+    },
+    "/user/v1/auth/logout": {
+      "post": {
+        "operationId": "AuthController_logout",
+        "summary": "Logout",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/LogoutRequestBody" }
+            }
+          }
+        },
+        "responses": { "200": { "description": "" } },
+        "tags": ["Auth"]
+      }
+    },
+    "/user/v1/form/read": {
+      "get": {
+        "operationId": "FormsController_getFormData",
+        "summary": "Read Forms",
+        "parameters": [
+          {
+            "name": "tenantId",
+            "in": "header",
+            "required": false,
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "contextType",
+            "required": false,
+            "in": "query",
+            "schema": {}
+          },
+          { "name": "context", "required": false, "in": "query", "schema": {} }
+        ],
+        "responses": {
+          "201": { "description": "Form Data Fetch" },
+          "403": { "description": "Forbidden" }
+        },
+        "tags": ["Forms"]
+      }
+    },
+    "/user/v1/form/create": {
+      "post": {
+        "operationId": "FormsController_createCohort",
+        "summary": "Create Forms",
+        "parameters": [
+          { "name": "tenantid", "in": "header", "schema": { "type": "string" } }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/FormCreateDto" }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Form has been created successfully." },
+          "400": { "description": "Bad request." },
+          "500": { "description": "Internal Server Error." }
+        },
+        "tags": ["Forms"],
+        "security": [{ "access-token": [] }]
+      }
+    },
+    "/user/v1/tenant/read": {
+      "get": {
+        "operationId": "TenantController_getTenants",
+        "summary": "Get Tenants",
+        "parameters": [],
+        "responses": {
+          "201": { "description": "Tenant Data Fetch" },
+          "403": { "description": "Forbidden" }
+        }
+      }
+    },
+    "/user/v1/tenant/create": {
+      "post": {
+        "operationId": "TenantController_createTenants",
+        "summary": "Create Tenants",
+        "parameters": [
+          {
+            "name": "userId",
+            "required": false,
+            "in": "query",
+            "schema": { "type": "string" }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/TenantCreateDto" }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Tenant Created Successfully" },
+          "403": { "description": "Forbidden" }
+        }
+      }
+    },
+    "/user/v1/tenant/update": {
+      "patch": {
+        "operationId": "TenantController_updateTenants",
+        "summary": "Update Tenants",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "query",
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "userId",
+            "required": false,
+            "in": "query",
+            "schema": { "type": "string" }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/TenantUpdateDto" }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Tenant Data Fetch" },
+          "403": { "description": "Forbidden" }
+        }
+      }
+    },
+    "/user/v1/tenant/delete": {
+      "delete": {
+        "operationId": "TenantController_deleteTenants",
+        "summary": "Delete Tenants",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "query",
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "201": { "description": "Tenant Data Fetch" },
+          "403": { "description": "Forbidden" }
+        }
+      }
+    },
+    "/user/v1/academicyears/create": {
+      "post": {
+        "operationId": "AcademicyearsController_createAcademicYears",
+        "summary": "Create Academic Year",
+        "parameters": [
+          { "name": "tenantid", "in": "header", "schema": { "type": "string" } }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/AcademicYearDto" }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Academic Year Created Successfully" }
+        },
+        "tags": ["Academicyears"],
+        "security": [{ "access-token": [] }]
+      }
+    },
+    "/user/v1/academicyears/list": {
+      "post": {
+        "operationId": "AcademicyearsController_getAcademicYearList",
+        "summary": "List Academic Year",
+        "parameters": [
+          { "name": "tenantid", "in": "header", "schema": { "type": "string" } }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/AcademicYearSearchDto" }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Academic Year Created Successfully" }
+        },
+        "tags": ["Academicyears"],
+        "security": [{ "access-token": [] }]
+      }
+    },
+    "/user/v1/academicyears/{id}": {
+      "get": {
+        "operationId": "AcademicyearsController_getAcademicYearById",
+        "summary": "Get Academic Year",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": { "description": "Get Successfully" },
+          "500": { "description": "Internal Server Error" }
+        },
+        "tags": ["Academicyears"],
+        "security": [{ "access-token": [] }]
+      }
+    },
+    "/user/v1/cohort-academic-year/create": {
+      "post": {
+        "operationId": "CohortAcademicYearController_createCohortAcademicYear",
+        "summary": "Create Cohort Academic Year",
+        "parameters": [
+          { "name": "tenantid", "in": "header", "schema": { "type": "string" } }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/CohortAcademicYearDto" }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Form has been created successfully." },
+          "400": { "description": "Bad request." },
+          "500": { "description": "Internal Server Error." }
+        },
+        "tags": ["CohortAcademicYear"],
+        "security": [{ "access-token": [] }]
+      }
+    }
+  },
+  "info": {
+    "title": "Shiksha Platform",
+    "description": "CRUD API",
+    "version": "1.0",
+    "contact": {}
+  },
+  "tags": [{ "name": "V1", "description": "" }],
+  "servers": [],
+  "components": {
+    "securitySchemes": {
+      "access-token": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "Authorization"
+      }
+    },
+    "schemas": {
+      "RoleDto": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "The name of the role",
+            "default": ""
+          }
+        },
+        "required": ["title"]
+      },
+      "CreateRolesDto": {
+        "type": "object",
+        "properties": {
+          "tenantId": { "type": "string", "description": "Tenant" },
+          "roles": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/RoleDto" }
+          }
+        },
+        "required": ["tenantId", "roles"]
+      },
+      "RoleSearchDto": {
+        "type": "object",
+        "properties": {
+          "limit": { "type": "string", "description": "Limit" },
+          "page": { "type": "number", "description": "number" },
+          "filters": { "type": "object", "description": "Filters" }
+        },
+        "required": ["limit", "page"]
+      },
+      "PrivilegeDto": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "Privilege title",
+            "default": ""
+          },
+          "code": {
+            "type": "string",
+            "description": "Privilege title",
+            "default": ""
+          }
+        },
+        "required": ["title", "code"]
+      },
+      "CreatePrivilegesDto": {
+        "type": "object",
+        "properties": {
+          "privileges": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/PrivilegeDto" }
+          }
+        },
+        "required": ["privileges"]
+      },
+      "CreateAssignRoleDto": {
+        "type": "object",
+        "properties": {
+          "tenantId": {
+            "type": "string",
+            "description": "Tenant Id",
+            "default": ""
+          },
+          "userId": {
+            "type": "string",
+            "description": "User Id of User",
+            "default": ""
+          },
+          "roleId": {
+            "description": "Assigned Role Ids",
+            "default": [],
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        },
+        "required": ["tenantId", "userId", "roleId"]
+      },
+      "DeleteAssignRoleDto": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "string",
+            "description": "User Id of User",
+            "default": ""
+          },
+          "roleId": {
+            "description": "Assigned Role Id",
+            "default": [],
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        },
+        "required": ["userId", "roleId"]
+      },
+      "CreatePrivilegeRoleDto": {
+        "type": "object",
+        "properties": {
+          "privilegeId": {
+            "description": "Array of Privilege Ids",
+            "default": [],
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "roleId": {
+            "type": "string",
+            "description": "Role Id",
+            "default": ""
+          },
+          "deleteOld": {
+            "type": "boolean",
+            "description": "Boolean to Delete Previous Privileges",
+            "default": false
+          },
+          "tenantId": {
+            "type": "string",
+            "description": "Tenant Id",
+            "default": ""
+          }
+        },
+        "required": ["privilegeId", "roleId", "deleteOld", "tenantId"]
+      },
+      "tenantRoleMappingDto": {
+        "type": "object",
+        "properties": {
+          "tenantId": { "type": "string", "description": "Tenant Id" },
+          "cohortIds": {
+            "description": "The cohort id of the user",
+            "default": [],
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "roleId": { "type": "string", "description": "User Role" }
+        },
+        "required": ["tenantId"]
+      },
+      "FieldValuesOptionDto": {
+        "type": "object",
+        "properties": {
+          "fieldId": { "type": "string", "description": "Field Id" },
+          "value": { "type": "string", "description": "Field values" }
+        },
+        "required": ["fieldId", "value"]
+      },
+      "UserCreateDto": {
+        "type": "object",
+        "properties": {
+          "username": { "type": "string" },
+          "name": { "type": "string" },
+          "dob": {
+            "type": "string",
+            "description": "The date of Birth of the user"
+          },
+          "mobile": {
+            "type": "string",
+            "description": "The contact number of the user"
+          },
+          "email": { "type": "string", "description": "The email of the user" },
+          "password": {
+            "type": "string",
+            "description": "The password of the user"
+          },
+          "district": {
+            "type": "string",
+            "description": "The district of the user"
+          },
+          "state": { "type": "string", "description": "The state of the user" },
+          "address": {
+            "type": "string",
+            "description": "The address of the user"
+          },
+          "pincode": {
+            "type": "string",
+            "description": "The pincode of the user"
+          },
+          "tenantCohortRoleMapping": {
+            "description": "List of user attendance details",
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/tenantRoleMappingDto" }
+          },
+          "customFields": {
+            "description": "The fieldValues Object",
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/FieldValuesOptionDto" }
+          }
+        },
+        "required": ["username", "name", "password", "tenantCohortRoleMapping"]
+      },
+      "UserDataDTO": {
+        "type": "object",
+        "properties": {
+          "username": { "type": "string" },
+          "name": { "type": "string" },
+          "role": { "type": "string" },
+          "dob": { "type": "string" },
+          "email": { "type": "string" },
+          "district": { "type": "string" },
+          "state": { "type": "string" },
+          "address": { "type": "string" },
+          "pincode": { "type": "string" },
+          "createdAt": { "type": "string" },
+          "updatedAt": { "type": "string" },
+          "createdBy": { "type": "string" },
+          "updatedBy": { "type": "string" },
+          "tenantId": { "type": "string" },
+          "status": { "type": "string" },
+          "reason": { "type": "string" },
+          "deviceId": { "type": "string" }
+        },
+        "required": [
+          "username",
+          "name",
+          "role",
+          "dob",
+          "email",
+          "district",
+          "state",
+          "address",
+          "pincode",
+          "createdAt",
+          "updatedAt",
+          "createdBy",
+          "updatedBy",
+          "tenantId",
+          "status",
+          "reason",
+          "deviceId"
+        ]
+      },
+      "CustomFieldDTO": {
+        "type": "object",
+        "properties": {
+          "fieldId": { "type": "string" },
+          "value": { "type": "string" }
+        },
+        "required": ["fieldId", "value"]
+      },
+      "UserUpdateDTO": {
+        "type": "object",
+        "properties": {
+          "userData": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/UserDataDTO" }
+          },
+          "customFields": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/CustomFieldDTO" }
+          }
+        },
+        "required": ["userData", "customFields"]
+      },
+      "setFilters": {
+        "type": "object",
+        "properties": {
+          "state": { "type": "string", "description": "State" },
+          "district": { "type": "string", "description": "District" },
+          "block": { "type": "string", "description": "Block" },
+          "role": { "type": "string", "description": "Role" },
+          "username": { "type": "string", "description": "User Name" },
+          "userId": { "type": "string", "description": "User Id" }
+        }
+      },
+      "tenantCohortRoleMappingDto": {
+        "type": "object",
+        "properties": {
+          "tenantId": { "type": "string", "description": "Tenant Id" },
+          "cohortId": {
+            "description": "Cohort Id",
+            "default": [],
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "roleId": { "type": "string", "description": "Role Id" }
+        },
+        "required": ["cohortId"]
+      },
+      "excludeFields": {
+        "type": "object",
+        "properties": {
+          "userIds": {
+            "description": "Exclude User IDs",
+            "default": [],
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "cohortIds": {
+            "description": "Exclude Cohort IDs",
+            "default": [],
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        },
+        "required": ["userIds", "cohortIds"]
+      },
+      "UserSearchDto": {
+        "type": "object",
+        "properties": {
+          "limit": { "type": "number", "description": "Limit" },
+          "offset": { "type": "number", "description": "Offset" },
+          "filters": {
+            "description": "Filters",
+            "allOf": [{ "$ref": "#/components/schemas/setFilters" }]
+          },
+          "customFieldsName": {
+            "description": "Custom Fields Name",
+            "default": [],
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "tenantCohortRoleMapping": {
+            "description": "Tenant Cohort RoleMapping",
+            "allOf": [
+              { "$ref": "#/components/schemas/tenantCohortRoleMappingDto" }
+            ]
+          },
+          "exclude": {
+            "description": "Filters",
+            "allOf": [{ "$ref": "#/components/schemas/excludeFields" }]
+          },
+          "sort": {
+            "description": "Sort",
+            "example": ["username", "asc"],
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        },
+        "required": ["limit", "offset", "filters", "customFieldsName"]
+      },
+      "SendPasswordResetLinkDto": {
+        "type": "object",
+        "properties": {
+          "username": { "type": "string", "example": "John" },
+          "redirectUrl": { "type": "string", "example": "https://example.com" }
+        },
+        "required": ["username", "redirectUrl"]
+      },
+      "ForgotPasswordDto": {
+        "type": "object",
+        "properties": {
+          "newPassword": { "type": "string", "example": "12345" },
+          "token": { "type": "string", "example": "User services token" }
+        },
+        "required": ["newPassword", "token"]
+      },
+      "ResetUserPasswordDto": {
+        "type": "object",
+        "properties": {
+          "userName": { "type": "string", "example": "user@987" },
+          "newPassword": { "type": "string", "example": "98765" }
+        },
+        "required": ["userName", "newPassword"]
+      },
+      "CohortMembersDto": {
+        "type": "object",
+        "properties": {
+          "cohortId": {
+            "type": "string",
+            "description": "The cohortId of the cohort members",
+            "default": ""
+          },
+          "cohortAcademicYearId": {
+            "type": "string",
+            "description": "cohortAcademicYearId",
+            "default": ""
+          },
+          "userId": {
+            "type": "string",
+            "description": "The userId of the cohort members",
+            "default": ""
+          }
+        },
+        "required": ["cohortId", "cohortAcademicYearId", "userId"]
+      },
+      "FiltersDto": {
+        "type": "object",
+        "properties": {
+          "cohortId": {
+            "type": "string",
+            "description": "Cohort ID",
+            "example": ""
+          },
+          "userId": {
+            "type": "string",
+            "description": "User ID",
+            "example": ""
+          },
+          "role": { "type": "string", "description": "Role", "example": "" },
+          "name": { "type": "string", "description": "Name", "example": "" },
+          "status": {
+            "description": "Status",
+            "example": [],
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        }
+      },
+      "CohortMembersSearchDto": {
+        "type": "object",
+        "properties": {
+          "limit": { "type": "number", "description": "Limit" },
+          "offset": { "type": "number", "description": "Offset" },
+          "filters": {
+            "description": "Filters",
+            "example": {
+              "cohortId": "",
+              "userId": "",
+              "role": "",
+              "name": "",
+              "status": [],
+              "academicYearIds": []
+            },
+            "allOf": [{ "$ref": "#/components/schemas/FiltersDto" }]
+          },
+          "sort": {
+            "description": "Sort",
+            "example": ["createdAt", "asc"],
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        },
+        "required": ["limit", "offset", "filters"]
+      },
+      "CohortMembersUpdateDto": {
+        "type": "object",
+        "properties": {
+          "cohortId": {
+            "type": "string",
+            "description": "The cohortId of the cohort members"
+          },
+          "userId": {
+            "type": "string",
+            "description": "The userId of the cohort members"
+          },
+          "status": {
+            "type": "string",
+            "enum": ["active", "inactive", "dropout", "archived"],
+            "description": "The status of the cohort members"
+          },
+          "createdBy": {
+            "type": "string",
+            "description": "The createdBy of the cohort members"
+          },
+          "updatedBy": {
+            "type": "string",
+            "description": "The updatedBy of the cohort members"
+          },
+          "statusReason": {
+            "type": "string",
+            "description": "The status change reason"
+          },
+          "customFields": {
+            "description": "Array of Custom fields",
+            "allOf": [{ "$ref": "#/components/schemas/FieldValuesOptionDto" }]
+          }
+        },
+        "required": [
+          "cohortId",
+          "userId",
+          "status",
+          "createdBy",
+          "updatedBy",
+          "statusReason",
+          "customFields"
+        ]
+      },
+      "BulkCohortMember": { "type": "object", "properties": {} },
+      "CohortCreateDto": {
+        "type": "object",
+        "properties": {
+          "programId": {
+            "type": "string",
+            "description": "The programId of the cohort",
+            "default": ""
+          },
+          "parentId": {
+            "type": "string",
+            "description": "The parentId of the cohort",
+            "default": ""
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the cohort",
+            "default": ""
+          },
+          "type": {
+            "type": "string",
+            "description": "The type of the cohort",
+            "default": ""
+          },
+          "status": { "type": "string", "description": "The status of Cohort" },
+          "customFields": {
+            "description": "The fieldValues Object",
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/FieldValuesOptionDto" }
+          }
+        },
+        "required": ["name", "type", "status"]
+      },
+      "filtersProperty": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "string",
+            "description": "User Id",
+            "default": ""
+          },
+          "cohortId": {
+            "type": "string",
+            "description": "Cohort Id",
+            "default": ""
+          },
+          "academicYearId": {
+            "type": "string",
+            "description": "Academic Year Id",
+            "default": ""
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the cohort",
+            "default": ""
+          },
+          "parentId": {
+            "description": "Parent Id",
+            "default": [],
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "type": {
+            "type": "string",
+            "description": "The type of the cohort",
+            "default": ""
+          },
+          "status": {
+            "description": "The status of the cohort",
+            "default": [],
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "states": { "type": "string", "description": "State" },
+          "districts": { "type": "string", "description": "District" },
+          "blocks": { "type": "string", "description": "Block" },
+          "customFieldsName": {
+            "type": "object",
+            "description": "The customFieldsName of the cohort"
+          }
+        },
+        "required": [
+          "userId",
+          "cohortId",
+          "academicYearId",
+          "name",
+          "parentId",
+          "type",
+          "status",
+          "customFieldsName"
+        ]
+      },
+      "CohortSearchDto": {
+        "type": "object",
+        "properties": {
+          "limit": { "type": "number", "description": "Limit" },
+          "offset": { "type": "number", "description": "Offset" },
+          "filters": {
+            "description": "Filters",
+            "allOf": [{ "$ref": "#/components/schemas/filtersProperty" }]
+          },
+          "sort": {
+            "description": "Sort",
+            "example": ["name", "asc"],
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        },
+        "required": ["limit", "offset", "filters"]
+      },
+      "CohortUpdateDto": {
+        "type": "object",
+        "properties": {
+          "programId": {
+            "type": "string",
+            "description": "The programId of the cohort"
+          },
+          "parentId": {
+            "type": "string",
+            "description": "The parentId of the cohort"
+          },
+          "name": { "type": "string", "description": "The name of the cohort" },
+          "type": { "type": "string", "description": "The type of the cohort" },
+          "status": { "type": "string", "description": "The status of Cohort" },
+          "customFields": {
+            "description": "The fieldValues Object",
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/FieldValuesOptionDto" }
+          }
+        },
+        "required": ["status"]
+      },
+      "UserTenantMappingDto": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "string",
+            "description": "User Id of User",
+            "default": ""
+          },
+          "tenantId": {
+            "type": "string",
+            "description": "Tenant Id",
+            "default": []
+          }
+        },
+        "required": ["userId", "tenantId"]
+      },
+      "FieldsDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The name of the fields",
+            "default": ""
+          },
+          "label": {
+            "type": "string",
+            "description": "The label of the fields",
+            "default": ""
+          },
+          "context": {
+            "type": "string",
+            "description": "The context of the fields",
+            "default": ""
+          },
+          "contextType": {
+            "type": "string",
+            "description": "The contextType of the fields",
+            "default": ""
+          },
+          "type": {
+            "type": "string",
+            "enum": ["text", "numeric", "radio", "drop_down", "checkbox"],
+            "default": "text",
+            "nullable": false
+          },
+          "ordering": {
+            "type": "number",
+            "description": "The ordering of the fields",
+            "default": 0
+          },
+          "tenantId": {
+            "type": "string",
+            "description": "The tenantId of the fields",
+            "default": ""
+          },
+          "fieldParams": {
+            "type": "object",
+            "description": "The fieldParams of the fields",
+            "default": {}
+          },
+          "fieldAttributes": {
+            "type": "object",
+            "description": "The fieldAttributes of the fields",
+            "default": {}
+          },
+          "sourceDetails": {
+            "type": "object",
+            "description": "The sourceDetails of the fields",
+            "default": {}
+          },
+          "dependsOn": {
+            "type": "string",
+            "description": "The dependsOn of the fields",
+            "default": {}
+          }
+        },
+        "required": ["name", "label", "type", "ordering"]
+      },
+      "FieldParams": {
+        "type": "object",
+        "properties": {
+          "isCreate": {
+            "type": "boolean",
+            "description": "Specifies if the field can be created",
+            "default": false
+          },
+          "options": {
+            "description": "Options for the field",
+            "default": [],
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        }
+      },
+      "FieldsUpdateDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The name of the fields",
+            "default": ""
+          },
+          "label": {
+            "type": "string",
+            "description": "The label of the fields",
+            "default": ""
+          },
+          "context": {
+            "type": "string",
+            "description": "The context of the fields",
+            "default": ""
+          },
+          "contextType": {
+            "type": "string",
+            "description": "The contextType of the fields",
+            "default": ""
+          },
+          "type": {
+            "type": "string",
+            "enum": ["text", "numeric", "radio", "drop_down", "checkbox"],
+            "default": "text",
+            "nullable": false
+          },
+          "ordering": {
+            "type": "number",
+            "description": "The ordering of the fields",
+            "default": 0
+          },
+          "required": {
+            "type": "boolean",
+            "description": "The required of the fields",
+            "default": true
+          },
+          "tenantId": {
+            "type": "string",
+            "description": "The tenantId of the fields",
+            "default": ""
+          },
+          "fieldParams": {
+            "description": "The fieldParams of the fields",
+            "default": {},
+            "allOf": [{ "$ref": "#/components/schemas/FieldParams" }]
+          },
+          "fieldAttributes": {
+            "type": "object",
+            "description": "The fieldAttributes of the fields",
+            "default": {}
+          },
+          "sourceDetails": {
+            "type": "object",
+            "description": "The sourceDetails of the fields",
+            "default": {}
+          },
+          "dependsOn": {
+            "type": "string",
+            "description": "The dependsOn of the fields",
+            "default": {}
+          }
+        }
+      },
+      "FieldsFilterDto": {
+        "type": "object",
+        "properties": {
+          "context": { "type": "string" },
+          "fieldId": { "type": "string" },
+          "name": { "type": "string" },
+          "tenantId": { "type": "string" }
+        }
+      },
+      "FieldsSearchDto": {
+        "type": "object",
+        "properties": {
+          "limit": { "type": "number", "description": "Limit" },
+          "offset": { "type": "number", "description": "number" },
+          "filters": {
+            "description": "Filters",
+            "allOf": [{ "$ref": "#/components/schemas/FieldsFilterDto" }]
+          }
+        },
+        "required": ["offset"]
+      },
+      "FieldValuesDto": { "type": "object", "properties": {} },
+      "FieldValuesSearchDto": {
+        "type": "object",
+        "properties": {
+          "limit": { "type": "string", "description": "Limit" },
+          "page": { "type": "number", "description": "number" },
+          "filters": { "type": "object", "description": "Filters" }
+        },
+        "required": ["limit", "page"]
+      },
+      "FieldsOptionsSearchDto": {
+        "type": "object",
+        "properties": {
+          "limit": { "type": "number" },
+          "offset": { "type": "number" },
+          "fieldName": { "type": "string" },
+          "controllingfieldfk": { "type": "string" },
+          "context": { "type": "string" },
+          "contextType": { "type": "string" },
+          "optionName": { "type": "string" },
+          "sort": {
+            "description": "Sort",
+            "example": ["name", "asc"],
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        },
+        "required": ["fieldName"]
+      },
+      "AuthDto": {
+        "type": "object",
+        "properties": {
+          "username": { "type": "string", "description": "username" },
+          "password": { "type": "string", "description": "password" }
+        },
+        "required": ["username", "password"]
+      },
+      "RefreshTokenRequestBody": {
+        "type": "object",
+        "properties": {
+          "refresh_token": { "type": "string", "description": "token" }
+        },
+        "required": ["refresh_token"]
+      },
+      "LogoutRequestBody": {
+        "type": "object",
+        "properties": {
+          "refresh_token": { "type": "string", "description": "token" }
+        },
+        "required": ["refresh_token"]
+      },
+      "FormCreateDto": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "title",
+            "example": "Sample Form"
+          },
+          "context": {
+            "type": "string",
+            "description": "context",
+            "example": "Context"
+          },
+          "contextType": {
+            "type": "string",
+            "description": "context",
+            "example": "Context"
+          },
+          "fields": { "type": "object", "description": "fields" }
+        },
+        "required": ["title", "context", "contextType", "fields"]
+      },
+      "TenantCreateDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Tenant name",
+            "default": ""
+          },
+          "domain": {
+            "type": "string",
+            "description": "Domain Name",
+            "default": ""
+          },
+          "params": {
+            "type": "object",
+            "description": "Params",
+            "default": ""
+          },
+          "programImages": {
+            "description": "List of program images (URLs or other related strings)",
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        },
+        "required": ["name"]
+      },
+      "TenantUpdateDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Tenant name",
+            "default": ""
+          },
+          "domain": {
+            "type": "string",
+            "description": "Domain Name",
+            "default": ""
+          },
+          "params": {
+            "type": "object",
+            "description": "Params",
+            "default": ""
+          },
+          "programImages": { "type": "string" },
+          "description": { "type": "string" },
+          "status": {
+            "type": "string",
+            "description": "Status of the tenant",
+            "enum": ["active", "inactive", "archive"],
+            "default": "active"
+          }
+        }
+      },
+      "AcademicYearDto": {
+        "type": "object",
+        "properties": {
+          "startDate": {
+            "type": "string",
+            "description": "startDate",
+            "example": "YYYY-MM-DD"
+          },
+          "endDate": {
+            "type": "string",
+            "description": "endDate",
+            "example": "YYYY-MM-DD"
+          },
+          "createdBy": {
+            "type": "string",
+            "description": "createdBy",
+            "example": "eff008a8-2573-466d-b877-fddf6a4fc13e"
+          },
+          "updatedBy": {
+            "type": "string",
+            "description": "updatedBy",
+            "example": "eff008a8-2573-466d-b877-fddf6a4fc13e"
+          }
+        },
+        "required": ["startDate", "endDate", "createdBy", "updatedBy"]
+      },
+      "AcademicYearSearchDto": {
+        "type": "object",
+        "properties": {
+          "isActive": {
+            "type": "boolean",
+            "description": "isActive",
+            "example": true
+          }
+        },
+        "required": ["isActive"]
+      },
+      "CohortAcademicYearDto": {
+        "type": "object",
+        "properties": {
+          "cohortId": {
+            "type": "string",
+            "description": "cohortId",
+            "default": ""
+          },
+          "academicYearId": {
+            "type": "string",
+            "description": "academicYearId",
+            "default": ""
+          }
+        },
+        "required": ["cohortId", "academicYearId"]
+      }
+    }
+  }
+}

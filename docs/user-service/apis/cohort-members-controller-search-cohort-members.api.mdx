@@ -1,0 +1,71 @@
+---
+id: cohort-members-controller-search-cohort-members
+title: "Cohort Member List"
+description: "Cohort Member List"
+sidebar_label: "Cohort Member List"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVU1v2zgQ/SvGnNnaWfSkW5rsAkG7myBuDovAWIylccSGIlVylFYr6L8vhpQl+aObFujFkMn5fPPmsQNXk0fWzt4UkMGVK53nP6nakg9XzrJ3xpD/JxD6vDy4BQU1eqyI5U/22IHFiiADzLGgSuctodcFKNAWMigJC/KgIOQlVQhZB9zWYh/Ya/sEfa/GEEwWLf+U80aBpy8NBX7vilYs5K/2VEDGviEFubNMluUK69roPLa9/ByclbOT0G77mXKWNr2AxJqC3BpdaZ6Z2UbgAAUFhdzrWoJCBh+jWa/A7XaBfsDhNtn1CnbaJEy7I5M/hgsF9A2r2pCY5HEocXqgoAnk99/eiYV8DbAKgIzcyLg2ahzU34T+poiHvQI05nYX5/n/OEx5j4dx3FmizeLmel44SKf7al+L8BDIn/NPHb7mfS9Wx64Jktdc/xKrY9c9hsfjWafzmbmgPCRA77EVPjNV4RyBewWsOSYZ5nzNDnoZSXCez6ST03kyyD0hU3Epxxhy+Lns0748DiQfyTtxcjNVeaAG6ygQseIhWKidDYkqv60uTssfWJH8F0YHfivgvlutTm3fY7EYtjvZvDu1uUbGhXW82LnGFhDxxCdh9WEqaSFQ3njNbaQ55jmF8IbdM9m4A5vvEHgo9aMOgkhFXDrZtNrF/zVyCRkshdPLl4tl2o8q+ixN8gnkX5JazopYi/AkoA5LGaeEtf5A7YkYDlt92XDpvP43ylnsWyTtfhLD3yexGMRrNcnS6kBvfrWYJOaeYWYvzexcbHLg07rUz6HExZ1B3jlfnerI/cP14vLuBhQIiunw4u0KkrZjLksi/ctEKowIDsWeneBB9BFspm+8rA1qGxXKG7lLw32MiEj6i5hzGjAoiCPeKCiFDtkjdN0WAz140/dy/KUh3yaoXtBr3CZ96NV+nkLFQge5KCDboQl0UuL4hAn6Z+t9pvbcE/yCphnk69dlmb3SB/HT7VWK8uaTBJgsTp5eWbdxl+5u159AwXZ4witXiI/Hr8JA/JpKcrHSyNd41oFB+9Tgk9immMICbGRm8yV6jks0fMxeOLTtrMLDfdo3K7/S3FmXrksr2vejfbr6rse4xMlaYN30ff8fkME5vQ==
+sidebar_class_name: "post api-method"
+info_path: docs/user-service/apis/shiksha-platform
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Cohort Member List"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/user/v1/cohortmember/list"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Cohort Member List
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"academicyearid","in":"header","schema":{"type":"string"}},{"name":"tenantid","in":"header","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"limit":{"type":"number","description":"Limit"},"offset":{"type":"number","description":"Offset"},"filters":{"description":"Filters","example":{"cohortId":"","userId":"","role":"","name":"","status":[],"academicYearIds":[]},"allOf":[{"type":"object","properties":{"cohortId":{"type":"string","description":"Cohort ID","example":""},"userId":{"type":"string","description":"User ID","example":""},"role":{"type":"string","description":"Role","example":""},"name":{"type":"string","description":"Name","example":""},"status":{"description":"Status","example":[],"type":"array","items":{"type":"string"}}},"title":"FiltersDto"}]},"sort":{"description":"Sort","example":["createdAt","asc"],"type":"array","items":{"type":"string"}}},"required":["limit","offset","filters"],"title":"CohortMembersSearchDto"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"201":{"description":"Cohort Member list."},"400":{"description":"Bad request"},"404":{"description":"Data not found"}}}
+>
+  
+</StatusCodes>
+
+
+      

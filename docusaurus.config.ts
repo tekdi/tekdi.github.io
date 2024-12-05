@@ -1,43 +1,43 @@
-import { themes as prismThemes } from 'prism-react-renderer';
-import type { Config } from '@docusaurus/types';
-import type * as Preset from '@docusaurus/preset-classic';
+import { themes as prismThemes } from "prism-react-renderer";
+import type { Config } from "@docusaurus/types";
+import type * as Preset from "@docusaurus/preset-classic";
 import type * as OpenApiPlugin from "docusaurus-plugin-openapi-docs";
 
 const config: Config = {
-  title: 'Tekdi Docs',
-  tagline: 'CATALYSE • DIGITAL • TRANSFORMATION',
-  favicon: 'img/favicon.png',
+  title: "Tekdi Docs",
+  tagline: "CATALYSE • DIGITAL • TRANSFORMATION",
+  favicon: "img/favicon.png",
 
   // Set the production url of your site here
-  url: 'https://tekdi.github.io',
+  url: "https://tekdi.github.io",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: "/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'tekdi', // Usually your GitHub org/user name.
-  projectName: 'tekdi.github.io', // Usually your repo name.
+  organizationName: "tekdi", // Usually your GitHub org/user name.
+  projectName: "tekdi.github.io", // Usually your repo name.
   trailingSlash: false, // ++ Tekdi
-  deploymentBranch: 'gh-pages', // ++ Tekdi
+  deploymentBranch: "gh-pages", // ++ Tekdi
 
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: "throw",
+  onBrokenMarkdownLinks: "warn",
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: "en",
+    locales: ["en"],
   },
 
   presets: [
     [
-      'classic',
+      "classic",
       {
         docs: {
-          sidebarPath: './sidebars.ts',
+          sidebarPath: "./sidebars.ts",
           docRootComponent: "@theme/DocRoot",
           docItemComponent: "@theme/ApiItem", // Derived from docusaurus-theme-openapi
           // Please change this to your repo.
@@ -51,18 +51,22 @@ const config: Config = {
           // editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },*/
         theme: {
-          customCss: './src/css/custom.css',
-        }
-      }
+          customCss: "./src/css/custom.css",
+        },
+      },
     ],
   ],
   plugins: [
     [
-      'docusaurus-plugin-openapi-docs',
+      "docusaurus-plugin-openapi-docs",
       {
         id: "api", // plugin id
         docsPluginId: "classic", // configured for preset-classic
         config: {
+          user: {
+            specPath: "swagger/user-service.json",
+            outputDir: "docs/user-service/apis",
+          } satisfies OpenApiPlugin.Options,
           notification: {
             specPath: "swagger/notification-service.json",
             outputDir: "docs/notifications-service/apis",
@@ -71,19 +75,19 @@ const config: Config = {
             specPath: "swagger/todo-service.json",
             outputDir: "docs/todo-service/apis",
           } satisfies OpenApiPlugin.Options,
-        }
+        },
       },
-    ]
+    ],
   ],
   themes: ["docusaurus-theme-openapi-docs"],
   themeConfig: {
     // Replace with your project's social card
-    image: 'img/tekdi-social-card.jpg',
+    image: "img/tekdi-social-card.jpg",
     navbar: {
-      title: 'Tekdi Docs',
+      title: "Tekdi Docs",
       logo: {
-        alt: 'Tekdi Logo',
-        src: 'img/logo.png',
+        alt: "Tekdi Logo",
+        src: "img/logo.png",
       },
       items: [
         /*{
@@ -93,22 +97,22 @@ const config: Config = {
           label: 'Tutorial',
         },*/
         {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          position: 'left',
-          label: 'Docs',
+          type: "docSidebar",
+          sidebarId: "tutorialSidebar",
+          position: "left",
+          label: "Docs",
         },
         /*{to: '/blog', label: 'Blog', position: 'left'},*/
-        { to: '/docs/category/tools', label: 'Tools', position: 'left' },
+        { to: "/docs/category/tools", label: "Tools", position: "left" },
         {
-          href: 'https://github.com/tekdi/tekdi.github.io',
-          label: 'GitHub',
-          position: 'right',
+          href: "https://github.com/tekdi/tekdi.github.io",
+          label: "GitHub",
+          position: "right",
         },
       ],
     },
     footer: {
-      style: 'dark',
+      style: "dark",
       /*links: [
         {
           title: 'Docs',
