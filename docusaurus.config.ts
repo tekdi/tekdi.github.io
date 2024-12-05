@@ -71,6 +71,10 @@ const config: Config = {
             specPath: "swagger/notification-service.json",
             outputDir: "docs/notifications-service/apis",
           } satisfies OpenApiPlugin.Options,
+          todo: {
+            specPath: "swagger/todo-service.json",
+            outputDir: "docs/todo-service/apis",
+          } satisfies OpenApiPlugin.Options,
         },
       },
     ],
