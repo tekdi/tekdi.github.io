@@ -53,7 +53,7 @@ const config: Config = {
         theme: {
           customCss: './src/css/custom.css',
         }
-      } 
+      }
     ],
   ],
   plugins: [
@@ -63,9 +63,13 @@ const config: Config = {
         id: "api", // plugin id
         docsPluginId: "classic", // configured for preset-classic
         config: {
-          notification : {
+          notification: {
             specPath: "swagger/notification-service.json",
             outputDir: "docs/notifications-service/apis",
+          } satisfies OpenApiPlugin.Options,
+          todo: {
+            specPath: "swagger/todo-service.json",
+            outputDir: "docs/todo-service/apis",
           } satisfies OpenApiPlugin.Options,
         }
       },
