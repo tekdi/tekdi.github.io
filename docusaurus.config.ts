@@ -5,7 +5,7 @@ import type * as OpenApiPlugin from "docusaurus-plugin-openapi-docs";
 
 const config: Config = {
   title: "Tekdi Docs",
-  tagline: "CATALYSE • DIGITAL • TRANSFORMATION",
+  tagline: `CATALYSE • DIGITAL • TRANSFORMATION`,
   favicon: "img/favicon.png",
 
   // Set the production url of your site here
@@ -74,6 +74,10 @@ const config: Config = {
           todo: {
             specPath: "swagger/todo-service.json",
             outputDir: "docs/todo-service/apis",
+          } satisfies OpenApiPlugin.Options,
+          events: {
+            specPath: "swagger/event-service.json",
+            outputDir: "docs/event-service/apis",
           } satisfies OpenApiPlugin.Options,
         },
       },
