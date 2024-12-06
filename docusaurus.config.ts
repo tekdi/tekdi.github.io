@@ -5,7 +5,7 @@ import type * as OpenApiPlugin from "docusaurus-plugin-openapi-docs";
 
 const config: Config = {
   title: "Tekdi Docs",
-  tagline: "CATALYSE • DIGITAL • TRANSFORMATION",
+  tagline: `CATALYSE • DIGITAL • TRANSFORMATION`,
   favicon: "img/favicon.png",
 
   // Set the production url of your site here
@@ -63,11 +63,7 @@ const config: Config = {
         id: "api", // plugin id
         docsPluginId: "classic", // configured for preset-classic
         config: {
-          user: {
-            specPath: "swagger/user-service.json",
-            outputDir: "docs/user-service/apis",
-          } satisfies OpenApiPlugin.Options,
-          notification: {
+          notification : {
             specPath: "swagger/notification-service.json",
             outputDir: "docs/notifications-service/apis",
           } satisfies OpenApiPlugin.Options,
