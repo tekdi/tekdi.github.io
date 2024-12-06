@@ -1,0 +1,71 @@
+---
+id: cohort-controller-create-cohort
+title: "Create Cohort"
+description: "Create Cohort"
+sidebar_label: "Create Cohort"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVl1v2zoM/SsGn50m6dJu9dvWbUCwhxZrd1+C4IKxmVirLXmU3NUL/N8HSo6dj100F1jeLJGH4iF5mC2YihidMnqeQQK3Jjfsbo12bIqC+N+UCR2FY4ihQsaSHLGFZLEFjSVBArUlnmcQA9OPWjFlkKyxsBSD0pDAj5q4gRjoBcuqEIfp5RuaXV2/HdG7m9Voepm9GeHs6no0u7y+ns6mb2eTyQRisGlOJUKyBddU4mcdK72Bto372JhiRqVKG0JW8gYfMifMiM+EcKRRu//lvAy5knUfTNaIxZC645piSI12pJ1cYVUVKvUkj79bo+XsBNqsvlPqKWYpiVNk5bZis2EspTjHr4ghI5uyqgQYEnjMKerNI7OOXE5RuqtcRmusCwcJQOvrSNqdjdpZvwIa6DwHUCxfAQsg54CJxStg1qGr7XlwwVYAu65vY0hr60z5WVGReZRTr7Xc/YNFTTa625WyC4bMKP2vHJX29ZJ7qHNK498TzTN54bOEPtfFG1uZgb22XfSBd2jLGJxyfmA/D+ndeayPzkB7DOAboEu7J30PpVMXLykdgEewldE2JH85mZ4SHPyiHG20ItJREKUssnWakrXruiiaC2FhNpmcen/ALOqGtTO6+c8QWDBh1kT0oqyz3vzqT5hz7Yg1FtED8TNx9InZ8IVn1OFGxLFDlPSPIvnHR72kluRyI9pbGRsk1uWQwFhEdfw8HYeWHoechVYfUUIs5SOtWbnmQeQkMIiek5EzT6T3GgIr9YWaE4nrJPB97XLD6pcXKZ+GCNXXQeI+7bT7QJKGNhsEZTjrsPvv49bcTeVwcjhni71ZGGy6Tu+1eNlKTmvjc+0a7SFXTzbH6L5AtzZcnszB7ddvH6P393PBI7bhcHohS0eEG1MRbqFBilKiJ7JL57h+B8A93Y5e3LgqUGnpoZoLz5wv7cLvS4k89eE6nK7AyxhyaYRkAdvtCi1946Jt5TisUWElUxZXxd6afaJmfw3vKALZU8/ISqylYdp4V/k/whyl0q8wGIp3mFeIe7KCh/jx34uyt6UP8MPtbUAZPQbt2VmcrF5hpJ+4+7uHR4hh1a3w0mTiw/hT/srgz/Ak41/qR8ufbaFAvalxI7YBU36/AYtAJig=
+sidebar_class_name: "post api-method"
+info_path: docs/user-service/apis/shiksha-platform
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create Cohort"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/user/v1/cohort/create"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Create Cohort
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"userId","required":false,"in":"query","example":"123e4567-e89b-12d3-a456-426614174000","schema":{"type":"string"}},{"name":"academicyearid","in":"header","schema":{"type":"string"}},{"name":"tenantid","in":"header","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"programId":{"type":"string","description":"The programId of the cohort","default":""},"parentId":{"type":"string","description":"The parentId of the cohort","default":""},"name":{"type":"string","description":"The name of the cohort","default":""},"type":{"type":"string","description":"The type of the cohort","default":""},"status":{"type":"string","description":"The status of Cohort"},"customFields":{"description":"The fieldValues Object","type":"array","items":{"type":"object","properties":{"fieldId":{"type":"string","description":"Field Id"},"value":{"type":"string","description":"Field values"}},"required":["fieldId","value"],"title":"FieldValuesOptionDto"}}},"required":["name","type","status"],"title":"CohortCreateDto"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"201":{"description":"Cohort has been created successfully."},"400":{"description":"Bad request."},"409":{"description":"Cohort already exists."},"500":{"description":"Internal Server Error."}}}
+>
+  
+</StatusCodes>
+
+
+      

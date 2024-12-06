@@ -1,0 +1,71 @@
+---
+id: assign-role-controller-get-role
+title: "Get User Role"
+description: "Get User Role"
+sidebar_label: "Get User Role"
+hide_title: true
+hide_table_of_contents: true
+api: eJyVU02P2jAU/CtoTq3kLtD25BvabVeolxVbTghVJnkQi2Bn7RdUGvm/Vy+BLCxspV4Sf7yPmXnjBr6iYNh6N82hMYnRbtzMl3TvHQdflhR+bYjlBAqVCWZHTCFCLxo4syNo1JHCNIdCoJfaBsqhOdSkYB00KsMFFGJW0M5AN+BDJVmRg3UbpKT6QkzOOLZSqk0tyOQU/pm8lK6x8i5SlPvPo5H8copZsJXwgoagHzwQG1veISl8HX25Dvruw8rmOTmBBDYb4YiwMhmWCpGyOlg+tLxNllGMn9hvyUEvloListgj8WAeKQyOwu2ICy8Cb4hbHbmAxlCUG+7HQ+nSbqLEx2HTSZqEOoV9p/cZimfRoyN8iaUXyFT2Bx2uhDwKPam58MH+aQff8rVu7dt0y6VEPBd2GwszeCoNr33Y4S3D+9n8YTB5mkJB8HWH47sRFDLv2GQM3UjlykfemRbbsftbcS4K9wyYfvOwKo11MrI6lHLXCbdoLSedx+I6GZHCq3xQ0EdPLhUKH1lSmmZlIs1DmZIcv9QUDp2qexOsWQntRYPcRlnn0GtTRrpCJ+TIMTQ+zI52/ziAuo36NAwnk9ibspYdFLZ0eH03aZnUaUL/h+C9tl35s9fUtxan9l58/PYTCqYWSc+Ns22Nc1wIops0Lj10aipfedE3U5qms2VKfXx39W5Gb9wuWugtU0p/AUfIlN0=
+sidebar_class_name: "get api-method"
+info_path: docs/user-service/apis/shiksha-platform
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get User Role"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/user/v1/rbac/usersRoles/{userId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get User Role
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"userId","required":true,"in":"path","schema":{"type":"string"}},{"name":"tenantid","in":"header","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Role Detail."},"403":{"description":"Forbidden"}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,71 @@
+---
+id: role-controller-get-role
+title: "Get Role"
+description: "Get Role"
+sidebar_label: "Get Role"
+hide_title: true
+hide_table_of_contents: true
+api: eJyVU0tv2zAM/isBTxug1cm2k25FuxXFLkW6noJgYCwmFqJIrkQHywz994G2YyRNOmAXPySR34OfWgg1RWQb/KMBDfPg6C54jsE5ir82xLICCmqMuCOmmEAvWvC4I9BgDSiI9NrYSAY0x4YUWA8aauQKFKSyoh2CboEPtVQkjtZvIGc1NmHy6Llr1ZVWhIbiP4uXgprq4BMl2f88ncrLUCqjrUXNoGVyT4zW3UBW8HX65fLQ9xBX1hjyQgkYN6IP4gpLWCpIVDbR8qHTjGVJKX3isCUPerEUFufNHogng1874iqIoxvizj6uQEPRJIrFflYIQBGDo1REQlO01mRRTHHfW3wC/iw29DrPKYy+YG1/0OHCv8Hf24arEO2fbsqdTOvXoSu37OTEc2W3qcLJk0Neh7iDt8Lu5i/3k9unR1Ag/PrF2c0UFJTBM5YMupXOdUi8w47bgH7iyVnPkTzTby5qh9bLkJroZK/3awHil4DOJGcyFAWda13sUCKjrZFJVSGxFLTtChO9RJezLL82FA+9nXuMFleid9GCsUm+Deg1ukQX3EQVeQYNH+ZDvD9OQF3nfJyClxHs0TXyBwq2dOjvSF5mdRzL/6G/B9m3Prk5I6ykcgzfw7efoAAbMfM0LdsuLcOHMLoq4Tw4R1B5yu29WtK2fRZzHs/3W+9WjGkd3PLiVs5/AQDXiDE=
+sidebar_class_name: "get api-method"
+info_path: docs/user-service/apis/shiksha-platform
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get Role"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/user/v1/rbac/roles/read/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get Role
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"id","required":true,"in":"path","schema":{"type":"string"}},{"name":"tenantid","in":"header","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Role Detail."},"403":{"description":"Forbidden"}}}
+>
+  
+</StatusCodes>
+
+
+      

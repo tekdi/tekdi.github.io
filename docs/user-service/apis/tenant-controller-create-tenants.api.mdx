@@ -1,0 +1,71 @@
+---
+id: tenant-controller-create-tenants
+title: "Create Tenants"
+description: "Create Tenants"
+sidebar_label: "Create Tenants"
+hide_title: true
+hide_table_of_contents: true
+api: eJyFlE1v2zAMhv+KwdMGqEuz7eTb1m5AsGILmvYUBANjM7Fa2XIpum0W+L8PlPI5F5hvlshXr8hH3IJviVGsbyYl5HBHDTZy5Rth7xzx74IJhdJyAAMtMtYkxAHy+RYarAly6ALxpAQDTE+dZSohX6ELZMA2kMNTR7wBA6GoqEbItyCbVvOCsG3W0PeLlEpBvvpyoxFHJeGODBS+EWpEt7BtnS2i6dFD8I2uDaT98oEKUcesVxRLQXeT4X8NGCgpFGxb1TyUIYvBurfCzgnkAL2B0tdom/9rXMe47OdbGrGK4S235xrTFDdIZ79mrCc1rtOtzrNubJDMr7JdWGZjXPbu/vYmZJ4zLxVxxuRQqMyS/fAezN4MMqO2ywqdmTx0qz9t9DzVdGFArDg6QhTJuRavCTEjtL4JyfDHy/HQ967qKbHMZl1RUAirzrmN3vrz5adhznfPS1uW1ICecb6XhLIjvDVJ5RXz1oeIBkoFOYwU39HzeCQxcpSYV16JnxPpC/0pOraymSlp6RYYDV6If6RTILC1PygWUF1UhCUxmP1b+dJJ5dn+ifxG18rw7ZH+b69Yt46OtJ4QtmPvuHIgaYjFfB+16NXKykeLux7NKvsYKsymDmXluR6gd3V7f519mU7AgNYgLY4/XEJ6iljoU1T3WssamxO7g7qfKR/KJPQqo9bphXoDHTvdSy2Zx4miR48VyyikB6fGLAxU2sB8DtvtEgPds+t7XU6DRgdTaQMu3ckgeqTN6aB6RtdRfE4L/WGr0dro3uw7pjIp6yrNnos7NX7MHcwh1TowNv01uwMDy908q32pOYwvOibxRc824GNRIkxxbQsOm3WHa41Nmvr9BYvC7wQ=
+sidebar_class_name: "post api-method"
+info_path: docs/user-service/apis/shiksha-platform
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create Tenants"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/user/v1/tenant/create"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Create Tenants
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"userId","required":false,"in":"query","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"name":{"type":"string","description":"Tenant name","default":""},"domain":{"type":"string","description":"Domain Name","default":""},"params":{"type":"object","description":"Params","default":""},"programImages":{"description":"List of program images (URLs or other related strings)","type":"array","items":{"type":"string"}}},"required":["name"],"title":"TenantCreateDto"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"201":{"description":"Tenant Created Successfully"},"403":{"description":"Forbidden"}}}
+>
+  
+</StatusCodes>
+
+
+      
