@@ -1,0 +1,71 @@
+---
+id: notification-events-controller-delete-template
+title: "Template Delete"
+description: "Template Delete"
+sidebar_label: "Template Delete"
+hide_title: true
+hide_table_of_contents: true
+api: eJytUsGK2zAQ/RXzTi2oTVr2pFvp5hBYSinb0xKKYk3WYmXJK41DjdG/l4njxdtke+pJMHrzZt6bNyJ2lAy7GLYWGt8iu4OrT4XNkQLnrzFwit5T+mXJE9M9tZ03TFDoTDItMaUM/TAimJag4SwUEj33LpGF5tSTggvQ6Aw3UMh1Q62BHsFDJx2hb/eUUIp6Iekzpe2bRM89peEaU+bkwiNK2Uln7mLIlOX/83otj6VcJ9eJPGjMUqpJWZX7uqacD733A4rCzfrmH00hcnWIfbCyONg8iguvHPwwYzN26i2a29NsKLTETZQj2Lly8ktjFZacPHOuRmeLmEDpOJ1gJ/Yc4skPx57+OigudmioWgKqL9+31RKiIMwT+NPHNRTqGNjUDD2K6C5mbk2Qgee7Xcp6NfLlUEy/edV544IY3Scvf5PeB1zXCwXtrDjZxMyCG8e9yfQz+VKkPKVCkmhdNnsvoTkYn+liCVFBgaHx7sc5X+8rqOvLPdGwDOTR+F5AkIwdTXIy6f9PPRdNGJYz522cRdmVRWZuN3eb+w1K+QPB2lAU
+sidebar_class_name: "delete api-method"
+info_path: docs/notifications-service/apis/notification
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Template Delete"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/notification-templates/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Template Delete
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"id","required":true,"in":"path","schema":{"type":"number"}},{"name":"userId","required":true,"in":"query","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Template delete successfully"},"404":{"description":"Template not found"}}}
+>
+  
+</StatusCodes>
+
+
+      

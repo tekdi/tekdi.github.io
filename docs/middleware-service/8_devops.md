@@ -11,8 +11,8 @@ Installation
 #### 1. Clone git repository
 
 ```sh
-git clone https://github.com/tekdi/notification-microservice
-cd notification-microservice
+git clone https://github.com/tekdi/shiksha-middleware
+cd shiksha-middleware
 npm install
 ```
 
@@ -34,32 +34,22 @@ POSTGRES_PASSWORD="add-here"
 POSTGRES_DATABASE="add-here"
 POSTGRES_SCHEMA="add-here"
 
-#Email config
-EMAIL_TYPE=smtp
-EMAIL_HOST="add-here"
-EMAIL_PORT="add-here"
-EMAIL_USER="add-here"
-EMAIL_PASS="add-here"
-EMAIL_FROM="add-here"
+JWT_SECRET="add-here"
 
-#RABBITMQ LOCAL
-RABBITMQ_URL=amqp://localhost:5672
 
-#push notification
-FCM_KEY="add-here"
-FCM_URL=""add-here"
-FIREBASE_PROJECT_ID="add-here"
-FIREBASE_PRIVATE_KEY="add-here"
-FIREBASE_CLIENT_EMAIL="add-here"
+RBAC_JWT_EXPIRES_IN="add-here"
+RBAC_JWT_SECRET="add-here"
 
-TWILIO_ACCOUNT_SID ="add-here"
-TWILIO_AUTH_TOKEN ="add-here"
-SMS_FROM ="add-here"
+#Expiration Time for cache
+TTL ="add-here"
+
+NODE_TLS_REJECT_UNAUTHORIZED = 0
+
+# microservice base url (add all microservice which you want to integrate in middleware)
+USER_SERVICE ="add-here"
 ```
 
 #### 4. Run the Application
-
-Before starting application make sure RabbitMQ server should be up and running.
 
 ```sh
 npm run start:dev
