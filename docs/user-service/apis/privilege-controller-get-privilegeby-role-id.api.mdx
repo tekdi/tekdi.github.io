@@ -1,0 +1,71 @@
+---
+id: privilege-controller-get-privilegeby-role-id
+title: "Get Privileges for Role"
+description: "Get Privileges for Role"
+sidebar_label: "Get Privileges for Role"
+hide_title: true
+hide_table_of_contents: true
+api: eJy1U02P2kAM/SuRT600XaBqL7ltd1cr1AuC7glFlUkMGTHMBI+Dmkb575WTJYWWvVTqhY+ZZ/u95zcthIoYxQY/LyCFBduTdbSjh+CFg3PE33ck4/GmWQZH8wIMVMh4ICGOkK5b8HggSEHIo5cewHSsLVMBqXBNBqyHFI41cQMGYl7SASFtQZpKC6Ow9TvoOjP24vOof+yUaWWsgo8U9f7jdKpfBcWcbaWaLxUnjyRo3R10Bj7dQn7BIlnSsaYoivl8CzP3QuzRJSviE3HyxBxYRYHgTo0C3mAOmYFIec1Wmt48zHOK8YOEPXlI15lSv278TJKMVGOyDZzoJsDAgaQMursdSb8WKSGFSR2JJ6fZROdNqrFSDeupKZkLGit1cbDpmsxoK1b2K6nhvfslYUEM5ryr+1rKwPZnH6VesPXb0JdbcYpYlXYfS0wWDmUb+AB/SnxYvjwm94s5GFB+w+HsbgoG8uAFc4G01c5ViHLAntvr9LfduRoxahH6IZPKofW6yZqd3g3OrUGdUw4zTZ5uy8CFf5mBMkRRYNtuMNILu67T4yGQus7CRtw4zesWXaS/WKgc8gIpvFu+Rvt9AuY2uz011+/qhK5WGOhT+Q+jxmf3e1Cmf9jqpD6eF6l7fvoGBrBW7y6zsu+z8vpDTTlf+eai9XVszgz0U8XdLGnbIYldN+KHqzcrxqwOaNWadV33C3XRru8=
+sidebar_class_name: "get api-method"
+info_path: docs/user-service/apis/shiksha-platform
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get Privileges for Role"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/user/v1/rbac/privileges"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get Privileges for Role
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"tenantId","required":true,"in":"query","schema":{"type":"string"}},{"name":"roleId","required":true,"in":"query","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Privilege Detail."},"400":{"description":"Bad Request"},"500":{"description":"Internal Server Error"}}}
+>
+  
+</StatusCodes>
+
+
+      

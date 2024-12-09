@@ -1,0 +1,71 @@
+---
+id: fields-controller-search-field-values
+title: "Search Field Values"
+description: "Search Field Values"
+sidebar_label: "Search Field Values"
+hide_title: true
+hide_table_of_contents: true
+api: eJx1VMtu2zAQ/BVjz0xktz3pluYBBC3QIE56MYyCltYWY4pUyJUbVeC/F0vKipzHRbb3ObMzcg+2QSdJWXNbQg43CnXpL60hZ7VG98ejdEUVw7+lbtGDgEY6WSOh85Cv1gIcPrfo6bstO8j7+FM5LCEn16KAwhpCQ5ySTaNVEddlT94ajvmiwlryN+oahBzs5gkL4j2OwZFCz1mtakWTMk9OmR0IKNEXTjU8FHL4GcsCo9zhpNy09Qbdu/IhHARslU6U3gM5bbkZCkMQE66rAeCweC2AFGk83jQdbxmveUUWQkjtvrHGJ4Jf5gv+eLuMBZml9plWns4Z7Lf51w9qrduoskQToZHcsT7DBAbksWidog7yVQ+yKND7M7J7NCxjWL/lmcDOYv9sFL9GqixbpbE+saUKcshajy47LLJtXJcdYn2W7AO82x1GwxyBLFn6RP4UziiBbNQP7ECAYkQVyjJqaGTN2YuWKuvUv2ioSJpNdf9qx+sXWTcaJ/Z5tU3yx3wqPE9QZmsjgEG9ZaX2vpKzOy1pa139zg6X949Xs4u7WxDADFNwcT6H5HxZ0DCZD1bLyG7A//GFT8aPlyB8oazRUhnWv3Wac+n4K+Dj8/4FMJ2ot4DDceAgwlpAxZrlK+j7jfT46HQIHH5u0XVJmoN0Sm6Y+WodxPHibJg9dsw2vcxnD4xq2BF1evNis51Gq9z9Wj6AgM3wB1Hbknuc/AsiPnMAATYyjmaIsR60NLs2qgRpJl9Rtkx5apB9NMjwhZEeU6abIDz1ihjo8DOIT1r6PtkvhLE+pT7tGA2aqlmrdQjhP2EL1xk=
+sidebar_class_name: "post api-method"
+info_path: docs/user-service/apis/shiksha-platform
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Search Field Values"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/user/v1/fields/values/search"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Search Field Values
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"limit":{"type":"string","description":"Limit"},"page":{"type":"number","description":"number"},"filters":{"type":"object","description":"Filters"}},"required":["limit","page"],"title":"FieldValuesSearchDto"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"201":{"description":"Fields Values list."},"403":{"description":"Forbidden"}}}
+>
+  
+</StatusCodes>
+
+
+      

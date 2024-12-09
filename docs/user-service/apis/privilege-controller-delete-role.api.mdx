@@ -1,0 +1,71 @@
+---
+id: privilege-controller-delete-role
+title: "Delete Privilege"
+description: "Delete Privilege"
+sidebar_label: "Delete Privilege"
+hide_title: true
+hide_table_of_contents: true
+api: eJyVVEtP20AQ/ivWd2qlLYGKk28UOKD2gKCcoqga7AleZbNrdsdRU2v/ezV24gYISL0kjnce32vTI7QcSWzwNzVK3Ea7sY6f+DJ4icE5jr9qdix8FxzDoKVIaxaOCeW8h6c1o0S7b7upYRD5ubORa5QSOzawXktIGhikquE1oewh21Zbk0Trn5CzmaYJe/JiddTQ2jDVHD9sXujW1AafOOn519NT/ao5VdG2Sg8llEIxsqmL1FUVp7TsnNueIBucH2v5RnWhdDjJWHP+tuaKhAofpFiGztfKBEJPqg/iI1VYGCSuumhlO2hGw+IvElbsUc4XCv7VxAFjMZkBgzVLE9ShEf/ghDQoMesSx9nmbKa7ZpMRadYfmJJVPI6b0bYDQPeq6CjZS1iTxNTa77x9Y8XOqotOmhDtnyFBA3Xrl2Fot+K04r6xq9RQcetIliGu8Zrs5d3DVXFxewMDxTe+PDs5hUEVvFAlKHud3IYkaxqw7bYf0enF7ImE8G+ZtY6sVxe76PRsFHAOFVCXn2l01TDzL88JBuVhuhcGTUiifX3/SIkfostZXz93HLejuhuKlh6V/rxHbZM+1yiX5BK/gagk2QtKfLrbXZzPBcxx6HtTvDqyIdfpLxisePvqGuZFNnu7/g/Ge7vHHQeXc9qvCZ4CenX94/rnNQyoU30Pg7QagrR7UFBH6bzM1H6vfup/xNGWvh9jmvNUPx692zEFeaxWhouc81+N7bYu
+sidebar_class_name: "delete api-method"
+info_path: docs/user-service/apis/shiksha-platform
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete Privilege"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/user/v1/rbac/privileges/{privilegeId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Delete Privilege
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"privilegeId","required":true,"in":"path","schema":{"type":"string"}},{"name":"tenantid","in":"header","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Role deleted successfully."},"400":{"description":"Bad request"},"404":{"description":"Data not found"}}}
+>
+  
+</StatusCodes>
+
+
+      

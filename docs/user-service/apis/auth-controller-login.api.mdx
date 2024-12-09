@@ -1,0 +1,71 @@
+---
+id: auth-controller-login
+title: "Login"
+description: "Login"
+sidebar_label: "Login"
+hide_title: true
+hide_table_of_contents: true
+api: eJyFk01v2zAMhv9KwbM6t9hOvnVtBxQbsKBpT0EwMDYbq5Ell6LTeob/+0Apn9thPsQORZEvn1caIXTEKDb4hxpKuOmluQ1eODhH/MuFtfVgoEPGloQ4QrlYGmB66ynK11APUI7pr2WqoRTuyUAVvJAXXcKuc7ZKDYrXGLzGYtVQi/olQ0dQQli9UiXah1WOWIq62kdijy2dZEZh69dgoKZYse20LpTHzEm1xvgeuP7/rkPmNJmTGRbHcifVlgbEiqMdpDsJME15Y+yCj1nyl6vP+jrv8y3wytY1+dRIcK0UUxWtep77Y0e8JWmCOtKFmMigNFBCodKK7XWBvTTF3p5IvD14E6nq2cowV8pZFVYVxXgpYUP+BAt29jsNYMBq54awJgYDGXnSF9j+Tt4l5erf49H5+w9sO0fnTh1ZH33Yxybt9BKSgh3KeWM3scGLmUN5Cdz+49Ht4/Pdxc3sAQzoiDl4/ekK8inDSk+ZilNOLabxdkr2KM8KHoYX+pCic2i96urZ6VqmnA+AdrwGA0oaDGTWSwONGlIuYBxXGOmZ3TRp+K0nHrIDW2SLK51vsZzMHmy5GGFDg86Ur8flkyrRdNdnO/66KtPy5BzMfs6fwMBqd+XaUOsexncw6bcEMBDSlMnzFBvBoV/3uNbcXFOfP5T1XCY=
+sidebar_class_name: "post api-method"
+info_path: docs/user-service/apis/shiksha-platform
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Login"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/user/v1/auth/login"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Login
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"username":{"type":"string","description":"username"},"password":{"type":"string","description":"password"}},"required":["username","password"],"title":"AuthDto"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"403":{"description":"Forbidden"}}}
+>
+  
+</StatusCodes>
+
+
+      

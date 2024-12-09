@@ -1,0 +1,71 @@
+---
+id: auth-controller-logout
+title: "Logout"
+description: "Logout"
+sidebar_label: "Logout"
+hide_title: true
+hide_table_of_contents: true
+api: eJxlk01v2zAMhv9KwbNaJz361nU7FCuwoGlPRlAwNhOrsSWXorN6hv/7QCkJktQHf0gU+b4P6RF8R4xivXuqIIeHXupH74R90xC/N37rewEDHTK2JMQB8mJlgOmzpyA/fDVAPsZPy1RBLtyTgdI7ISe6hV3X2DJWyD6Cd7oWyppa1DcZOoIc/PqDyliHVY9YCinthinU7+J35M7Cg7B1WzBQUSjZdpocckhh02TO9BRXSVYGxEqjWZ6juZczJ9OUDofOu5Ak3M9m+rgsFGsIbhVGRKZpL0Oej+Raktor2s6HRFJqyCHrA3G2n2fYS52dOAfi/QlyoLJnK8NScSU5WJYUwu01EOzsbxrAgNXaNWFFDAYctnRoqmf7LzYhatdGnBn/9YVtp0y+IT+injT1xseSB3zL2u5CjTeLBmXjuf3WjseXt583D4snMKCe0uL8bgZpPrDU+VA1SqbF6Oeg+ETvIuPJrtCXZF2D1qmwnhvdS2ALULBacg4GFC4YOOBdGai1CXkB47jGQG/cTJMuf/bEQ4K+R7a4VofFajJHlnkxwo4GdZVG+/ZVpWh406cOXI35tDrr/eLP8hUMrA+/S+srPcP4F0y85wAGfLSZBl/XRmjQbXvcamzKqdd/aX9GLw==
+sidebar_class_name: "post api-method"
+info_path: docs/user-service/apis/shiksha-platform
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Logout"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/user/v1/auth/logout"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Logout
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"refresh_token":{"type":"string","description":"token"}},"required":["refresh_token"],"title":"LogoutRequestBody"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":""}}}
+>
+  
+</StatusCodes>
+
+
+      

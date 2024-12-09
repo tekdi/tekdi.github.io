@@ -1,0 +1,71 @@
+---
+id: notification-events-controller-get-templates
+title: "Template List"
+description: "Template List"
+sidebar_label: "Template List"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNVE1v2zAM/SsGTxugLt2wXXzbumwIMLRF2+0SBANjM7E6WXIlOm1g+L8PlJyPxsEw3yw9ku+Rj+rANeSRtbOzEnK4dqxXuogH0w1ZDlfOsnfGkP+9Jn6gujHIFEBBgx5rYvIB8nkHFmuCHNpAflaCAk9PrfZUQs6+JQXaQg5PLfktKAhFRTVC3gFvGwkL7LVdQ98vUiQF/uLKrSBOExXOMlmWK2waM7CdPAZn5WyU2i0fqWAh7EUsawpyu9Imce+gpFB43UgayOFbushWzmeB0BcVKEBjblZR57+zRnIvPFamgF6wbowcTX9Nrx+gV/CHtv+F7I/bOd8XSQkWClhzhN9Hul/ZQb84DdrpHcGT3hjUp6DQOBuSng+Xl+MOfSfOeHBCZnRg0fLxHHJmN2h0mQ0jFdyn8zgmb9Fk9+Q35LOp985H3Yxr8dcrZ14cbLhQJ5l2V9kP4aWgJq6cWLtx8b9BriCHiT3OtxMTJiZFhUhDCi8UiLPuDp6c7qbzykP7wQ8zG4Z7NEFtVy5Oe+j+sSIYyagoOwZkn29n2TFEgRBM4PfvLiHtBRZiPakmcmuMGzFs5mlnXhXcm1BETBqD2sqwWm/kLjVtDuebBgpi2xYKKmlyPoeuW2Kgn970vRyntZftKXXApRFHrtAEGrHYLze8uRvM+zYDdZ5d6vD+xdmgaQUE8ohs0GupJCPsFVSEJflIIUVdpUIXD5L4EDt6USTX3kO3N/cy2eXwMtWulBiPz/Le4bPUVuCimGiKeNaBQbtucS3YlFO+v0n448I=
+sidebar_class_name: "post api-method"
+info_path: docs/notifications-service/apis/notification
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Template List"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/notification-templates/list"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Template List
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"userId","required":true,"in":"query","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"filters":{"description":"Filters for search","allOf":[{"type":"object","properties":{"context":{"type":"string","example":"EVENT"},"key":{"type":"string","example":"EVENT"}},"required":["context","key"],"title":"SearchDto"}]}},"required":["filters"],"title":"SearchFilterDto"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Get template list"},"400":{"description":"Invalid request"},"500":{"description":"Internal Server Error"}}}
+>
+  
+</StatusCodes>
+
+
+      
