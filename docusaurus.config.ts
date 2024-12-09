@@ -79,6 +79,10 @@ const config: Config = {
             specPath: "swagger/event-service.json",
             outputDir: "docs/event-service/apis",
           } satisfies OpenApiPlugin.Options,
+          attendance: {
+            specPath: "swagger/attendance-service.json",
+            outputDir: "docs/attendance-service/apis",
+          }
         },
       },
     ],
