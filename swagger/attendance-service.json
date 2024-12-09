@@ -1,0 +1,403 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/api/v1/attendance": {
+      "post": {
+        "operationId": "AttendanceController_createAttendance",
+        "summary": "Create Attendance",
+        "parameters": [
+          {
+            "name": "userId",
+            "required": true,
+            "in": "query",
+            "description": "userId required",
+            "schema": {
+              "example": "123e4567-e89b-12d3-a456-426614174000",
+              "type": "string"
+            }
+          },
+          {
+            "name": "tenantid",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AttendanceDto"
+              },
+              "examples": {
+                "CreateAttendance": {
+                  "summary": "Example for CreateAttendance",
+                  "description": "Detailed example for CreateAttendance",
+                  "value": {
+                    "attendanceDate": "2024-12-09",
+                    "attendance": "present / absent / on-leave",
+                    "remark": "",
+                    "latitude": 0,
+                    "longitude": 0,
+                    "image": "",
+                    "metaData": "",
+                    "syncTime": "",
+                    "session": "Morning",
+                    "context": "event / cohort",
+                    "contextId": "dcb80783-0619-485f-b2a7-ec4df21e7a60",
+                    "scope": "self / student"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Attendance has been created successfully."
+          }
+        },
+        "tags": ["Attendance"]
+      }
+    },
+    "/api/v1/attendance/list": {
+      "post": {
+        "operationId": "AttendanceController_searchAttendanceNew",
+        "summary": "Attendance Search",
+        "parameters": [
+          {
+            "name": "tenantid",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AttendanceSearchDto"
+              },
+              "examples": {
+                "SearchAttendance": {
+                  "summary": "Example for SearchAttendance",
+                  "description": "Detailed example for SearchAttendance",
+                  "value": {
+                    "limit": 0,
+                    "page": 0,
+                    "filters": {
+                      "contextId": "2b73b482-d8bf-41a2-bd49-91a7a4abd7d4",
+                      "fromDate": "2024-11-07T00:00:00.000Z",
+                      "toDate": "2024-11-13T00:00:00.000Z",
+                      "scope": "student",
+                      "context": "cohort"
+                    },
+                    "facets": ["contextId"],
+                    "sort": ["absent_percentage", "asc"]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Attendance List"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "tags": ["Attendance"]
+      }
+    },
+    "/api/v1/attendance/bulkAttendance": {
+      "post": {
+        "operationId": "AttendanceController_multipleAttendance",
+        "summary": "Create Bulk Attendance",
+        "parameters": [
+          {
+            "name": "userId",
+            "required": true,
+            "in": "query",
+            "description": "userId required",
+            "schema": {
+              "example": "123e4567-e89b-12d3-a456-426614174000",
+              "type": "string"
+            }
+          },
+          {
+            "name": "tenantid",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BulkAttendanceDTO"
+              },
+              "examples": {
+                "CreateBulkAttendance": {
+                  "summary": "Example for CreateBulkAttendance",
+                  "description": "Detailed example for CreateBulkAttendance",
+                  "value": {
+                    "attendanceDate": "2024-12-09",
+                    "contextId": "dcb80783-0619-485f-b2a7-ec4df21e7a60",
+                    "context": "cohort / event",
+                    "scope": "self / student",
+                    "userAttendance": [
+                      {
+                        "userId": "2447aa0c-4111-4cb9-94d1-9898ef6975a1",
+                        "attendance": "",
+                        "remark": "string",
+                        "latitude": 0,
+                        "longitude": 0,
+                        "image": "string",
+                        "metaData": "string",
+                        "syncTime": "string",
+                        "session": "string"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Attendance updated successfully"
+          },
+          "201": {
+            "description": "Attendance has been created successfully."
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "tags": ["Attendance"]
+      }
+    }
+  },
+  "info": {
+    "title": "Attendance API Collection",
+    "description": "APIs of Attendance Service",
+    "version": "1.0",
+    "contact": {}
+  },
+  "tags": [],
+  "servers": [],
+  "components": {
+    "securitySchemes": {
+      "access-token": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "Authorization"
+      }
+    },
+    "schemas": {
+      "AttendanceDto": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "string",
+            "description": "The userid of the attendance",
+            "default": ""
+          },
+          "attendanceDate": {
+            "type": "string",
+            "description": "The date of the attendance in format yyyy-mm-dd",
+            "default": "2024-12-09T10:27:36.463Z"
+          },
+          "attendance": {
+            "type": "string",
+            "description": "The attendance of the attendance",
+            "default": ""
+          },
+          "remark": {
+            "type": "string"
+          },
+          "latitude": {
+            "type": "number"
+          },
+          "longitude": {
+            "type": "number"
+          },
+          "image": {
+            "type": "string"
+          },
+          "metaData": {
+            "type": "string"
+          },
+          "syncTime": {
+            "type": "string"
+          },
+          "session": {
+            "type": "string"
+          },
+          "context": {
+            "type": "string",
+            "description": "The context of the attendance",
+            "default": ""
+          },
+          "contextId": {
+            "type": "string",
+            "description": "The contextId of the attendance",
+            "default": ""
+          },
+          "scope": {
+            "type": "string"
+          }
+        },
+        "required": ["userId", "attendanceDate", "attendance", "contextId"]
+      },
+      "AttendanceFiltersDto": {
+        "type": "object",
+        "properties": {
+          "fromDate": {
+            "format": "date-time",
+            "type": "string",
+            "default": "yyyy-mm-dd"
+          },
+          "toDate": {
+            "format": "date-time",
+            "type": "string",
+            "default": "yyyy-mm-dd"
+          },
+          "contextId": {
+            "type": "string"
+          },
+          "context": {
+            "type": "string"
+          },
+          "scope": {
+            "type": "string"
+          },
+          "attendanceDate": {
+            "type": "string",
+            "description": "The date of the attendance in format yyyy-mm-dd",
+            "default": "yyyy-mm-dd"
+          },
+          "userId": {
+            "type": "string"
+          }
+        }
+      },
+      "AttendanceSearchDto": {
+        "type": "object",
+        "properties": {
+          "limit": {
+            "type": "number",
+            "description": "Limit"
+          },
+          "page": {
+            "type": "number",
+            "description": "number"
+          },
+          "filters": {
+            "description": "Filters",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/AttendanceFiltersDto"
+              }
+            ]
+          },
+          "facets": {
+            "description": "Facets",
+            "example": ["contextId", "userId", "scope"],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "sort": {
+            "description": "Sort",
+            "example": ["attendanceDate", "asc"],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": ["page"]
+      },
+      "UserAttendanceDTO": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "string"
+          },
+          "attendance": {
+            "type": "string",
+            "description": "The attendance of the attendance",
+            "default": ""
+          },
+          "remark": {
+            "type": "string"
+          },
+          "latitude": {
+            "type": "number"
+          },
+          "longitude": {
+            "type": "number"
+          },
+          "image": {
+            "type": "string"
+          },
+          "metaData": {
+            "type": "string"
+          },
+          "syncTime": {
+            "type": "string"
+          },
+          "session": {
+            "type": "string"
+          }
+        },
+        "required": ["userId", "attendance"]
+      },
+      "BulkAttendanceDTO": {
+        "type": "object",
+        "properties": {
+          "attendanceDate": {
+            "type": "string",
+            "description": "The date of the attendance in format yyyy-mm-dd"
+          },
+          "contextId": {
+            "type": "string"
+          },
+          "context": {
+            "type": "string",
+            "description": "The context of the attendance"
+          },
+          "scope": {
+            "type": "string"
+          },
+          "userAttendance": {
+            "description": "List of user attendance details",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UserAttendanceDTO"
+            }
+          }
+        },
+        "required": ["attendanceDate", "contextId", "context", "userAttendance"]
+      }
+    }
+  }
+}
