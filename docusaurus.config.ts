@@ -67,6 +67,10 @@ const config: Config = {
             specPath: "swagger/user-service.json",
             outputDir: "docs/user-service/apis",
           } satisfies OpenApiPlugin.Options,
+          user: {
+            specPath: "swagger/user-service.json",
+            outputDir: "docs/user-service/apis",
+          } satisfies OpenApiPlugin.Options,
           notification: {
             specPath: "swagger/notification-service.json",
             outputDir: "docs/notifications-service/apis",
@@ -75,6 +79,14 @@ const config: Config = {
             specPath: "swagger/todo-service.json",
             outputDir: "docs/todo-service/apis",
           } satisfies OpenApiPlugin.Options,
+          events: {
+            specPath: "swagger/event-service.json",
+            outputDir: "docs/event-service/apis",
+          } satisfies OpenApiPlugin.Options,
+          attendance: {
+            specPath: "swagger/attendance-service.json",
+            outputDir: "docs/attendance-service/apis",
+          },
         },
       },
     ],
