@@ -67,10 +67,6 @@ const config: Config = {
             specPath: "swagger/user-service.json",
             outputDir: "docs/user-service/apis",
           } satisfies OpenApiPlugin.Options,
-          user: {
-            specPath: "swagger/user-service.json",
-            outputDir: "docs/user-service/apis",
-          } satisfies OpenApiPlugin.Options,
           notification: {
             specPath: "swagger/notification-service.json",
             outputDir: "docs/notifications-service/apis",
