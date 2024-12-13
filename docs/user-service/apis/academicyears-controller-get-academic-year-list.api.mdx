@@ -1,0 +1,71 @@
+---
+id: academicyears-controller-get-academic-year-list
+title: "List Academic Year"
+description: "List Academic Year"
+sidebar_label: "List Academic Year"
+hide_title: true
+hide_table_of_contents: true
+api: eJx1VE2P2jAQ/Stozt5SesyNsj2sWqmrZfdQIVQNzkC8OHbWduimkf97NXaARGwvSfB8vXnvmR5sQw6DsuahhAKWEkuqlewInV9ZE5zVmtzvA4Vz6Beh+6F8AAENOqwpkPNQbHowWBMUEMigCaoEAcpAARVhSQ4EeFlRjVD0ELqGM31wyhwgxq0AR28t+fDVlh1n8E/lqIQiuJYESGsCmcAhbBqtZMI8f/XW8NlNa7t7JZkwOt4wKPIcVX4pgzrRKHNnrSY0IKAkL51quDEU11QB9I51oyljiVGM0G2ueVsBQQVOgzFXa0Inq/tgIcZc6xtrfMbz5fOCX9PJ5+oZl89WjjBQOVu3UpL3+1brDrhRwAPzPtWMUXiSrVOhS6JgqroL9kgGis2WuZ6OYzFnk5kgoKZQWXZEYwepQwUFzFtPbn5azHE8dK6zHzy5UzbDCMWapcnbTrFcFMBGfafuxi6DnZZtqKxTf5PgaXEW/elql29ndcbyJqW4496mSYMw60odfYWzR41hb119o/rq6eV+tnx8AAG8Sj5cfPoM2YIo2YIMgnmpMa0xAP2Qx0n3y8aB3sO80agMRAGt0xzLFG+AKebxCxAwoRkEJKK3AipWpdhA3+/Q04vTMfLxW0uuy/Sf0Cnc8dKbbRRnVtkRpfIcKKHYo/Z0g/Fy1QDEx4CP1E3v+Ql1y2kQRT9EV7nL3TM3uGbcXF7248Vsjz/XzyBgN/wJ1LbkGod/QKRngmQT0mSodNaDRnNo8cC5uScLhC3TOTbZMZls+GAmziHTjRBO/XZelp+83IclfZ8tHOMlP4f+W3Exec5mWrcxxn+LkeeY
+sidebar_class_name: "post api-method"
+info_path: docs/user-service/apis/shiksha-platform
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List Academic Year"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/user/v1/academicyears/list"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+List Academic Year
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"tenantid","in":"header","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"isActive":{"type":"boolean","description":"isActive","example":true}},"required":["isActive"],"title":"AcademicYearSearchDto"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"201":{"description":"Academic Year Created Successfully"}}}
+>
+  
+</StatusCodes>
+
+
+      

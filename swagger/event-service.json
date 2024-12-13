@@ -1,0 +1,1136 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/event-service/event/v1/create": {
+      "post": {
+        "operationId": "EventController_create",
+        "summary": "Create Events",
+        "parameters": [
+          {
+            "name": "userId",
+            "required": true,
+            "in": "query",
+            "description": "UserId Required",
+            "schema": { "example": "123e4567-e89b-12d3-a456-426614174000" }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/CreateEventDto" },
+              "examples": {
+                "RecurringOnlineDailyByEndDate": {
+                  "summary": "Example for RecurringOnlineDailyByEndDate",
+                  "description": "Detailed example for RecurringOnlineDailyByEndDate",
+                  "value": {
+                    "title": "Sample OnlineDailyByEndDate Event",
+                    "shortDescription": "This is a sample event",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                    "eventType": "online",
+                    "isRestricted": true,
+                    "autoEnroll": true,
+                    "startDatetime": "2024-12-18T10:00:00Z",
+                    "endDatetime": "2024-12-18T11:00:00Z",
+                    "onlineProvider": "Zoom",
+                    "isMeetingNew": false,
+                    "meetingDetails": {
+                      "url": "https://zoom.us/j/99201586505?pwd=ZA8uek6tYu0LQTPbW2GgIORpNDmv7j",
+                      "id": "meeting-id"
+                    },
+                    "attendees": [],
+                    "recordings": { "url": "https://zoom.com/recording" },
+                    "status": "live",
+                    "isRecurring": true,
+                    "recurrencePattern": {
+                      "frequency": "daily",
+                      "interval": 1,
+                      "endCondition": {
+                        "type": "endDate",
+                        "value": "2024-12-25T11:00:00Z"
+                      },
+                      "recurringStartDate": "2024-03-18T10:00:00Z"
+                    },
+                    "metaData": {
+                      "cohortId": "3218bb35-a87d-4adf-b305-b205286fe320"
+                    },
+                    "erMetaData": {}
+                  }
+                },
+                "RecurringOnlineDailyByOccurrences": {
+                  "summary": "Example for RecurringOnlineDailyByOccurrences",
+                  "description": "Detailed example for RecurringOnlineDailyByOccurrences",
+                  "value": {
+                    "title": "Sample OnlineDailyByOccurrences Event",
+                    "shortDescription": "This is a sample event",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                    "eventType": "online",
+                    "isRestricted": true,
+                    "autoEnroll": true,
+                    "startDatetime": "2024-12-18T10:00:00Z",
+                    "endDatetime": "2024-12-18T11:00:00Z",
+                    "onlineProvider": "Zoom",
+                    "isMeetingNew": false,
+                    "meetingDetails": {
+                      "url": "https://zoom.us/j/99201586505?pwd=ZA8uek6tYu0LQTPbW2GgIORpNDmv7j",
+                      "id": "meeting-id"
+                    },
+                    "attendees": [],
+                    "recordings": { "url": "https://zoom.com/recording" },
+                    "status": "live",
+                    "isRecurring": true,
+                    "recurrencePattern": {
+                      "frequency": "daily",
+                      "interval": 1,
+                      "endCondition": { "type": "occurrences", "value": "20" },
+                      "recurringStartDate": "2024-03-18T10:00:00Z"
+                    },
+                    "metaData": {
+                      "cohortId": "3218bb35-a87d-4adf-b305-b205286fe320"
+                    },
+                    "erMetaData": {}
+                  }
+                },
+                "RecurringOfflineDailyByEndDate": {
+                  "summary": "Example for RecurringOfflineDailyByEndDate",
+                  "description": "Detailed example for RecurringOfflineDailyByEndDate",
+                  "value": {
+                    "title": "Sample OfflineDailyByEndDate Event",
+                    "shortDescription": "This is a sample event",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                    "eventType": "offline",
+                    "isRestricted": true,
+                    "autoEnroll": true,
+                    "startDatetime": "2024-12-18T10:00:00Z",
+                    "endDatetime": "2024-12-18T11:00:00Z",
+                    "location": "Kothrud",
+                    "attendees": [],
+                    "recordings": { "url": "https://zoom.com/recording" },
+                    "status": "live",
+                    "isRecurring": true,
+                    "recurrencePattern": {
+                      "frequency": "daily",
+                      "interval": 1,
+                      "endCondition": {
+                        "type": "endDate",
+                        "value": "2024-12-25T11:00:00Z"
+                      },
+                      "recurringStartDate": "2024-03-18T10:00:00Z"
+                    },
+                    "metaData": {
+                      "cohortId": "3218bb35-a87d-4adf-b305-b205286fe320"
+                    },
+                    "erMetaData": {}
+                  }
+                },
+                "RecurringOfflineDailyByOccurrence": {
+                  "summary": "Example for RecurringOfflineDailyByOccurrence",
+                  "description": "Detailed example for RecurringOfflineDailyByOccurrence",
+                  "value": {
+                    "title": "Sample OfflineDailyByOccurrence Event",
+                    "shortDescription": "This is a sample event",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                    "eventType": "offline",
+                    "isRestricted": true,
+                    "autoEnroll": true,
+                    "startDatetime": "2024-12-18T10:00:00Z",
+                    "endDatetime": "2024-12-18T11:00:00Z",
+                    "location": "Kothrud",
+                    "attendees": [],
+                    "recordings": { "url": "https://zoom.com/recording" },
+                    "status": "live",
+                    "isRecurring": true,
+                    "recurrencePattern": {
+                      "frequency": "daily",
+                      "interval": 1,
+                      "endCondition": { "type": "occurrences", "value": "20" },
+                      "recurringStartDate": "2024-03-18T10:00:00Z"
+                    },
+                    "metaData": {
+                      "cohortId": "3218bb35-a87d-4adf-b305-b205286fe320"
+                    },
+                    "erMetaData": {}
+                  }
+                },
+                "RecurringOnlineWeeklyByEndDate": {
+                  "summary": "Example for RecurringOnlineWeeklyByEndDate",
+                  "description": "Detailed example for RecurringOnlineWeeklyByEndDate",
+                  "value": {
+                    "title": "Sample OnlineWeeklyByEndDate Event",
+                    "shortDescription": "This is a sample event",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                    "eventType": "online",
+                    "isRestricted": true,
+                    "autoEnroll": true,
+                    "startDatetime": "2024-12-18T10:00:00Z",
+                    "endDatetime": "2024-12-18T11:00:00Z",
+                    "onlineProvider": "Zoom",
+                    "isMeetingNew": false,
+                    "meetingDetails": {
+                      "url": "https://zoom.us/j/99201586505?pwd=ZA8uek6tYu0LQTPbW2GgIORpNDmv7j",
+                      "id": "meeting-id"
+                    },
+                    "attendees": [],
+                    "recordings": { "url": "https://example.com/recording" },
+                    "status": "live",
+                    "isRecurring": true,
+                    "recurrencePattern": {
+                      "frequency": "weekly",
+                      "interval": 1,
+                      "daysOfWeek": [3, 5],
+                      "endCondition": {
+                        "type": "endDate",
+                        "value": "2024-12-25T11:00:00Z"
+                      },
+                      "recurringStartDate": "2024-12-18T10:00:00Z"
+                    },
+                    "metaData": {},
+                    "erMetaData": {}
+                  }
+                },
+                "RecurringOnlineWeeklyByOccurrences": {
+                  "summary": "Example for RecurringOnlineWeeklyByOccurrences",
+                  "description": "Detailed example for RecurringOnlineWeeklyByOccurrences",
+                  "value": {
+                    "title": "Sample OnlineWeeklyByOccurrences Event",
+                    "shortDescription": "This is a sample event",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                    "eventType": "online",
+                    "isRestricted": true,
+                    "autoEnroll": true,
+                    "startDatetime": "2024-12-18T10:00:00Z",
+                    "endDatetime": "2024-12-18T11:00:00Z",
+                    "onlineProvider": "Zoom",
+                    "isMeetingNew": false,
+                    "meetingDetails": {
+                      "url": "https://zoom.us/j/99201586505?pwd=ZA8uek6tYu0LQTPbW2GgIORpNDmv7j",
+                      "id": "meeting-id"
+                    },
+                    "attendees": [],
+                    "recordings": { "url": "https://example.com/recording" },
+                    "status": "live",
+                    "isRecurring": true,
+                    "recurrencePattern": {
+                      "frequency": "weekly",
+                      "interval": 1,
+                      "daysOfWeek": [3, 5],
+                      "endCondition": { "type": "occurrences", "value": "20" },
+                      "recurringStartDate": "2024-12-18T10:00:00Z"
+                    },
+                    "metaData": {},
+                    "erMetaData": {}
+                  }
+                },
+                "RecurringOfflineWeeklyByEndDate": {
+                  "summary": "Example for RecurringOfflineWeeklyByEndDate",
+                  "description": "Detailed example for RecurringOfflineWeeklyByEndDate",
+                  "value": {
+                    "title": "Sample Event",
+                    "shortDescription": "This is a sample event",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                    "eventType": "offline",
+                    "isRestricted": true,
+                    "autoEnroll": true,
+                    "startDatetime": "2024-12-18T10:00:00Z",
+                    "endDatetime": "2024-12-18T11:00:00Z",
+                    "location": "Kothrud",
+                    "attendees": [],
+                    "recordings": { "url": "https://example.com/recording" },
+                    "status": "live",
+                    "isRecurring": true,
+                    "recurrencePattern": {
+                      "frequency": "weekly",
+                      "interval": 1,
+                      "daysOfWeek": [3, 5],
+                      "endCondition": {
+                        "type": "endDate",
+                        "value": "2024-12-25T11:00:00Z"
+                      },
+                      "recurringStartDate": "2024-12-18T10:00:00Z"
+                    },
+                    "metaData": {},
+                    "erMetaData": {}
+                  }
+                },
+                "RecurringOfflineWeeklyByOccurrence": {
+                  "summary": "Example for RecurringOfflineWeeklyByOccurrence",
+                  "description": "Detailed example for RecurringOfflineWeeklyByOccurrence",
+                  "value": {
+                    "title": "Sample Event",
+                    "shortDescription": "This is a sample event",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                    "eventType": "offline",
+                    "isRestricted": true,
+                    "autoEnroll": true,
+                    "startDatetime": "2024-12-18T10:00:00Z",
+                    "endDatetime": "2024-12-18T11:00:00Z",
+                    "location": "Kothrud",
+                    "attendees": [],
+                    "recordings": { "url": "https://example.com/recording" },
+                    "status": "live",
+                    "isRecurring": true,
+                    "recurrencePattern": {
+                      "frequency": "weekly",
+                      "interval": 1,
+                      "daysOfWeek": [3, 5],
+                      "endCondition": { "type": "occurrences", "value": "20" },
+                      "recurringStartDate": "2024-12-18T10:00:00Z"
+                    },
+                    "metaData": {},
+                    "erMetaData": {}
+                  }
+                },
+                "NonRecurringOffline": {
+                  "summary": "Example for NonRecurringOffline",
+                  "description": "Detailed example for NonRecurringOffline",
+                  "value": {
+                    "title": "Sample Event",
+                    "shortDescription": "This is a sample event",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                    "eventType": "offline",
+                    "isRestricted": true,
+                    "autoEnroll": true,
+                    "startDatetime": "2024-12-18T10:00:00Z",
+                    "endDatetime": "2024-12-18T11:00:00Z",
+                    "location": "Kothrud",
+                    "attendees": [],
+                    "recordings": { "url": "https://example.com/recording" },
+                    "status": "live",
+                    "isRecurring": false,
+                    "metaData": {},
+                    "erMetaData": {}
+                  }
+                },
+                "NonRecurringOnline": {
+                  "summary": "Example for NonRecurringOnline",
+                  "description": "Detailed example for NonRecurringOnline",
+                  "value": {
+                    "title": "Sample NonRecurringOnline Event",
+                    "shortDescription": "This is a sample event",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                    "eventType": "online",
+                    "isRestricted": true,
+                    "autoEnroll": true,
+                    "startDatetime": "2024-12-18T10:00:00Z",
+                    "endDatetime": "2024-12-18T11:00:00Z",
+                    "onlineProvider": "Zoom",
+                    "isMeetingNew": false,
+                    "meetingDetails": {
+                      "url": "https://zoom.us/j/99201586505?pwd=ZA8uek6tYu0LQTPbW2GgIORpNDmv7j",
+                      "id": "meeting-id"
+                    },
+                    "attendees": [],
+                    "recordings": { "url": "https://example.com/recording" },
+                    "status": "live",
+                    "isRecurring": false,
+                    "metaData": {},
+                    "erMetaData": {}
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Event created successfully" },
+          "400": { "description": "Invalid request body" },
+          "500": { "description": "Internal Server Error" }
+        },
+        "tags": ["Create Event"]
+      }
+    },
+    "/event-service/event/v1/list": {
+      "post": {
+        "operationId": "EventController_findAll",
+        "summary": "Search Events",
+        "parameters": [
+          { "name": "userId", "required": true, "in": "query", "schema": {} }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/SearchFilterDto" },
+              "examples": {
+                "SearchWithStartAndEndDate": {
+                  "summary": "Example for SearchWithStartAndEndDate",
+                  "description": "Detailed example for SearchWithStartAndEndDate",
+                  "value": {
+                    "limit": 100,
+                    "offset": 2,
+                    "filters": {
+                      "startDate": {
+                        "after": "2024-08-21T18:30:00Z",
+                        "before": "2024-08-22T18:29:59Z"
+                      },
+                      "endDate": {
+                        "after": "2024-08-24T18:30:00Z",
+                        "before": "2024-08-25T18:29:59Z"
+                      },
+                      "status": ["live", "draft", "inActive", "archived"],
+                      "eventType": ["offline"],
+                      "title": "Event",
+                      "cohortId": "0278fd6a-ed93-4f29-b961-d3c87697c76a",
+                      "createdBy": "eff008a8-2573-466d-b877-fddf6a4fc13e"
+                    }
+                  }
+                },
+                "SearchWithDateInBetweenRange": {
+                  "summary": "Example for SearchWithDateInBetweenRange",
+                  "description": "Detailed example for SearchWithDateInBetweenRange",
+                  "value": {
+                    "limit": 100,
+                    "offset": 1,
+                    "filters": {
+                      "date": {
+                        "after": "2024-08-24T18:30:00Z",
+                        "before": "2024-08-25T18:29:59Z"
+                      },
+                      "status": ["live", "draft", "inActive", "archived"],
+                      "eventType": ["offline"],
+                      "title": "Event",
+                      "cohortId": "0278fd6a-ed93-4f29-b961-d3c87697c76a",
+                      "createdBy": "eff008a8-2573-466d-b877-fddf6a4fc13e"
+                    }
+                  }
+                },
+                "SearchWithOtherFilters": {
+                  "summary": "Example for SearchWithOtherFilters",
+                  "description": "Detailed example for SearchWithOtherFilters",
+                  "value": {
+                    "limit": 100,
+                    "offset": 1,
+                    "filters": {
+                      "title": "Event",
+                      "cohortId": "0278fd6a-ed93-4f29-b961-d3c87697c76a"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Searched" },
+          "500": { "description": "Internal Server Error" }
+        },
+        "tags": ["Create Event"]
+      }
+    },
+    "/event-service/event/v1/{id}": {
+      "patch": {
+        "operationId": "EventController_updateEvent",
+        "summary": "Edit Events",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "userId",
+            "required": true,
+            "in": "query",
+            "description": "UserId Required",
+            "schema": { "example": "123e4567-e89b-12d3-a456-426614174000" }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/UpdateEventDto" },
+              "examples": {
+                "EditThisAndFollowingWeeklyOnline": {
+                  "summary": "Example for EditThisAndFollowingWeeklyOnline",
+                  "description": "Detailed example for EditThisAndFollowingWeeklyOnline",
+                  "value": {
+                    "isMainEvent": true,
+                    "title": "Modify following events",
+                    "startDatetime": "2024-12-20T02:00:00Z",
+                    "endDatetime": "2024-12-20T03:00:00Z",
+                    "onlineProvider": "Zoom",
+                    "onlineDetails": {
+                      "id": "123-456-0000",
+                      "url": "http://zoom.us/j/mymeeting?pwd=xyz",
+                      "password": "xxxxxxx",
+                      "occurrenceId": "",
+                      "providerGenerated": false
+                    },
+                    "erMetaData": {
+                      "topic": "#",
+                      "subTopic": "Type of C",
+                      "mentorId": "1244546647"
+                    },
+                    "recurrencePattern": {
+                      "frequency": "weekly",
+                      "interval": 2,
+                      "daysOfWeek": [3, 5],
+                      "recurringStartDate": "2024-12-06T02:00:00Z",
+                      "endCondition": {
+                        "type": "endDate",
+                        "value": "2024-12-30T03:00:00Z"
+                      }
+                    }
+                  }
+                },
+                "EditThisWeeklyOnline": {
+                  "summary": "Example for EditThisWeeklyOnline",
+                  "description": "Detailed example for EditThisWeeklyOnline",
+                  "value": {
+                    "isMainEvent": false,
+                    "title": "Modify this event ie 0c8abb6b-02c3-4eb3-88df-b58d9027958e ",
+                    "startDatetime": "2024-12-21T02:00:00Z",
+                    "endDatetime": "2024-12-21T03:00:00Z",
+                    "onlineProvider": "GoogleMeet",
+                    "onlineDetails": {
+                      "id": "123-456-0000",
+                      "url": "https://meet.google.com/hex-uqed-zpp",
+                      "password": "xxxxxxx",
+                      "occurrenceId": "",
+                      "providerGenerated": false
+                    },
+                    "erMetaData": {
+                      "topic": "#",
+                      "subTopic": "Type of C",
+                      "mentorId": "1244546647"
+                    }
+                  }
+                },
+                "EditThisOneDayOnline": {
+                  "summary": "Example for EditThisOneDayOnline",
+                  "description": "Detailed example for EditThisOneDayOnline",
+                  "value": {
+                    "isMainEvent": true,
+                    "title": "Modify this event ie 0c8abb6b-02c3-4eb3-88df-b58d9027958e ",
+                    "startDatetime": "2024-12-21T02:00:00Z",
+                    "endDatetime": "2024-12-21T03:00:00Z",
+                    "onlineProvider": "GoogleMeet",
+                    "onlineDetails": {
+                      "id": "123-456-0000",
+                      "url": "https://meet.google.com/hex-uqed-zpp",
+                      "password": "xxxxxxx",
+                      "occurrenceId": "",
+                      "providerGenerated": false
+                    },
+                    "erMetaData": {
+                      "topic": "#",
+                      "subTopic": "Type of C",
+                      "mentorId": "1244546647"
+                    }
+                  }
+                },
+                "EditThisAndFollowingWeeklyOffline": {
+                  "summary": "Example for EditThisAndFollowingWeeklyOffline",
+                  "description": "Detailed example for EditThisAndFollowingWeeklyOffline",
+                  "value": {
+                    "isMainEvent": true,
+                    "title": "Modify following events",
+                    "startDatetime": "2024-12-20T02:00:00Z",
+                    "endDatetime": "2024-12-20T03:00:00Z",
+                    "location": "Pune",
+                    "recurrencePattern": {
+                      "endCondition": {
+                        "type": "endDate",
+                        "value": "2024-12-25T03:00:00Z"
+                      },
+                      "frequency": "weekly",
+                      "interval": 1,
+                      "daysOfWeek": [2, 1, 3],
+                      "recurringStartDate": "2024-12-19T02:00:00Z"
+                    },
+                    "metadata": {
+                      "category": "Recurring online",
+                      "courseType": "Foundation Course",
+                      "subject": "Basic Language",
+                      "teacherName": "Sudhakar",
+                      "cohortId": "2447aa0c-4111-4cb9-94d1-9898ef6975a1",
+                      "cycleId": "",
+                      "tenantId": ""
+                    },
+                    "erMetaData": {
+                      "topic": "#",
+                      "subTopic": "Type of C",
+                      "mentorId": "1244546647"
+                    }
+                  }
+                },
+                "EditThisWeeklyOffline": {
+                  "summary": "Example for EditThisWeeklyOffline",
+                  "description": "Detailed example for EditThisWeeklyOffline",
+                  "value": {
+                    "isMainEvent": false,
+                    "title": "Modify this event in other recurring events",
+                    "startDatetime": "2024-12-29T02:00:00Z",
+                    "endDatetime": "2024-12-29T04:00:00Z",
+                    "location": "Chandani Chowk",
+                    "metadata": {
+                      "category": "Recurring online",
+                      "courseType": "Foundation Course",
+                      "subject": "Basic Language",
+                      "teacherName": "Sudhakar",
+                      "cohortId": "2447aa0c-4111-4cb9-94d1-9898ef6975a1",
+                      "cycleId": "",
+                      "tenantId": ""
+                    },
+                    "erMetaData": {
+                      "topic": "#",
+                      "subTopic": "Type of C",
+                      "mentorId": "1244546647"
+                    }
+                  }
+                },
+                "EditThisOneDayOffline": {
+                  "summary": "Example for EditThisOneDayOffline",
+                  "description": "Detailed example for EditThisOneDayOffline",
+                  "value": {
+                    "isMainEvent": true,
+                    "title": "Modify this event ie  ",
+                    "startDatetime": "2024-12-29T02:00:00Z",
+                    "endDatetime": "2024-12-29T04:00:00Z",
+                    "location": "Chandani Chowk",
+                    "metadata": {
+                      "category": "Recurring online",
+                      "courseType": "Foundation Course",
+                      "subject": "Basic Language",
+                      "teacherName": "Sudhakar",
+                      "cohortId": "2447aa0c-4111-4cb9-94d1-9898ef6975a1",
+                      "cycleId": "",
+                      "tenantId": ""
+                    },
+                    "erMetaData": {
+                      "topic": "#",
+                      "subTopic": "Type of C",
+                      "mentorId": "1244546647"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Event updated successfully" },
+          "500": { "description": "Internal Server Error" }
+        },
+        "tags": ["Create Event"]
+      }
+    }
+  },
+  "info": {
+    "title": "Event Management",
+    "description": "CRUD API",
+    "version": "1.0",
+    "contact": {}
+  },
+  "tags": [],
+  "servers": [],
+  "components": {
+    "schemas": {
+      "MeetingDetailsDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Meeting ID",
+            "example": 94292617
+          },
+          "url": {
+            "type": "string",
+            "description": "Meeting url",
+            "example": "https://example.com/meeting"
+          },
+          "password": {
+            "type": "string",
+            "description": "Meeting password",
+            "writeOnly": true
+          },
+          "providerGenerated": {
+            "type": "string",
+            "description": "providerGenerated",
+            "default": false
+          }
+        },
+        "required": ["id", "url", "password", "providerGenerated"]
+      },
+      "EndCondition": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Type of end condition",
+            "example": "endDate"
+          },
+          "value": {
+            "type": "string",
+            "description": "Value of end condition",
+            "example": "2024-03-18T10:00:00Z | 5"
+          }
+        },
+        "required": ["type", "value"]
+      },
+      "RecurrencePatternDto": {
+        "type": "object",
+        "properties": {
+          "frequency": {
+            "type": "string",
+            "enum": ["daily", "weekly"],
+            "description": "Frequency",
+            "example": "daily"
+          },
+          "interval": {
+            "type": "number",
+            "description": "Interval",
+            "example": 1,
+            "default": 1
+          },
+          "daysOfWeek": {
+            "description": "Days of Week",
+            "example": [1, 3, 5],
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "endCondition": {
+            "description": "End Condition",
+            "example": { "type": "endDate", "value": "2024-03-18T10:00:00Z" },
+            "allOf": [{ "$ref": "#/components/schemas/EndCondition" }]
+          }
+        },
+        "required": ["frequency", "interval", "daysOfWeek", "endCondition"]
+      },
+      "CreateEventDto": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "title",
+            "example": "Sample Event"
+          },
+          "shortDescription": {
+            "type": "string",
+            "description": "Short Description",
+            "example": "This is a sample event"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description",
+            "example": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          },
+          "eventType": {
+            "type": "string",
+            "enum": ["online", "offline"],
+            "description": "Event Type",
+            "example": "online"
+          },
+          "isRestricted": {
+            "type": "string",
+            "description": "isRestricted",
+            "example": true
+          },
+          "autoEnroll": {
+            "type": "string",
+            "description": "autoEnroll",
+            "example": true
+          },
+          "startDatetime": {
+            "type": "string",
+            "description": "Start Datetime",
+            "example": "2024-03-18T10:00:00"
+          },
+          "endDatetime": {
+            "type": "string",
+            "description": "End Datetime",
+            "example": "2024-03-18T10:00:00"
+          },
+          "location": {
+            "type": "string",
+            "description": "Location",
+            "example": "Event Location"
+          },
+          "longitude": {
+            "type": "number",
+            "description": "Latitude",
+            "example": 18.508345134886994
+          },
+          "latitude": {
+            "type": "number",
+            "description": "Latitude",
+            "example": 18.508345134886994
+          },
+          "onlineProvider": {
+            "type": "string",
+            "description": "Online Provider",
+            "example": "Zoom"
+          },
+          "isMeetingNew": {
+            "type": "boolean",
+            "description": "isMeetingNew",
+            "example": false
+          },
+          "meetingDetails": {
+            "description": "Online Meeting Details",
+            "example": {
+              "url": "https://example.com/meeting",
+              "id": "meeting-id"
+            },
+            "allOf": [{ "$ref": "#/components/schemas/MeetingDetailsDto" }]
+          },
+          "maxAttendees": {
+            "type": "number",
+            "description": "Max Attendees",
+            "example": 100
+          },
+          "attendees": {
+            "type": "object",
+            "description": "Attendees",
+            "example": [
+              "eff008a8-2573-466d-b877-fddf6a4fc13e",
+              "e9fec05a-d6ab-44be-bfa4-eaeef2ef8fe9"
+            ]
+          },
+          "recordings": {
+            "type": "object",
+            "description": "Recordings",
+            "example": { "url": "https://example.com/recording" }
+          },
+          "status": {
+            "type": "string",
+            "description": "Status",
+            "example": "live"
+          },
+          "idealTime": {
+            "type": "string",
+            "description": "idealTime",
+            "example": 120
+          },
+          "registrationStartDate": {
+            "type": "string",
+            "description": "registrationStartDate",
+            "example": "2024-03-18T10:00:00"
+          },
+          "registrationEndDate": {
+            "type": "string",
+            "description": "registrationEndDate",
+            "example": "2024-03-18T10:00:00"
+          },
+          "isRecurring": {
+            "type": "string",
+            "description": "isRecurring",
+            "example": true
+          },
+          "recurrencePattern": {
+            "description": "recurrencePattern",
+            "example": { "frequency": "daily", "interval": 1 },
+            "allOf": [{ "$ref": "#/components/schemas/RecurrencePatternDto" }]
+          },
+          "metaData": {
+            "type": "object",
+            "description": "Event meta data",
+            "example": ""
+          },
+          "erMetaData": {
+            "type": "object",
+            "description": "Meta data for recurring events",
+            "example": ""
+          }
+        },
+        "required": [
+          "title",
+          "shortDescription",
+          "description",
+          "eventType",
+          "isRestricted",
+          "autoEnroll",
+          "startDatetime",
+          "endDatetime",
+          "location",
+          "longitude",
+          "latitude",
+          "onlineProvider",
+          "isMeetingNew",
+          "meetingDetails",
+          "maxAttendees",
+          "attendees",
+          "recordings",
+          "status",
+          "idealTime",
+          "registrationStartDate",
+          "registrationEndDate",
+          "isRecurring",
+          "recurrencePattern",
+          "metaData",
+          "erMetaData"
+        ]
+      },
+      "DateRangeDto": {
+        "type": "object",
+        "properties": {
+          "after": {
+            "type": "string",
+            "example": "2024-07-24T00:00:00Z",
+            "description": "ISO 8601 format date-time representing the start of the range"
+          },
+          "before": {
+            "type": "string",
+            "example": "2024-07-27T23:59:59Z",
+            "description": "ISO 8601 format date-time representing the end of the range"
+          }
+        },
+        "required": ["after", "before"]
+      },
+      "FilterDto": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "description": "Start date range filter",
+            "allOf": [{ "$ref": "#/components/schemas/DateRangeDto" }]
+          },
+          "startDate": {
+            "description": "Start date range filter",
+            "allOf": [{ "$ref": "#/components/schemas/DateRangeDto" }]
+          },
+          "endDate": {
+            "description": "End date range filter",
+            "allOf": [{ "$ref": "#/components/schemas/DateRangeDto" }]
+          },
+          "status": {
+            "example": ["live", "draft", "inActive", "archived"],
+            "description": "Array of status values: live, draft, inActive,archived",
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "eventType": {
+            "example": ["online", "offline"],
+            "description": "Array of status values: online, offline",
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "title": {
+            "type": "string",
+            "example": "Event Title",
+            "description": "Event title"
+          },
+          "cohortId": {
+            "type": "string",
+            "example": "76a5e84a-4336-47c8-986f-98f7ad190e0b",
+            "description": "Cohort"
+          },
+          "createdBy": {
+            "type": "string",
+            "example": "eff008a8-2573-466d-b877-fddf6a4fc13e",
+            "description": "CreatedBy"
+          }
+        },
+        "required": [
+          "date",
+          "startDate",
+          "endDate",
+          "status",
+          "eventType",
+          "title",
+          "cohortId",
+          "createdBy"
+        ]
+      },
+      "SearchFilterDto": {
+        "type": "object",
+        "properties": {
+          "limit": { "type": "number", "description": "Limit" },
+          "offset": { "type": "number", "description": "Offset" },
+          "filters": {
+            "description": "Filters for search",
+            "allOf": [{ "$ref": "#/components/schemas/FilterDto" }]
+          }
+        },
+        "required": ["limit", "offset", "filters"]
+      },
+      "UpdateEventDto": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "description": "Status",
+            "example": "live"
+          },
+          "title": {
+            "type": "string",
+            "description": "title",
+            "example": "Sample Event"
+          },
+          "isMainEvent": {
+            "type": "string",
+            "description": "isRecurring",
+            "example": true
+          },
+          "onlineDetails": {
+            "description": "Online Meeting Details",
+            "example": {
+              "url": "https://example.com/meeting",
+              "id": "123-456-789"
+            },
+            "allOf": [{ "$ref": "#/components/schemas/MeetingDetailsDto" }]
+          },
+          "erMetaData": {
+            "type": "object",
+            "description": "ErMetaData Details",
+            "example": {
+              "topic": "Java",
+              "mentorId": "1244546647",
+              "subTopic": "Type of fetaures"
+            }
+          },
+          "metadata": {
+            "type": "object",
+            "description": "MetaData Details",
+            "example": {
+              "framework": {
+                "board": "",
+                "medium": "",
+                "grade": "",
+                "subject": "",
+                "topic": "",
+                "subTopic": "",
+                "teacherName": "Vivek Kasture"
+              },
+              "eventType": "PLANNED_SESSION",
+              "doId": "",
+              "cohortId": "71bdbed4-388a-4c79-bd69-65b08e857f1e",
+              "cycleId": "",
+              "tenant": ""
+            }
+          },
+          "startDatetime": {
+            "type": "string",
+            "description": "Start Datetime",
+            "example": "2024-06-02T02:00:00Z"
+          },
+          "endDatetime": {
+            "type": "string",
+            "description": "End Datetime",
+            "example": "2024-06-02T05:00:00Z"
+          },
+          "location": {
+            "type": "string",
+            "description": "Location",
+            "example": "Event Location"
+          },
+          "longitude": {
+            "type": "number",
+            "description": "Latitude",
+            "example": 18.508345134886994
+          },
+          "latitude": {
+            "type": "number",
+            "description": "Latitude",
+            "example": 18.508345134886994
+          },
+          "recurrencePattern": {
+            "description": "recurrencePattern",
+            "example": { "frequency": "daily", "interval": 1 },
+            "allOf": [{ "$ref": "#/components/schemas/RecurrencePatternDto" }]
+          },
+          "onlineProvider": {
+            "type": "string",
+            "description": "Online Provider",
+            "example": "Zoom"
+          }
+        },
+        "required": [
+          "status",
+          "title",
+          "isMainEvent",
+          "onlineDetails",
+          "erMetaData",
+          "metadata",
+          "startDatetime",
+          "endDatetime",
+          "location",
+          "longitude",
+          "latitude",
+          "recurrencePattern",
+          "onlineProvider"
+        ]
+      },
+      "EventAttendeesDTO": {
+        "type": "object",
+        "properties": {
+          "eventId": {
+            "type": "string",
+            "description": "",
+            "example": "bfec8878-623d-40ff-90aa-9bcaf6a73602"
+          },
+          "status": {
+            "type": "string",
+            "description": "Status",
+            "example": "published"
+          }
+        },
+        "required": ["eventId", "status"]
+      },
+      "SearchAttendeesDto": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "string",
+            "description": "The UUID of the user",
+            "example": "014b9a1b-cf76-4fee-8d14-f832bcac61b5"
+          },
+          "eventId": {
+            "type": "string",
+            "description": "The UUID of the event",
+            "example": "bfec8878-623d-40ff-90aa-9bcaf6a73602"
+          }
+        },
+        "required": ["userId", "eventId"]
+      },
+      "UpdateAttendeesDto": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "string",
+            "description": "The UUID of the user",
+            "example": "0050d1cb-64d0-4902-9ef0-a868aa7aa713"
+          },
+          "eventId": {
+            "type": "string",
+            "description": "The UUID of the event",
+            "example": "bfec8878-623d-40ff-90aa-9bcaf6a73602"
+          },
+          "status": {
+            "type": "string",
+            "description": "Status",
+            "example": "unpublished"
+          },
+          "isAttended": {
+            "type": "boolean",
+            "description": "isAttended",
+            "example": true
+          },
+          "duration": {
+            "type": "number",
+            "description": "Duration",
+            "example": 2000
+          },
+          "joinedLeftHistory": {
+            "type": "object",
+            "description": "joinedLeftHistory",
+            "example": {
+              "duration": 28,
+              "joinedDateTime": "2021-12-30 06:08:50.250",
+              "leftDateTime": "2021-12-30 06:09:18.393"
+            }
+          }
+        },
+        "required": [
+          "userId",
+          "eventId",
+          "status",
+          "isAttended",
+          "duration",
+          "joinedLeftHistory"
+        ]
+      }
+    }
+  }
+}

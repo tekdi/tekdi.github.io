@@ -1,0 +1,71 @@
+---
+id: todo-controller-view-list
+title: "Todo List"
+description: "Todo List"
+sidebar_label: "Todo List"
+hide_title: true
+hide_table_of_contents: true
+api: eJy1Vktv2zgQ/ivEnHYBeqM8msS6tUkWCFAgRepe1jACWhzZ7FKiSlJODUP/vRhSlqUoTd1DfbLImW+G8/hmdmAqtMIrU95LSGFmpLkxpbdGa7RPG4XPH5XzwKESVhTo0TpI5zsoRYGQQu3Q3kvgYPFbrSxKSL2tkYMqIYVvNdotcHDZGgsB6Q78tiI1560qV9A0i6iJzn8wcksSL4EyU3osPV2JqtIqC86efHWmpLMRtFl+xSw4bOlpXqGjW60K5XtiZV0s0QIHiS6zqiJQSOFjEGs4mDx3eITCQ5RrOORKx+jsXoj8Gy9YbixzKGy2Bg5C64c8RPJtv4VzalWifFpux/HjgN9FUWk6uroU7/D6Qkwuzs8vJxdX2fVken2ZT6bX+ZWQp9MEk+XI+z56ww+f3vxJY96QsZDY7/5JyT9gqwd+MPW2HSrlEc57a8WWmZw5LzyyjdA1upSRLM/M2ljKGJZ1AekcqnqplaPsSityuqFkqw1KWDQcAsTbPvQQfu5G7To/WnnOgkHemTvaJ6+8/oVPdxssPZsFwZd+xbsIQvWT0flT5Ia3MC3GYhgBztbIIgojbeYNWyKr0ObGFoOHDSA0euxiXIfG6YzNITP0zwd1Ve6/AmlRz1Eojg14B8XZAYmzDojvHy0IgOx5LNxrzMdB1vgk25IYWr+tkdENs6JcIYvM8hukkVtTvJ2As+TsYpJMJ2fJ7PQ6PU/SJPlvlIzPXlhPQZADfyjTvyKIDv+c8M+m6bvpGP+ulK+hN/1pMo+PCRYXXb1ShB5J+nb2AM3ipUqf1oasNqCdAzHsm3NvYFjKXVn1ctbzpeX3112Jc6ebJ4cxMQJ4jHMwwDQRxlWmdDGlZ0kyrhOa1ozmM8vRZ2uUzNVZhs7ltdaB0S9eU/sgJGunboi2Fysa6gFu3AqdEeBQoF8b2hMq0y4Ffg0pnHgjzYmOMg7tJm4JCw40ph8PA/5uXyDdQE4OozYZzNDB4Dt2CAwG2LFK/UH0mzqHsdGSe49v99kd8ueAIvsktmeuY+mqRx6x3X/W0yEUr/ZjqDJV5rGXW3cplawQpVhhQXvXy3K4efxyy95/ugcOlOZ4ePpP0gZFZDRmCZhKpBBhSWtf26+kAWjHJBTTk0oLVVLx1lbTXSyyefAMOIQyW3BYUwmmc9jtlsLhF6ubho7jzkkcKZUTS01tmAvtcGSz2yzhr8e2Y/9mBwYf+vI/bvvrbpgHkALQBrsRVpElKvmGwxqFRBtciFo30dBkRsAH3dE6S1hdh316+DwDDst2LS6MDAUjnqkQxDPZ5mDCY0K/hLMdaFGuarEi2YhJvx/JLvVr
+sidebar_class_name: "post api-method"
+info_path: docs/todo-service/apis/todo-management
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Todo List"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/todo/list"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Todo List
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"userId","required":true,"in":"query","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"limit":{"type":"number","description":"Limit"},"offset":{"type":"number","description":"Offset"},"filters":{"description":"Filters for search","allOf":[{"type":"object","properties":{"assigned_by":{"type":"string","example":"76a5e84a-4336-47c8-986f-98f7ad190e0b","description":"assigned_by"},"assigned_to":{"type":"string","example":"76a5e84a-4336-47c8-986f-98f7ad190e0b","description":"assigned_to"},"context_id":{"type":"string","example":"76a5e84a-4336-47c8-986f-98f7ad190e0b","description":"context_id"},"context":{"type":"string","example":"user","description":"Array of state values: user,cohort","enum":["publish","draft","archived"]},"state":{"type":"string","example":"publish","description":"Array of status values: publish, draft,archived","enum":["publish","draft","archived"]},"title":{"type":"string","example":"Event Title","description":"Event title"},"action_name":{"type":"string","example":"reassign","description":"The action type to be performed","enum":["reassign","delete"]},"status":{"example":["completed","incomplete","rejected"],"description":"Array of status values: completed, incomplete, rejected","type":"array","items":{"type":"string"}},"due_date":{"description":"Due date range filter","allOf":[{"type":"object","properties":{"from":{"type":"string","example":"2024-09-20T18:30:00Z","description":"Start of due date range"},"to":{"type":"string","example":"2024-09-23T18:29:59Z","description":"End of due date range"}},"required":["from","to"],"title":"DueRangeDTO"}]}},"required":["assigned_by","assigned_to","context_id","context","state","title","action_name","status","due_date"],"title":"FiltersDTO"}]}},"required":["limit","offset","filters"],"title":"FilterRequestDTO"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Todo List fetched successfully"},"400":{"description":"Bad request"}}}
+>
+  
+</StatusCodes>
+
+
+      

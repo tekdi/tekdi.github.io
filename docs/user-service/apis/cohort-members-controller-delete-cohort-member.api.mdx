@@ -1,0 +1,71 @@
+---
+id: cohort-members-controller-delete-cohort-member
+title: "Delete Cohort Member"
+description: "Delete Cohort Member"
+sidebar_label: "Delete Cohort Member"
+hide_title: true
+hide_table_of_contents: true
+api: eJyVVMtu2zAQ/BVhTy3AVnaRk26B7UPQFgiS5mQYBS2uI8IUqZAro6qgfy+WlFU7tg+56EXO7MzsUj24Br0k7eyDggIWrnKefmK9RR8WzpJ3xqD/rdAg4ekqCGiklzUS+gDFugcra4QCtAIBHt9a7VFBQb5FAdpCAY2kCgSEssJaQtEDdQ0jAnltX2EYxERCaKWlSBWhFUoVa94Gb7hqaJwNGHj922zON4Wh9Lphh5O/rI4WsuRKZaEtSwxh1xrTwSDgbnZ3CV1Kkpl1lO1caxWrBZKvbP3IOgazERCwbL2mLuYiI/kXcnu0UKw3rPQdddSRndMIqJEqx11JOmPiVEEBeRvQ54d5XkZEcpOnXXmv1cBBoT+kzpzoeeb0UjznqqY4ZaO/Y3cR+9iW+5Yq5/XfODAxAm13LsI1Gd7xXOl9qGT2aCTtnK/hvdfF08syu398AAGsL32cf52BgNJZkiVB0TNz4wLVMmobq9+I6Yx/MkL4h/LGSG25o603vJbyWwPnxwLmser/DCPbmHWhFbeycoEY0vdbGfDFm2Hgz28t+i6Fe5Beyy27X/egdOBnBcVOmoAX6tgjWoICPj2NZ+RzBuK66mNPLDfkIE3LbyBgj106aMNmEMcmfaz6rZKJ+uT4TWV5bKeJXK5+rH6tQIBsOdHT8dnH8RkfWNRVF+eTdKzLV/4LXIX0fRrOYZj2p6WbiGl8x8AsBzYM/wAMYqz1
+sidebar_class_name: "delete api-method"
+info_path: docs/user-service/apis/shiksha-platform
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete Cohort Member"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/user/v1/cohortmember/delete/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Delete Cohort Member
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"id","required":true,"in":"path","schema":{"type":"string"}},{"name":"tenantid","in":"header","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"201":{"description":"Cohort member deleted successfully"},"404":{"description":"Data not found"}}}
+>
+  
+</StatusCodes>
+
+
+      
