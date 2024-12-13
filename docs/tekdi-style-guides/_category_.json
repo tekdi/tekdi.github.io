@@ -1,8 +1,8 @@
 {
   "label": "Tekdi Style Guides",
-  "position": 8,
+  "position": 1,
   "link": {
     "type": "generated-index",
-    "description": "Learn about lanauge specific styleguides being used at Tekdi."
+    "description": "📚 Learn about lanauge specific styleguides being used at Tekdi."
   }
 }
