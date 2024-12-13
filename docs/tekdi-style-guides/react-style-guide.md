@@ -15,7 +15,7 @@ To help you assist in following style guide, we recommend **using tools suggeste
 Learn more about [ESLint tool](../tools/javascript/eslint)
 
 #### Link to React specific docs for ESLint
-- [ESLint, ESLint Plugins Installation](../tools/javascript/eslint#installation-for-react-projects-using-typescript/tools/javascript/eslint#recommended-eslint-configuration-for-react-projects-using-typescript)
+- [ESLint, ESLint Plugins Installation](../tools/javascript/eslint#installation-for-react-projects-using-typescript)
 - [ESLint Configuration](../tools/javascript/eslint#recommended-eslint-configuration-for-react-projects-using-typescript)
 
 ### Prettier
