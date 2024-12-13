@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktekdi_docs=self.webpackChunktekdi_docs||[]).push([[8798],{90421:t=>{t.exports=JSON.parse('{"tag":{"label":"formatter","permalink":"/docs/tags/formatter","allTagsPath":"/docs/tags","count":1,"items":[{"id":"tools/javascript/eslint","title":"ESLint","description":"About","permalink":"/docs/tools/javascript/eslint"}],"unlisted":false}}')}}]);
