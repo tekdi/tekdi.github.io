@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktekdi_docs=self.webpackChunktekdi_docs||[]).push([[8947],{56600:e=>{e.exports=JSON.parse('{"authors":[{"name":"Demo Author","title":"Docusaurus Core Team","url":"https://github.com/wgao19","imageURL":"https://github.com/wgao19.png","key":"demo_author","page":null,"count":4}]}')}}]);
