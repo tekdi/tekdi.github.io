@@ -164,7 +164,7 @@ export default [
           useTabs: true,
         },
       ],
-      indent: ['error', 'tab'],
+      indent: ['error', 'tab', { SwitchCase: 1 }],
     },
   },
   {
