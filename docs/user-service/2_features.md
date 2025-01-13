@@ -22,6 +22,8 @@ sidebar_position: 2
 
 **Edit Cohorts:** Modify or update cohort membership and details, including adding/removing users from a cohort.
 
+**Multi year Support:** Cohorts can be managed on an annual basis, allowing a cohort to be available in previous years but not in the current year, or a new cohort to be added for the current year. This flexibility is enabled through multiyear support.
+
 ### 3. Role Management
 
 **Define Roles:** Ability to create and manage various roles such as Admin, Teacher, and Student. These roles define the level of access and responsibility for users within the system.
@@ -52,6 +54,10 @@ sidebar_position: 2
 
 Custom Field Examples: For instance, a gender field could use a radio button to allow users to select between options like "Male" or "Female." Custom fields are stored separately from core fields and can be managed based on the specific requirements of each tenant or user group.
 
-### 6. User Profile Management:
+### 6. Dynamic Form Management:
+
+**Create Dynamic Form:** The ability to create dynamic forms based on specific requirements using customizable fields.
+
+### 7. User Profile Management:
 
 **View and Update User Profiles:** Ability for users or administrators to view and update personal information stored in the user profiles. This may include core fields or custome fields depends on requirement.

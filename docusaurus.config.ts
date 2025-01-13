@@ -5,7 +5,7 @@ import type * as OpenApiPlugin from "docusaurus-plugin-openapi-docs";
 
 const config: Config = {
   title: "Tekdi Docs",
-  tagline: `CATALYSE • DIGITAL • TRANSFORMATION`,
+  tagline: "CATALYSE • DIGITAL • TRANSFORMATION",
   favicon: "img/favicon.png",
 
   // Set the production url of your site here
@@ -43,6 +43,9 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           // editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+
+          showLastUpdateTime: true, // ++ Tekdi
+          showLastUpdateAuthor: true, // ++ Tekdi
         },
         /*blog: {
           showReadingTime: true,
@@ -82,7 +85,7 @@ const config: Config = {
           attendance: {
             specPath: "swagger/attendance-service.json",
             outputDir: "docs/attendance-service/apis",
-          }
+          },
         },
       },
     ],
