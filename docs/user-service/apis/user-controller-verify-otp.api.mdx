@@ -1,0 +1,71 @@
+---
+id: user-controller-verify-otp
+title: "Verify Otp"
+description: "Verify Otp"
+sidebar_label: "Verify Otp"
+hide_title: true
+hide_table_of_contents: true
+api: eJxtk01z4jAMhv8Ko3NYyh5z67Z76OwBpsBeGGZHJIK4OLErK7RZJv99RzafXbgEy7Ze6X3kAzhPjGJc81JCDotA/OQaYWct8Z89sdl0E/GQgUfGmoQ4QL5cZcD03lKQH67sID/EpWEqIRduKYPCNUKN6BZ6b00RRUZvwTUaC0VFNeo/6TxBDm79RoWoDmtJYijobu3WxtLVuSBsmi30GTjxd+MVhuruBhMe1f/bagNxg/U9oT676m15KijJH8XOqa8SrTIQI1o6TMT/jkY+zyfQ9ylj8K4JqcfvDw/6KSkUbLzapJfm08EerSmjb4NZW1AIm9baLpYkuFUOEZhq3V5OcoMEriapnML1LkSDUSrIYaSljvbjUYI8TP0E4v0ZcaCiZSPdTGGlWrHQOobidnTtJHrzizrIwKh8RVgSQwbJUnhspXJs/sZWYvk6Bq+XAfr5ibVPmE/AT/4fOV+WCe9lfaJ6iVxgXhE2zcbFgo9QZpXZhQoHU4uycVzDVw+fXhfPg8fpC2SgjqTg+NsDpNnGQmdbe1Fba4xuHFVv7L/JejZM6FNG3qJp4vix1b1EZhkbUNlx0j7RWWVQKcJ8CYfDGgMt2Pa9ht9b4i4x2yMbXGuLy5U+hoQiXx5gR522ld7lcK516HHbJoBf3mi/upqc6WQ2hwzWx7deu1LvMH6o//gBOSin2GOckhg7gMVm2+JWz6ac+vsHaYmFcQ==
+sidebar_class_name: "post api-method"
+info_path: docs/user-service/apis/shiksha-platform
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Verify Otp"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/user/v1/verify-otp"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Verify Otp
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"mobile":{"type":"string"},"otp":{"type":"string"},"hash":{"type":"string"},"reason":{"type":"string"},"username":{"type":"string"}},"required":["mobile","otp","hash","reason","username"],"title":"OtpVerifyDTO"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OTP validation Sucessfully"}}}
+>
+  
+</StatusCodes>
+
+
+      

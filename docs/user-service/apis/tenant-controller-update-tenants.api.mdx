@@ -5,7 +5,7 @@ description: "Update Tenants"
 sidebar_label: "Update Tenants"
 hide_title: true
 hide_table_of_contents: true
-api: eJyNVE1v2zAM/SsGTxugLs22k29dsmLBgCHox6kICsZmYrW25Ep02izwfx8oJU4ae9h8sc2Pp0fxkTuwNTlkbc0shxTuyKDhiTXsbFmSe2zqHJmi2YOCGh1WxOQ8pA87MFgRpKBzUODopdGOckjZNaRAG0jhpSG3BQU+K6hCSHfA21pSPDtt1tC2qkNpPLnZe6QVlv7/oRYxlTx/s/lWIs45ZdYwGRYX1nWps1D66MlbI7YetF0+UcZSt5OLYk1evJHwOQEFOfnM6Vowu8tMQrD4VtiUDClAqyC3FWrzb4xpiEt+DWGEXvghtu8x5jGul+7s2mE1q3BNfuA6z2AG/J6Rm4HUcwK3IS6xq4QLSjhcCygg01SQPgBmrDdSnjbdJ7qskK/FKeu9t20VsOaSuju+DyqdsoW2Fa8jX1vjY1mfL8fyGuzNFBmTa+KskHq+Xn7pR15bt9R5Tiac+94Xz02O41ERF1YGqUbBlB5xASmMRNujzXgUix/FsRIxk9vEYVrIT9Y4zdtbkWEkj1lG3l+wfabTHmCtf9IW9pNREObkQB0G6arhwjr9O4g70BaB3xxH4/sbVnVJRymfdG4vzKOlk1lfM39reGc+KKRrnTBe2VDJvoO3hX72BSbzEnllXdUDm9zcT5Or+QwUyFVF4/jTJcRxxkzGWYqsrecKzUlVvf4MK5rpjUd1KXW3ChpXii927iFsJTl6DAo66e77t1BQWM8Sttst0dO9K9tWzHFZyYrMtcdlebLMzjh0Kwk+3Oy31cdEzhri9kzbw7rdYNlQHOWBQ2Jgt1GPwQv5cVqiRXStOqhHuMasSWR0cScMjrm9hSlYneDnV3eTH6Bgud+8lc0lyeGrLHR8lcMV2FB2UHaw7aBEs25wLbERVJ4/QGg+ng==
+api: eJytVUtv2kAQ/ivWnFrJqUPbk28JaRTUS5THCaFq8A54E3vX2R2TUOT/Xs0uGCemPZULYufxzeP7hh3YhhyytmamIIcHMmh4ag07W1XkfrWNQqb47CGFBh3WxOQ85PMdGKwJctAKUnD00mpHCnJ2LaWgDeTQIJeQgi9KqhHyHfC2kQjPTps1dF3aJ2k9udlfE7205Lb/zLSIkeT50qqteHxMVFjDZFhM2DSVLkLj2ZO3Rt5Gqe3yiQqWrp2MiTV5scZ6RwWkoGyN2pw0hbn5ce4uJF87rGc1rmnogc6hdKyZ3kUeRweKfOF0I12cRPWM3J6I/RAJ98EvsauES0o4bBtSINPWkM+haZeV9iXJcpTDldjQFaXekIKFJFthW7Gsu/fsUigcIZO63J6eSGz7hlCdbo41V9Rz8jEQ8YotdJ1YHfnGGh8n9vV8Il/vm4pxyRUyJtfERSmo38+/jT2vrVtqpchEXFwLuffxsb+hd6wkOWqiJi6timQvyiASLiGHTBidbSZZHGgWtZTttOqEyOQ2UUYL+VG0TvP2XigYe8KiIO/P2D7TcLnY6J8UaCG1lISKHKQHDV20XFqnfwdih26E3HdHWfx4w7qp6EjjASX27D2+9KQds3R+8BqNp48+kO8dfQacGOAMqTCgiDYrG1rfM+G+1M++xOS2Ql5ZV494PL17vEoubmeQgsw2Pk6+nEPUPhaifZlKYz3XaAZjGG31tLaY3jhrKhlUl0LrKrHFfc/DBRPoCaTQiyhuHVLIdRBLaT2L8263RE+Pruo6eY73TW6q0h6XlVytFVaeRpX0Vww+3e0P3OdEEE9V+Ezb4WndYNWKE8i13KDTgvT/UQ9cNdsh5qEaraBbdOmBvIIeDdOIcfYg4cfA0a2W4nvR3V48TG8gheX+6NdWSZDDV/krwdeIbEMjQVjhbQcVmnWLa/GNSeXzB1pLaQE=
 sidebar_class_name: "patch api-method"
 info_path: docs/user-service/apis/shiksha-platform
 custom_edit_url: null
@@ -28,7 +28,7 @@ import Heading from "@theme/Heading";
 
 <MethodEndpoint
   method={"patch"}
-  path={"/user/v1/tenant/update"}
+  path={"/user/v1/tenant/update/{id}"}
   context={"endpoint"}
 >
   
@@ -47,14 +47,14 @@ Update Tenants
 </Heading>
 
 <ParamsDetails
-  parameters={[{"name":"id","required":true,"in":"query","schema":{"type":"string"}},{"name":"userId","required":false,"in":"query","schema":{"type":"string"}}]}
+  parameters={[{"name":"id","required":true,"in":"path","schema":{"type":"string"}},{"name":"userId","required":true,"in":"query","schema":{"type":"string"}}]}
 >
   
 </ParamsDetails>
 
 <RequestSchema
   title={"Body"}
-  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"name":{"type":"string","description":"Tenant name","default":""},"domain":{"type":"string","description":"Domain Name","default":""},"params":{"type":"object","description":"Params","default":""},"programImages":{"type":"string"},"description":{"type":"string"},"status":{"type":"string","description":"Status of the tenant","enum":["active","inactive","archive"],"default":"active"}},"title":"TenantUpdateDto"}}}}}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"name":{"type":"string"},"domain":{"type":"string"},"params":{"type":"object"},"programImages":{"type":"array","items":{"type":"string"}},"description":{"type":"string"},"status":{"type":"string","description":"Status of the tenant","enum":["published","draft","archived"],"default":"published"},"createdBy":{"type":"string"},"programHead":{"type":"string"}},"title":"TenantUpdateDto"}}}}}
 >
   
 </RequestSchema>

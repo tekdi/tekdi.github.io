@@ -5,7 +5,7 @@ description: "Create Tenants"
 sidebar_label: "Create Tenants"
 hide_title: true
 hide_table_of_contents: true
-api: eJyFlE1v2zAMhv+KwdMGqEuz7eTb1m5AsGILmvYUBANjM7Fa2XIpum0W+L8PlPI5F5hvlshXr8hH3IJviVGsbyYl5HBHDTZy5Rth7xzx74IJhdJyAAMtMtYkxAHy+RYarAly6ALxpAQDTE+dZSohX6ELZMA2kMNTR7wBA6GoqEbItyCbVvOCsG3W0PeLlEpBvvpyoxFHJeGODBS+EWpEt7BtnS2i6dFD8I2uDaT98oEKUcesVxRLQXeT4X8NGCgpFGxb1TyUIYvBurfCzgnkAL2B0tdom/9rXMe47OdbGrGK4S235xrTFDdIZ79mrCc1rtOtzrNubJDMr7JdWGZjXPbu/vYmZJ4zLxVxxuRQqMyS/fAezN4MMqO2ywqdmTx0qz9t9DzVdGFArDg6QhTJuRavCTEjtL4JyfDHy/HQ967qKbHMZl1RUAirzrmN3vrz5adhznfPS1uW1ICecb6XhLIjvDVJ5RXz1oeIBkoFOYwU39HzeCQxcpSYV16JnxPpC/0pOraymSlp6RYYDV6If6RTILC1PygWUF1UhCUxmP1b+dJJ5dn+ifxG18rw7ZH+b69Yt46OtJ4QtmPvuHIgaYjFfB+16NXKykeLux7NKvsYKsymDmXluR6gd3V7f519mU7AgNYgLY4/XEJ6iljoU1T3WssamxO7g7qfKR/KJPQqo9bphXoDHTvdSy2Zx4miR48VyyikB6fGLAxU2sB8DtvtEgPds+t7XU6DRgdTaQMu3ckgeqTN6aB6RtdRfE4L/WGr0dro3uw7pjIp6yrNnos7NX7MHcwh1TowNv01uwMDy908q32pOYwvOibxRc824GNRIkxxbQsOm3WHa41Nmvr9BYvC7wQ=
+api: eJxtVE1v2zAM/SsBTxugLsm2k29du2HBDiv6cQqCgbGYWK0suZScNgv83wdKSZzMycUIRT6+Jz5xB74hxmi8m2ko4JEcunjjXWRvLfGfkgkj5XAABQ0y1hSJAxTzHTisCQpoA/FMgwKm19YwaSgit6TAOCjgtSXegoJQVlQjFDuI20bKQmTj1tB1i1xJIX7zeisZ/wOV3kVyUY6waawpE+fxc/BOYgNov3ymMgphFoXRUJDTzHdAQIH2NRp38ShJDkPsLoGvGetZjWs6zUBmFMUm0lnlUbACTaFk04iKy10z9E9CfRmgv6F5lnWOeY6wUBBNtNSPOM31NnrouowWGu9CVvF5MpXPGcV93SgbQo9CW5YUwqq1dit8v06+DGt+eF4arcklxhHX4po9knA6z86cRr3ZaoqVF1s2PqRZYqyggLHYbbyZjmPKHGdKYjDiTXbmQv6ULZu4fRBrZF2YKF9F/0Knl46N+UVpXMKiItTEoA7evm5j5dn8TYZLOsR0971dv79j3Vjq7XWYUu+qPnI009A980PW4GL66lNTnJjFuJVPgvYzfqjMS6hwdGcxrjzXMLjq+6fb0fXdDBTIjeXg9NME8kvDUl6aaJWbr9GdiBtM6bKTI73HcWNFfqegZStneYDztC+k9RQU5CFK4zzGhYJKxl3MYbdbYqAntl0n4bxHZO1oE3BpxfsrtIEGHI7bAj7c75/Jx5H0usTthbanK2yDtpUkkK20QTbSSSzVqYM3hEKuusmNrh4FuK8drCjBOrr57vfDIyhY7ldd7bXUML7JAsU36a3AJzHJtim2A4tu3eJacjOm/P4BnC/55g==
 sidebar_class_name: "post api-method"
 info_path: docs/user-service/apis/shiksha-platform
 custom_edit_url: null
@@ -47,14 +47,14 @@ Create Tenants
 </Heading>
 
 <ParamsDetails
-  parameters={[{"name":"userId","required":false,"in":"query","schema":{"type":"string"}}]}
+  parameters={[{"name":"userId","required":true,"in":"query","schema":{"type":"string"}}]}
 >
   
 </ParamsDetails>
 
 <RequestSchema
   title={"Body"}
-  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"name":{"type":"string","description":"Tenant name","default":""},"domain":{"type":"string","description":"Domain Name","default":""},"params":{"type":"object","description":"Params","default":""},"programImages":{"description":"List of program images (URLs or other related strings)","type":"array","items":{"type":"string"}}},"required":["name"],"title":"TenantCreateDto"}}}}}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"name":{"type":"string"},"domain":{"type":"string"},"params":{"type":"object"},"programImages":{"type":"array","items":{"type":"string"}},"description":{"type":"string"},"programHead":{"type":"string"}},"required":["name","description","programHead"],"title":"TenantCreateDto"}}}}}
 >
   
 </RequestSchema>
@@ -62,7 +62,7 @@ Create Tenants
 <StatusCodes
   id={undefined}
   label={undefined}
-  responses={{"201":{"description":"Tenant Created Successfully"},"403":{"description":"Forbidden"}}}
+  responses={{"201":{"description":"Tenant created successfully"},"403":{"description":"Forbidden"}}}
 >
   
 </StatusCodes>

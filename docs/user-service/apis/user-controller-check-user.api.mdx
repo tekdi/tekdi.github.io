@@ -1,12 +1,12 @@
 ---
-id: tenant-controller-get-tenants
-title: "Get Tenants"
-description: "Get Tenants"
-sidebar_label: "Get Tenants"
+id: user-controller-check-user
+title: "Check User"
+description: "Check User"
+sidebar_label: "Check User"
 hide_title: true
 hide_table_of_contents: true
-api: eJxlUUtv00AQ/ivWd97iBDj5VhWoql4q2p6iCE3sSXZVe9fMjiOM5f+Oxq4CLafVzuN7zYTUs5CGFO8aVHjiSFFvUlRJbcvy48S61jIcehLqWFkyqt3eQTj3KWbOqCZ83GztaTjXEnpDvOAVmUlqX+Shrjnn49C2I2aHz5tP/698S3IITcMR8+ygdDKyVyDs3bvpW9bir8CO1SfzcWJd9KpHhXLILOV5W+oyWApTA4fMcr5YyVwPEnR8rD13qyFaxF5peuFofx17RgXqwz2PcAjG75kaFjhE6qx7PahPEn4vkS4OQjymZT1oaxOPPrxkT8VDS3pM0uG9pZvvz1+K64c7OJi+tbj9sIFDnaJSragmQ+5T1o4Wba/sb9N4A3vRr/xLy76lEO0Eg7TWW5PawZIy3i0c1rRgZ6bGkvcpqw1N04EyP0s7z1b+ObCMa4pnkkAHs7nbz/+c4/brE+b5Dw4e0qI=
-sidebar_class_name: "get api-method"
+api: eJxlkUFvwjAMhf8KeudsrDv2htgF7TA0xgmhKQSzRLRN57horOp/n5wiNLZTFDt+7/NLj9gSWwmxWexRYp2I57ERjlVF/O48uaPWYNBatjUJcUK52RowpTY2iRLKHo8PhR57So5Dq3IogWEwEPuhA1kZW/PnyVwNJheHmsRHpWhjkuwoHiWmXSKenopppoFBIj5dMRK5joOcV85TPcJY5yilO4lHavQu55ZQwrbhmc4wCOrsye6za2Nr7c468ZHDd84ik4fmEPN4kEpfrHw4Jm8ny8rKIXKNf8u8rp8ms+UCBso3Fov7Bxi42Ih1grJXZd2vtpnt4n6Tw43qFV/oS6ZtZUODwaDjSntjRBt04+SpUK8c09bAa4zlBn2/s4nWXA2Dlj874vMY3slysDvdbrMdfn3A8mX1hmH4AV0cthg=
+sidebar_class_name: "post api-method"
 info_path: docs/user-service/apis/shiksha-platform
 custom_edit_url: null
 ---
@@ -22,13 +22,13 @@ import Heading from "@theme/Heading";
 <Heading
   as={"h1"}
   className={"openapi__heading"}
-  children={"Get Tenants"}
+  children={"Check User"}
 >
 </Heading>
 
 <MethodEndpoint
-  method={"get"}
-  path={"/user/v1/tenant/read"}
+  method={"post"}
+  path={"/user/v1/check"}
   context={"endpoint"}
 >
   
@@ -36,7 +36,7 @@ import Heading from "@theme/Heading";
 
 
 
-Get Tenants
+Check User
 
 <Heading
   id={"request"}
@@ -62,7 +62,7 @@ Get Tenants
 <StatusCodes
   id={undefined}
   label={undefined}
-  responses={{"201":{"description":"Tenant search successfully"},"403":{"description":"Forbidden"}}}
+  responses={{"201":{"description":""}}}
 >
   
 </StatusCodes>
