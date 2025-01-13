@@ -1,0 +1,71 @@
+---
+id: user-controller-send-otp
+title: "Send Otp"
+description: "Send Otp"
+sidebar_label: "Send Otp"
+hide_title: true
+hide_table_of_contents: true
+api: eJxdk8Fy4jAMhl+F0dksZY+5dds9dPYAU+CUYXZEIoiLY7u2QpvN5N13ZAOl5EKwLP2/PikDOE8BWTv7UkMBm0jhyVkOzhgKfyPZesEeFHgM2BJTiFCUWwWB3juK/MvVPRRD+qsD1VBw6EhB5SyTZQmh90ZXSWL2Fp2Vs1g11KK8ce8JCnC7N6pYdIIYYk1Roq3baUM39yIHbQ8wigE8F7sLjerGTXkpcU3YKmDNUhQW7Fdk6+f1AsYx50XvbMzaPx8e5KemWAXtxb6krJeTSJYnsasqinHfGdMnTcaDoEkEReR7nuhMMsmWuHHC2ruYOkZuoIBZFynMTvOZMJ+6dDVSOF2JR6q6oLlfCbtsEZOHKbsj3ZJAr/9QDwq0SDeENQVQYLGV6GPHjQv6X5pIsi5Tef2a5+9PbH2mfuF/gfuF/WYS2u5dUj9jXTX6GBucLA3y3oUW7mE8vW6eJ4/LF1Ag7eXD+Y8HyHuDleyNGBNCLabWzuZvOH6ree2d6ZNn3qC2Yq0LRmIZcQmCWETnie0Z81ZBI5MoShiGHUbaBDOOcvzeUegz/BMGjTtpr9yO6sK0KAc4Ui8t5X2frsWFXDddnsTd7o/bmwVYLlZrULA7f0OtqyUn4Idwxg8oABS41GEadzobwKA9dHiQu7mmPP8BDWBK5g==
+sidebar_class_name: "post api-method"
+info_path: docs/user-service/apis/shiksha-platform
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Send Otp"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/user/v1/send-otp"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Send Otp
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"mobile":{"type":"string"},"reason":{"type":"string"}},"required":["mobile","reason"],"title":"OtpSendDTO"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OTP sent successfully"}}}
+>
+  
+</StatusCodes>
+
+
+      

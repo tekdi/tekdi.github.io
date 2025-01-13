@@ -1,0 +1,71 @@
+---
+id: cohort-members-controller-create-bulk-cohort-members
+title: "Bulk Cohort Member Create"
+description: "Bulk Cohort Member Create"
+sidebar_label: "Bulk Cohort Member Create"
+hide_title: true
+hide_table_of_contents: true
+api: eJy1Vdtu2zAM/RWBTxvgNHGappvf2mwPxTCs6OUpCAbaZmI1tuVKctrM8L8PtBLn4q7obn6zKJKHPIdUBaogjVaq/CqGACYqUdp+pSwkbSYqt1qlKenvkSa0dFmmy4Mb4EGBGjOy/BNMK8gxIwigNKSvYvBA02MpNcUQWF2SBzKHAB5L0mvwICYTaVlw9tZHtB4e0DNmRcrx/OEpjc7G5z368DHs+cP4tIejs3FvNByP/ZF/PhoMBuCBiRLKEIIK7LpgP2O1zBdQ114LDSOMKZPRmlBLztJASghj0i8AfktISznm9q+CzdxlMvZSxWu+cewbqdxSbtmERZHKqGGt/2C4eVU3tAofKLLMkGaOrSTD1g0zQXXU/buEhLMZoebCJiSihmqRtVxvIqPWyPRJS5l5sTPgXH+VZ2v9F5k0ZWpFkzfms0qEJJxPLOZaZb+RrN4ndLrTeFtsB83MAytto+Dj2eF4TUBTqNw4boYDv1uAcxLOSyRoREiUCzeRsTBlFJEx8zJN1ydNRywueBYPHRnKYVwGJA6DT5qY4EFGNlG8DwplGgmhTSCAPpfcX/l9V7Gjqx9yZVtPQ3rldsGMf6JSS7u+ZW26ErFB27NqSflej7GQX2jdmZ/NfF2UNlFa/mgU39TIqr/Zzcvn7aLY6Xu65W22r8b902Pl7Gw145irBt+GvttELk2C4jpFO1c662yvyc39J3FxfQUecAPcoX8yADe5GPHkMnRuaYZN8ZvyXmPiIEnbLkvPtl+kKHOoPSh1yjZHktMlo/BbaTqiwIM9qmYeJExuMIWqCtHQvU7rmo/dduZlHkuDYcpqn2NqqIOmXUnw7mYzGO9Fd42/CHpJ6/13YoVpyZeAN+EKteTErKLa28rhjxG9DqHzHuygeP8l4d5rcZDKWScuYO+OA+xudFY+96kd0+tvt3dM7+bpyFTMPhqfeCXhE2fwQDWgmylszipIMV+UuOC7LiZ/PwFFZsQK
+sidebar_class_name: "post api-method"
+info_path: docs/user-service/apis/shiksha-platform
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Bulk Cohort Member Create"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/user/v1/cohortmember/bulkCreate"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Bulk Cohort Member Create
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"userId","required":true,"in":"query","description":"userId required","example":"123e4567-e89b-12d3-a456-426614174000","schema":{"type":"string"}},{"name":"academicyearid","in":"header","required":true,"schema":{"type":"string"}},{"name":"tenantid","in":"header","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"userId":{"description":"The userIds of the cohort members","type":"array","items":{"type":"string"}},"cohortId":{"description":"The cohortIds of the cohort members","type":"array","items":{"type":"string"}},"removeCohortId":{"description":"The cohortIds to be removed from","type":"array","items":{"type":"string"}}},"required":["userId","cohortId","removeCohortId"],"title":"BulkCohortMember"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"201":{"description":"Cohort Member has been created successfully."}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -5,7 +5,7 @@ description: "Create Cohort Member"
 sidebar_label: "Create Cohort Member"
 hide_title: true
 hide_table_of_contents: true
-api: eJy1VMtu2zAQ/BVhz0wc96hb6vQQBEWDPA6FYRRram0xlkiFpNyogv69WFKWLdsB0qK9yJb2wdnZGbZgKrLoldG3GaQwM7mx/iuVS7JuZrS3pijI/pCW0NMoCgIqtFiS55d03oLGkiCFjLZKkspAgNKQQk6YkQUBTuZUIqQt+KbiTOet0mvoOjEUo8SMSiUbQvuXLTxp1P6PihcCLL3W5PxnkzWcwa/KUgaptzUJkEZ70p5DWFWFkoGzyYszmr+dtDbLF5KeObLMsFfkOCoDg0z1MQgBGTlpVcV9IYWnnJJddmJWiR/ek3JYQEYrrAsPKUAn+ubXPYPfCe1HDjpbddy6dvShZow65n4IcycOiJ7v2XlnlgHHQoBXvqBjxd54A10X27rKaBdZ/3Q15Z8x1FiYxMokR5csiXQSlZ4lrpaSnFvVRdFcBqQe16zzcSFDcSRrq3wTTICh7MKbDWlI5wvW1tHB4YRk3EZAST437MHKuCAc9DmkMOGRJ9vpJDISeZxElKxpstvovwMgj6zGOPoYzrA+rNQdNScO6R10XfvcWPUraDzMzjp/2DvkyxuWFdN/qOi9Js4LcR/fqWkwIONYmYCvX+tjrjYux+S+QL8ytjxR2uzh+Sa5vr8FAUxA/Di9vILoVZTsVYbOdJYYhu/He2cBo/4DU57e/KQqUOngA1twLO5mHgZhANNh6HLXrd/QQkDO+0zn0LZLdPRsi67jz6812SbubYtW4ZLnni86sVsHqylTjgMZpCssHJ2AHK4lAHEe8Yaa8Z28xaKmaOt/1//k2v4vpxzc7KP+MTqLXS6euME+4+S6ZkcOZrv/9vgEApb9tV+ajGss/gQRngGSCUiDn8K3FgrU6xrXnBt7stKwZlUcemwTPNb/4X3uQro5QDi2225YfvJwZ0vaNjq464b8GHq3YvB4zGZaF13X/QbJdLze
+api: eJy1VU1v2zAM/SsGTxugNs2OvnXtDsUwrOjHYQiCgbGZWI0tuZKc1jP83wdKjmMn6ZAO26WpRfHpkXxPakCXZNBJrW5SiOFKZ9q4b1QsyNgrrZzReU7mZ2IIHY2iIKBEgwU5/ohnDSgsCGKoLJmbFAQYeq6koRRiZyoSIBXE8FyRqUGATTIqEOIGXF1ymnVGqhW0reiRUtrIhCRj+dyMMCVzYjImmFIhk5rQ/CWEI4XKvSt5Hsom6z7rtOYd+11ItHKkHIewLHOZ+O5PnqxWvHYArRdPlDjutuFZOUmWo4mfBQ9tn4SAlGxiZMm4EMNDRtF2d6SXkeu/o6IfZUpLrHIHMUArOvDLroM/CM0pBx3N2ofu1HES67D3JM7tUG6zXXfeqKXnMRfgpMtpX/vXTkPbBlhbamVD1z9dTPlnTDUkRiEzytBGCyIVBc+kka2ShKxdVnlen3umDlfsmHEiU7GUVEa62tsJfdqZ02tSEM/mrK29g/0J0RhGQEEu0+zmUlsvHHQZxDDhkieb6SR0JPRxEliypslsgpMHRO5ZjaH0MZ1+fFjKr1QfOKRz0GXlMm3kL69xXzvr/G7nkC+vWJTc/qGid5o4LsRdfKum3oDMY6k9v26s95lc2wyj2xzdUpviQGlXd4/X0eXtDQjgBoTF6fkFBK9iwl5l6tzOAn3xXXlvDGCE33fK0aublDlK5X1gco6F2cx8IUxg2hddbNG6Cc0FZDzPeAZNs0BLjyZvW14OVypLJpUWFzlbYIm5pQMm/d0DH+46t3yMQBxnuKZ6eJtvMK/Ie23OH0bySV6XYjv291H487mDu393svh3+AfPw385ZfCCjPBD9CqgnD0wwG7HwbPAHe9Nffv9/gEELLrnpdAp5xh84RcXXwIl7Zl63/q1BnJUqwpXvDdgsqKxYvUNvbz2Xu7+4XluQ6oeMBzbelss/+XijqY0Tbgp2rbfH0JvZvR3SdjNbZ23bfsbYd/4mQ==
 sidebar_class_name: "post api-method"
 info_path: docs/user-service/apis/shiksha-platform
 custom_edit_url: null
@@ -47,7 +47,7 @@ Create Cohort Member
 </Heading>
 
 <ParamsDetails
-  parameters={[{"name":"deviceid","in":"header","schema":{"type":"string"}},{"name":"academicyearid","in":"header","schema":{"type":"string"}},{"name":"tenantid","in":"header","schema":{"type":"string"}}]}
+  parameters={[{"name":"userId","required":true,"in":"query","schema":{"type":"string"}},{"name":"deviceid","in":"header","schema":{"type":"string"}},{"name":"academicyearid","in":"header","schema":{"type":"string"}},{"name":"tenantid","in":"header","schema":{"type":"string"}}]}
 >
   
 </ParamsDetails>

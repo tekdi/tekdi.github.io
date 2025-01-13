@@ -600,6 +600,7 @@
         "responses": {
           "201": { "description": "User created successfully" },
           "403": { "description": "User already exist." },
+          "409": { "description": "Duplicate data." },
           "500": { "description": "Internal Server Error" }
         },
         "tags": ["User"]
@@ -621,7 +622,7 @@
         ],
         "requestBody": {
           "required": true,
-          "description": "Exampls are given for creating user with different roles and different cutom fields.",
+          "description": "Examples are given for creating user with different roles and different cutom fields.",
           "content": {
             "application/json": {
               "schema": { "$ref": "#/components/schemas/UserUpdateDTO" },
@@ -887,14 +888,13 @@
           }
         },
         "responses": { "201": { "description": "User list." } },
-        "tags": ["User"],
-        "security": [{ "access-token": [] }]
+        "tags": ["User"]
       }
     },
     "/user/v1/password-reset-link": {
       "post": {
         "operationId": "UserController_sendPasswordResetLink",
-        "summary": "Passwort reset",
+        "summary": "Password reset",
         "parameters": [],
         "requestBody": {
           "required": true,
@@ -952,6 +952,15 @@
         "security": [{ "access-token": [] }]
       }
     },
+    "/user/v1/check": {
+      "post": {
+        "operationId": "UserController_checkUser",
+        "summary": "Check User",
+        "parameters": [],
+        "responses": { "201": { "description": "" } },
+        "tags": ["User"]
+      }
+    },
     "/user/v1/delete/{userId}": {
       "delete": {
         "operationId": "UserController_deleteUserById",
@@ -973,11 +982,72 @@
         "security": [{ "access-token": [] }]
       }
     },
+    "/user/v1/send-otp": {
+      "post": {
+        "operationId": "UserController_sendOtp",
+        "summary": "Send Otp",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/OtpSendDTO" }
+            }
+          }
+        },
+        "responses": { "200": { "description": "OTP sent successfully" } },
+        "tags": ["User"]
+      }
+    },
+    "/user/v1/verify-otp": {
+      "post": {
+        "operationId": "UserController_verifyOtp",
+        "summary": "Verify Otp",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/OtpVerifyDTO" }
+            }
+          }
+        },
+        "responses": { "200": { "description": "OTP validation Sucessfully" } },
+        "tags": ["User"]
+      }
+    },
+    "/user/v1/password-reset-otp": {
+      "post": {
+        "operationId": "UserController_sendPasswordResetOTP",
+        "summary": "Send Password Reset Otp",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SendPasswordResetOTPDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Password reset link sent successfully." }
+        },
+        "tags": ["User"]
+      }
+    },
     "/user/v1/cohortmember/create": {
       "post": {
         "operationId": "CohortMembersController_createCohortMembers",
         "summary": "Create Cohort Member",
         "parameters": [
+          {
+            "name": "userId",
+            "required": true,
+            "in": "query",
+            "schema": { "type": "string" }
+          },
           {
             "name": "deviceid",
             "in": "header",
@@ -1082,6 +1152,12 @@
             "required": true,
             "in": "path",
             "schema": { "type": "string" }
+          },
+          {
+            "name": "userId",
+            "required": true,
+            "in": "query",
+            "schema": { "type": "string" }
           }
         ],
         "requestBody": {
@@ -1128,15 +1204,29 @@
     },
     "/user/v1/cohortmember/bulkCreate": {
       "post": {
-        "operationId": "CohortMembersController_craeteBulkCohortMembers",
-        "summary": "Bluk Cohort Member Create",
+        "operationId": "CohortMembersController_createBulkCohortMembers",
+        "summary": "Bulk Cohort Member Create",
         "parameters": [
+          {
+            "name": "userId",
+            "required": true,
+            "in": "query",
+            "description": "userId required",
+            "example": "123e4567-e89b-12d3-a456-426614174000",
+            "schema": { "type": "string" }
+          },
           {
             "name": "academicyearid",
             "in": "header",
+            "required": true,
             "schema": { "type": "string" }
           },
-          { "name": "tenantid", "in": "header", "schema": { "type": "string" } }
+          {
+            "name": "tenantid",
+            "in": "header",
+            "required": true,
+            "schema": { "type": "string" }
+          }
         ],
         "requestBody": {
           "required": true,
@@ -1151,8 +1241,7 @@
             "description": "Cohort Member has been created successfully."
           }
         },
-        "tags": ["Cohort Member"],
-        "security": [{ "access-token": [] }]
+        "tags": ["Cohort Member"]
       }
     },
     "/user/v1/cohort/cohortHierarchy/{cohortId}": {
@@ -1267,7 +1356,7 @@
           },
           {
             "name": "userId",
-            "required": false,
+            "required": true,
             "in": "query",
             "example": "123e4567-e89b-12d3-a456-426614174000",
             "schema": { "type": "string" }
@@ -1303,7 +1392,7 @@
           },
           {
             "name": "userId",
-            "required": false,
+            "required": true,
             "in": "query",
             "example": "123e4567-e89b-12d3-a456-426614174000",
             "schema": { "type": "string" }
@@ -1648,6 +1737,23 @@
         "tags": ["Auth"]
       }
     },
+    "/user/v1/auth/rbac/token": {
+      "get": {
+        "operationId": "AuthRbacController_signInRbac",
+        "parameters": [
+          {
+            "name": "tenantid",
+            "in": "header",
+            "description": "Tenant Id",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": { "200": { "description": "" } },
+        "tags": ["AuthRbac"],
+        "security": [{ "access-token": [] }]
+      }
+    },
     "/user/v1/form/read": {
       "get": {
         "operationId": "FormsController_getFormData",
@@ -1704,9 +1810,29 @@
         "summary": "Get Tenants",
         "parameters": [],
         "responses": {
-          "201": { "description": "Tenant Data Fetch" },
+          "201": { "description": "Tenant search successfully" },
           "403": { "description": "Forbidden" }
-        }
+        },
+        "tags": ["Tenant"]
+      }
+    },
+    "/user/v1/tenant/search": {
+      "post": {
+        "operationId": "TenantController_searchTenants",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/TenantSearchDTO" }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Tenant search successfully" },
+          "403": { "description": "Forbidden" }
+        },
+        "tags": ["Tenant"]
       }
     },
     "/user/v1/tenant/create": {
@@ -1716,7 +1842,7 @@
         "parameters": [
           {
             "name": "userId",
-            "required": false,
+            "required": true,
             "in": "query",
             "schema": { "type": "string" }
           }
@@ -1730,12 +1856,13 @@
           }
         },
         "responses": {
-          "201": { "description": "Tenant Created Successfully" },
+          "201": { "description": "Tenant created successfully" },
           "403": { "description": "Forbidden" }
-        }
+        },
+        "tags": ["Tenant"]
       }
     },
-    "/user/v1/tenant/update": {
+    "/user/v1/tenant/update/{id}": {
       "patch": {
         "operationId": "TenantController_updateTenants",
         "summary": "Update Tenants",
@@ -1743,12 +1870,12 @@
           {
             "name": "id",
             "required": true,
-            "in": "query",
+            "in": "path",
             "schema": { "type": "string" }
           },
           {
             "name": "userId",
-            "required": false,
+            "required": true,
             "in": "query",
             "schema": { "type": "string" }
           }
@@ -1764,7 +1891,8 @@
         "responses": {
           "201": { "description": "Tenant Data Fetch" },
           "403": { "description": "Forbidden" }
-        }
+        },
+        "tags": ["Tenant"]
       }
     },
     "/user/v1/tenant/delete": {
@@ -1775,6 +1903,12 @@
           {
             "name": "id",
             "required": true,
+            "in": "path",
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "userId",
+            "required": true,
             "in": "query",
             "schema": { "type": "string" }
           }
@@ -1782,7 +1916,8 @@
         "responses": {
           "201": { "description": "Tenant Data Fetch" },
           "403": { "description": "Forbidden" }
-        }
+        },
+        "tags": ["Tenant"]
       }
     },
     "/user/v1/academicyears/create": {
@@ -2099,7 +2234,8 @@
           "tenantId": { "type": "string" },
           "status": { "type": "string" },
           "reason": { "type": "string" },
-          "deviceId": { "type": "string" }
+          "deviceId": { "type": "string" },
+          "action": { "type": "string", "enum": ["add", "remove"] }
         },
         "required": [
           "username",
@@ -2151,7 +2287,17 @@
           "block": { "type": "string", "description": "Block" },
           "role": { "type": "string", "description": "Role" },
           "username": { "type": "string", "description": "User Name" },
-          "userId": { "type": "string", "description": "User Id" }
+          "userId": { "type": "string", "description": "User Id" },
+          "email": {
+            "description": "email Ids",
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "status": {
+            "description": "status",
+            "type": "array",
+            "items": { "type": "string" }
+          }
         }
       },
       "tenantCohortRoleMappingDto": {
@@ -2243,6 +2389,30 @@
           "newPassword": { "type": "string", "example": "98765" }
         },
         "required": ["userName", "newPassword"]
+      },
+      "OtpSendDTO": {
+        "type": "object",
+        "properties": {
+          "mobile": { "type": "string" },
+          "reason": { "type": "string" }
+        },
+        "required": ["mobile", "reason"]
+      },
+      "OtpVerifyDTO": {
+        "type": "object",
+        "properties": {
+          "mobile": { "type": "string" },
+          "otp": { "type": "string" },
+          "hash": { "type": "string" },
+          "reason": { "type": "string" },
+          "username": { "type": "string" }
+        },
+        "required": ["mobile", "otp", "hash", "reason", "username"]
+      },
+      "SendPasswordResetOTPDto": {
+        "type": "object",
+        "properties": { "username": { "type": "string", "example": "John" } },
+        "required": ["username"]
       },
       "CohortMembersDto": {
         "type": "object",
@@ -2357,7 +2527,27 @@
           "customFields"
         ]
       },
-      "BulkCohortMember": { "type": "object", "properties": {} },
+      "BulkCohortMember": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "description": "The userIds of the cohort members",
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "cohortId": {
+            "description": "The cohortIds of the cohort members",
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "removeCohortId": {
+            "description": "The cohortIds to be removed from",
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        },
+        "required": ["userId", "cohortId", "removeCohortId"]
+      },
       "CohortCreateDto": {
         "type": "object",
         "properties": {
@@ -2743,58 +2933,84 @@
         },
         "required": ["title", "context", "contextType", "fields"]
       },
+      "TenantFilters": {
+        "type": "object",
+        "properties": {
+          "tenantId": {
+            "type": "string",
+            "description": "Tenant Id must be a (UUID)"
+          },
+          "name": { "type": "string" },
+          "domain": { "type": "string" },
+          "status": {
+            "type": "array",
+            "description": "Status of the tenant",
+            "default": ["published"],
+            "items": {
+              "type": "string",
+              "enum": ["published", "draft", "archived"]
+            }
+          },
+          "createdBy": {
+            "type": "string",
+            "description": "The ID of the creator (UUID)"
+          },
+          "updatedBy": {
+            "type": "string",
+            "description": "The ID of the updater (UUID)"
+          },
+          "programHead": { "type": "string" }
+        }
+      },
+      "TenantSearchDTO": {
+        "type": "object",
+        "properties": {
+          "limit": {
+            "type": "number",
+            "description": "Limit",
+            "minimum": 1,
+            "maximum": 200,
+            "default": 10
+          },
+          "offset": {
+            "type": "number",
+            "description": "Offset",
+            "minimum": 0,
+            "maximum": 200,
+            "default": 0
+          },
+          "filters": { "$ref": "#/components/schemas/TenantFilters" }
+        },
+        "required": ["limit", "offset"]
+      },
       "TenantCreateDto": {
         "type": "object",
         "properties": {
-          "name": {
-            "type": "string",
-            "description": "Tenant name",
-            "default": ""
-          },
-          "domain": {
-            "type": "string",
-            "description": "Domain Name",
-            "default": ""
-          },
-          "params": {
-            "type": "object",
-            "description": "Params",
-            "default": ""
-          },
-          "programImages": {
-            "description": "List of program images (URLs or other related strings)",
-            "type": "array",
-            "items": { "type": "string" }
-          }
+          "name": { "type": "string" },
+          "domain": { "type": "string" },
+          "params": { "type": "object" },
+          "programImages": { "type": "array", "items": { "type": "string" } },
+          "description": { "type": "string" },
+          "programHead": { "type": "string" }
         },
-        "required": ["name"]
+        "required": ["name", "description", "programHead"]
       },
       "TenantUpdateDto": {
         "type": "object",
         "properties": {
-          "name": {
-            "type": "string",
-            "description": "Tenant name",
-            "default": ""
-          },
-          "domain": {
-            "type": "string",
-            "description": "Domain Name",
-            "default": ""
-          },
-          "params": {
-            "type": "object",
-            "description": "Params",
-            "default": ""
-          },
-          "programImages": { "type": "string" },
+          "name": { "type": "string" },
+          "domain": { "type": "string" },
+          "params": { "type": "object" },
+          "programImages": { "type": "array", "items": { "type": "string" } },
           "description": { "type": "string" },
           "status": {
             "type": "string",
             "description": "Status of the tenant",
-            "enum": ["active", "inactive", "archive"],
-            "default": "active"
-          }
+            "enum": ["published", "draft", "archived"],
+            "default": "published"
+          },
+          "createdBy": { "type": "string" },
+          "programHead": { "type": "string" }
         }
       },
       "AcademicYearDto": {
