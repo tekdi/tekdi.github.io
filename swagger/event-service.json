@@ -616,6 +616,32 @@
         },
         "tags": ["Create Event"]
       }
+    },
+    "/event-service/attendance/v1/markeventattendance": {
+      "post": {
+        "operationId": "MarkEventAttendance",
+        "parameters": [
+          {
+            "name": "userId",
+            "required": true,
+            "in": "query",
+            "description": "UserId Required",
+            "schema": { "example": "123e4567-e89b-12d3-a456-426614174000" }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MarkMeetingAttendanceDto"
+              }
+            }
+          }
+        },
+        "responses": { "201": { "description": "" } },
+        "tags": ["Event-Attendance"]
+      }
     }
   },
   "info": {
@@ -1052,83 +1078,40 @@
           "onlineProvider"
         ]
       },
-      "EventAttendeesDTO": {
+      "MarkMeetingAttendanceDto": {
         "type": "object",
         "properties": {
-          "eventId": {
+          "meetingId": {
             "type": "string",
-            "description": "",
-            "example": "bfec8878-623d-40ff-90aa-9bcaf6a73602"
+            "description": "Meeting ID",
+            "example": "1234567890"
           },
-          "status": {
+          "eventRepetitionId": {
             "type": "string",
-            "description": "Status",
-            "example": "published"
-          }
-        },
-        "required": ["eventId", "status"]
-      },
-      "SearchAttendeesDto": {
-        "type": "object",
-        "properties": {
-          "userId": {
+            "description": "Event ID",
+            "example": "123e4567-e89b-12d3-a456-426614174000"
+          },
+          "attendanceDate": {
             "type": "string",
-            "description": "The UUID of the user",
-            "example": "014b9a1b-cf76-4fee-8d14-f832bcac61b5"
+            "description": "The date of the attendance in format yyyy-mm-dd"
           },
-          "eventId": {
+          "scope": {
             "type": "string",
-            "description": "The UUID of the event",
-            "example": "bfec8878-623d-40ff-90aa-9bcaf6a73602"
-          }
-        },
-        "required": ["userId", "eventId"]
-      },
-      "UpdateAttendeesDto": {
-        "type": "object",
-        "properties": {
-          "userId": {
+            "description": "Scope of the attendance",
+            "example": "self / student"
+          },
+          "tenantId": {
             "type": "string",
-            "description": "The UUID of the user",
-            "example": "0050d1cb-64d0-4902-9ef0-a868aa7aa713"
-          },
-          "eventId": {
-            "type": "string",
-            "description": "The UUID of the event",
-            "example": "bfec8878-623d-40ff-90aa-9bcaf6a73602"
-          },
-          "status": {
-            "type": "string",
-            "description": "Status",
-            "example": "unpublished"
-          },
-          "isAttended": {
-            "type": "boolean",
-            "description": "isAttended",
-            "example": true
-          },
-          "duration": {
-            "type": "number",
-            "description": "Duration",
-            "example": 2000
-          },
-          "joinedLeftHistory": {
-            "type": "object",
-            "description": "joinedLeftHistory",
-            "example": {
-              "duration": 28,
-              "joinedDateTime": "2021-12-30 06:08:50.250",
-              "leftDateTime": "2021-12-30 06:09:18.393"
-            }
+            "description": "Tenant ID",
+            "example": "123e4567-e89b-12d3-a456-426614174000"
           }
         },
         "required": [
-          "userId",
-          "eventId",
-          "status",
-          "isAttended",
-          "duration",
-          "joinedLeftHistory"
+          "meetingId",
+          "eventRepetitionId",
+          "attendanceDate",
+          "scope",
+          "tenantId"
         ]
       }
     }

@@ -1,0 +1,71 @@
+---
+id: event-attendance-mark-event-attendance
+title: "MarkEventAttendance"
+description: "MarkEventAttendance"
+sidebar_label: "MarkEventAttendance"
+hide_title: true
+hide_table_of_contents: true
+api: eJydVU1v4jAQ/SvRnHYlZyGU0ja3bumBQ7UVpSeEVkMygNvESW2HNkL576tx+EgAqWi5RNjj+XrvzWwgy0mjlZkaxRDC45qUvbeWVIwqor8p6vejMxCQo8aULGkD4XQDClOCEApDehSDAE0fhdQUQ2h1QQKkghA+CtIlCIjJRFrmHBFCeHVvvPHuhQATrShFCDdAX5jmCXsOelfUvx7c+HR7N/eDXnzlY/964Pd7g0HQD2763W4XqmpWhyZjf2dxyS6OM4kyZUlZvsI8T2TkKu+8GU5m04hty5wDZ/M3iixXrLlPVpLh25TISrXkju1NjdVSLU8KfKpNvdEQRLsiLuj2rguVAOIOjyknK3dIfOfXgXLG6wV9EoB7MIdo6ftgkxV5MVrysoVnV+Qd3ntSeYtMp2i9sixLP039OOYQJsryCzy/sNmp21ZVhpKF1/GMLWLGrhJgSaGyl7Rp4iz/r09Vk8nTBujnADtp6q4FjWxnAqy0LoMn1O9bahyUNbQZVFUd1+SZMjXbet2AP+3CXHoWl6zAmgx+Q6Kzs3T5Vtcp2VXGYyDPjGM92hWE0HHl+ob0WkbUORTaWQcd9uTuW+ixbT0eZgJYXuODMB93OLSE1JTEWUVchtopuQ/U2HLymFBNPl0sIakWmaPfFtBaj0+ocElp7bWNwMP4dejdP49AAHemPgx+ccY8lTDiqcSgcu9TdPNoO1hr3wekPO65d3x6HHEvDUtftpMnKBUnXuiE72pop9CCttU9TjRgUpwBeCZgxRQJp7DZzNHQq06qio/rMc9bIZYG5wlrZ4GJoZPs9rMYfuzG/0/vdB+cLeKdyubCWWNSkBPFjP9oyYGZe5WAFWFM2mVUv3qo4/qT0qlz9/ZkH7CvvSCe/7xMQMB8u1fSLOY3Gj953eEnxxaQudqcZt3ZBhJUywKXbFv75N8/ee15mQ==
+sidebar_class_name: "post api-method"
+info_path: docs/event-service/apis/event-management
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"MarkEventAttendance"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/event-service/attendance/v1/markeventattendance"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+EventAttendance_markEventAttendance
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"userId","required":true,"in":"query","description":"UserId Required","schema":{"example":"123e4567-e89b-12d3-a456-426614174000"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"meetingId":{"type":"string","description":"Meeting ID","example":"1234567890"},"eventRepetitionId":{"type":"string","description":"Event ID","example":"123e4567-e89b-12d3-a456-426614174000"},"attendanceDate":{"type":"string","description":"The date of the attendance in format yyyy-mm-dd"},"scope":{"type":"string","description":"Scope of the attendance","example":"self / student"},"tenantId":{"type":"string","description":"Tenant ID","example":"123e4567-e89b-12d3-a456-426614174000"}},"required":["meetingId","eventRepetitionId","attendanceDate","scope","tenantId"],"title":"MarkMeetingAttendanceDto"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"201":{"description":""}}}
+>
+  
+</StatusCodes>
+
+
+      
