@@ -3,9 +3,9 @@ sidebar_position: 2
 title: Users Service Features
 ---
 
-## Features of the Users Service
+# Users Service Features
 
-### 1. User Profile Management:
+### 1. User Profile Management
 
 **View and Update User Profiles:** Ability for users or administrators to view and update personal information stored in the user profiles. This may include core fields or custome fields depends on requirement.
 
@@ -21,7 +21,7 @@ title: Users Service Features
 
 Custom Field Examples: For instance, a gender field could use a radio button to allow users to select between options like "Male" or "Female." Custom fields are stored separately from core fields and can be managed based on the specific requirements of each tenant or user group.
 
-### 3. Dynamic Form Management:
+### 3. Dynamic Form Management
 
 **Create Dynamic Form:** The ability to create dynamic forms based on specific requirements using customizable fields.
 
