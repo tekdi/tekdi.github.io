@@ -1,5 +1,6 @@
 ---
 sidebar_position: 2
+title: Users Service Features
 ---
 
 ## Features of the Users Service
