@@ -1,0 +1,71 @@
+---
+id: notification-queue-controller-create
+title: "Notification Queue Create"
+description: "Notification Queue Create"
+sidebar_label: "Notification Queue Create"
+hide_title: true
+hide_table_of_contents: true
+api: eJyFVU1v2kAQ/SurORtiKLn41DZBKqqUpAntoQhFiz3gTexdZ3cckiL/92rWxjE4JFyA9ex78/HmeQemQCtJGT1LIIIrQ2qtYn/wq8QSL4wma7IM7X1sURJCAIW0MkdC6yBaLAOw+FSio+8meYVo5/8qiwlEZEsMIDaaUBM/kkWRNehnD85oPnNxirnkX/RaIERgVg8YE/NYTo4UOn4ap1JrzDqBjqzSGwgAX2ReZHw0zaXKIIAEXWxVwUQQwUV9VVBqTblJxTZVcSooRaE79QrlhENNQ6iapF/oE7Y/06t5n62+Ksy6R9GFvldJB12X+QrtAfpo/GVy3kOfXQqLmSRMBBlP0OB5bFfWzfsw7Svciukzj+QY/K6+fjL1VTPi09g/MMtMIChVjvspjzCOCVkzohHISVaLsSpUI6HT1KVD+7X5O4xN3iO73eOcZMKXQllf4drYXBJEkEjCAamchX+aexyOJ4NwMhiF89E4CsMoDP/2+OcqR0cyL8Q2Rd3Xn2dHN4SqCjpbtGil/ybLAxW9jb2ZULdlbVHLAEhRLYDjLb+cX0NV1bSuMNrVKzcOR/x1JG9vAwm3axKG/ecz/SwzlYjGFTju/P04QqtlJu7QPqMVU2uN9aWT3LCzHKQ5eOI8uYhDlG6M8LWIi71P5UipYVcrjPN+IimFCM5qqACcJ25MzGFcWkWvd2xHdfkyjtG5AZlH1B3pyUL9RG6y4gRSlIlfXC1zfvqtpNRY9c9n5Mtho7t9s8jpXjQdS2t9q7Wd1lu6btFaQrvmB7tcb+fnK9jZp/eWZr8E74u64rrXxvfjHTn1RZ+iOBjSt5uZ6IYEwEOog0fDsClZehPj9vHwcukH0LT4o5kfkLcj4w6eFZlUmvMvrX+L1HJYQKuslGUSLWC3W0mHv21WVXz8VCK3g0XyLK2SKy56sayC/eyjxQ4e8XVv/ZoGc6bl8KysFXP02quWHXXeXN/N4c1bc5PwHSu3PCq5hQggAONL8rL0ZzvIpN6UcsOxNSZ//gPL3Kxn
+sidebar_class_name: "post api-method"
+info_path: docs/notifications-service/apis/notification
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Notification Queue Create"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/queue"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Notification Queue Create
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"channel":{"type":"string","example":"Email","description":"Channel through which the notification is sent."},"context":{"type":"string","example":"EVENT","description":"Context of the notification."},"context_id":{"type":"number","example":"12345","description":"ID related to the context."},"subject":{"type":"string","example":"New Event","description":"Subject of the notification."},"body":{"type":"string","example":"Hello, this is a notification.","description":"Body content of the notification."},"recipient":{"type":"string","example":"user@example.com","description":"Recipient of the notification."},"expiry":{"format":"date-time","type":"string","example":"2024-04-10T12:00:00Z","description":"Timestamp when the notification expires."}},"required":["channel","context","context_id","subject","body","recipient","expiry"],"title":"NotificationQueueDTO"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"201":{"description":"Created"},"400":{"description":"Invalid request"},"500":{"description":"Internal Server Error"}}}
+>
+  
+</StatusCodes>
+
+
+      
