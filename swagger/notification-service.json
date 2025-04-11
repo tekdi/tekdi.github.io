@@ -101,7 +101,8 @@
           "400": { "description": "Invalid request" },
           "500": { "description": "Internal Server Error" }
         },
-        "tags": ["Notification-Templates"]
+        "tags": ["Notification-Templates"],
+        "security": [{ "access-token": [] }]
       }
     },
     "/notification-templates/list": {
@@ -129,7 +130,8 @@
           "400": { "description": "Invalid request" },
           "500": { "description": "Internal Server Error" }
         },
-        "tags": ["Notification-Templates"]
+        "tags": ["Notification-Templates"],
+        "security": [{ "access-token": [] }]
       }
     },
     "/notification-templates/{id}": {
@@ -238,7 +240,8 @@
           "200": { "description": "/Update Template for Notification" },
           "400": { "description": "Bad request" }
         },
-        "tags": ["Notification-Templates"]
+        "tags": ["Notification-Templates"],
+        "security": [{ "access-token": [] }]
       },
       "delete": {
         "operationId": "NotificationEventsController_deleteTemplate",
@@ -261,18 +264,105 @@
           "200": { "description": "Template delete successfully" },
           "404": { "description": "Template not found" }
         },
-        "tags": ["Notification-Templates"]
+        "tags": ["Notification-Templates"],
+        "security": [{ "access-token": [] }]
       }
     },
     "/notification/send": {
       "post": {
         "operationId": "NotificationController_sendNotification",
         "summary": "Send Notification",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/NotificationDto" }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "send notification successfully" },
+          "400": { "description": "Invalid Request" },
+          "500": { "description": "internal server error" }
+        },
+        "tags": ["Notification-send"],
+        "security": [{ "access-token": [] }]
+      }
+    },
+    "/notification/sendTopicNotification": {
+      "post": {
+        "operationId": "NotificationController_sendTopicNotification",
+        "summary": "Send Topic Notification",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/TopicNotification" }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Sunscribed the topic" },
+          "400": { "description": "Invalid Request" },
+          "500": { "description": "Server Error" }
+        },
+        "tags": ["Notification-send"],
+        "security": [{ "access-token": [] }]
+      }
+    },
+    "/queue": {
+      "post": {
+        "operationId": "NotificationQueueController_create",
+        "summary": "Notification Queue Create",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/NotificationQueueDTO" }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Created" },
+          "400": { "description": "Invalid request" },
+          "500": { "description": "Internal Server Error" }
+        },
+        "tags": ["Notification-queue"]
+      }
+    },
+    "/queue/list": {
+      "post": {
+        "operationId": "NotificationQueueController_get",
+        "summary": "Notification Queue List",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/SearchQueueDTO" }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Get Records from queue" },
+          "400": { "description": "Ivalid Request" },
+          "500": { "description": "Internal Server Error" }
+        },
+        "tags": ["Notification-queue"]
+      }
+    },
+    "/queue/{id}": {
+      "patch": {
+        "operationId": "NotificationQueueController_update",
+        "summary": "Notification Queue Update",
         "parameters": [
           {
-            "name": "userId",
+            "name": "id",
             "required": true,
-            "in": "query",
+            "in": "path",
             "schema": { "type": "string" }
           }
         ],
@@ -353,11 +443,70 @@
           }
         },
         "responses": {
-          "200": { "description": "send notification successfully" },
-          "400": { "description": "Invalid Request" },
-          "500": { "description": "internal server error" }
+          "200": { "description": "Updated Sucessfully" },
+          "400": { "description": "Invalid request" }
         },
-        "tags": ["Notification-send"]
+        "tags": ["Notification-queue"]
+      }
+    },
+    "/role-permission/create": {
+      "post": {
+        "operationId": "RolePermissionMappingController_createPermission",
+        "summary": "Role Permission Mapping Create",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RolePermissionCreateDto"
+              }
+            }
+          }
+        },
+        "responses": { "201": { "description": "" } },
+        "tags": ["RolePermissionMapping"]
+      }
+    },
+    "/role-permission/get": {
+      "post": {
+        "operationId": "RolePermissionMappingController_getPermission",
+        "summary": "Role Permission Mapping Get",
+        "parameters": [],
+        "responses": { "201": { "description": "" } },
+        "tags": ["RolePermissionMapping"]
+      }
+    },
+    "/role-permission/update": {
+      "post": {
+        "operationId": "RolePermissionMappingController_updatePermission",
+        "summary": "Role Permission Mapping Update",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RolePermissionCreateDto"
+              }
+            }
+          }
+        },
+        "responses": { "201": { "description": "" } },
+        "tags": ["RolePermissionMapping"]
+      }
+    },
+    "/role-permission/delete": {
+      "delete": {
+        "operationId": "RolePermissionMappingController_deletePermission",
+        "summary": "Role Permission Mapping Delete",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": { "application/json": { "schema": { "type": "string" } } }
+        },
+        "responses": { "200": { "description": "" } },
+        "tags": ["RolePermissionMapping"]
       }
     }
   },
@@ -370,6 +519,13 @@
   "tags": [],
   "servers": [],
   "components": {
+    "securitySchemes": {
+      "access-token": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "Authorization"
+      }
+    },
     "schemas": {
       "EmailDto": {
         "type": "object",
@@ -658,6 +814,56 @@
         },
         "required": ["topic_name", "title", "body", "image", "navigate_to"]
       },
+      "NotificationQueueDTO": {
+        "type": "object",
+        "properties": {
+          "channel": {
+            "type": "string",
+            "example": "Email",
+            "description": "Channel through which the notification is sent."
+          },
+          "context": {
+            "type": "string",
+            "example": "EVENT",
+            "description": "Context of the notification."
+          },
+          "context_id": {
+            "type": "number",
+            "example": "12345",
+            "description": "ID related to the context."
+          },
+          "subject": {
+            "type": "string",
+            "example": "New Event",
+            "description": "Subject of the notification."
+          },
+          "body": {
+            "type": "string",
+            "example": "Hello, this is a notification.",
+            "description": "Body content of the notification."
+          },
+          "recipient": {
+            "type": "string",
+            "example": "user@example.com",
+            "description": "Recipient of the notification."
+          },
+          "expiry": {
+            "format": "date-time",
+            "type": "string",
+            "example": "2024-04-10T12:00:00Z",
+            "description": "Timestamp when the notification expires."
+          }
+        },
+        "required": [
+          "channel",
+          "context",
+          "context_id",
+          "subject",
+          "body",
+          "recipient",
+          "expiry"
+        ]
+      },
       "SearchQueueDTO": {
         "type": "object",
         "properties": {
@@ -723,7 +929,8 @@
           "last_attempted",
           "status"
         ]
-      }
+      },
+      "RolePermissionCreateDto": { "type": "object", "properties": {} }
     }
   }
 }

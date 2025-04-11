@@ -2,7 +2,7 @@
 sidebar_position: 8
 ---
 
-# Devops
+# Installation
 
 Installation
 
@@ -52,9 +52,19 @@ FIREBASE_PROJECT_ID="add-here"
 FIREBASE_PRIVATE_KEY="add-here"
 FIREBASE_CLIENT_EMAIL="add-here"
 
+SMS_PROVIDER="add-here" # can be configured for AWS, TWILIO OR MSG91
+
 TWILIO_ACCOUNT_SID ="add-here"
 TWILIO_AUTH_TOKEN ="add-here"
 SMS_FROM ="add-here"
+
+AWS_ACCESS_KEY_ID="add-here"
+AWS_SECRET_ACCESS_KEY="add-here"
+AWS_REGION="add-here"
+AWS_SNS_SENDER_ID="add-here"
+
+MSG91_AUTH_KEY="add-here"
+MSG91_URL=https://control.msg91.com/api/v5/flow
 ```
 
 #### 4. Run the Application

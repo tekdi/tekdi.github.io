@@ -1,0 +1,71 @@
+---
+id: user-controller-suggest-username
+title: "Suggest Username"
+description: "Suggest Username"
+sidebar_label: "Suggest Username"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNlE1v2zAMhv+KwdMGqEs6bBffunYDinVb0Y9TEAyMzdhqZcmVqKxe4P8+UE5qtymw5pA4lEy+5PtIW3AteWTt7HkJOdwG8qfOsnfGkP8dYlVRYIlabAgUtOixISYfIF8sFXh6iBT4iys7yLfpr/ZUQs4+koLCWSbLsoRta3SRSs3ugrMSC0VNDcoTdy1BDm51RwVLHS/CWFOQ1bX2gX+KgnFrYK9tBQpKCoXXrSSGHL7J1kzUZm6dcU1ZDORBQYOPF2QrriH/PO8VNLosDb0t6Y+09yBr9s6lHWjev1LA4Fs1X+DbJMe9D//NKI5lqXjfq4kri8koJwqXClizkYTXo+Vn7KDvhwShdTYMZnycz+XnsGDqYIeMdjaryApbVGYhFgWFsI7GdNAr+PRainO7QaPLTNs2cjYBTRQwVkJcqiNyn7+6E51NQG2IaydIty4koFDGCDOZ4WxzPDtEO5DfPHEdqIhec3cthA59Y+rhiN092YkD2Orv1IECLUpqwjJ5N/gEJ5Fr5/XfxH3qRNi/Gk/N10dsWkMvKB99nWI6Rke2xthIxz7Wi6i1S2L39tb6PtSYXRrktfPNATmnV7dn2cnlOSiQaQzB4w9zGA4zFnKYpQ+Za4NpEruqr7jwLPfTyJgeedYa1FYkRm9kbTBoATv2N8diyQuTlgpqsTNfwHa7wkC33vS9hB8i+W6wboNe40q6XSx7tXckX2zhnjrpcLiTjm5EjGw3cfDxxf3ULycUXf66vgEFq90917hS3vH4B1T6zgEUDLdBgiXFtmDQVhEr2TvklM8/jC3jCQ==
+sidebar_class_name: "post api-method"
+info_path: docs/user-service/apis/shiksha-platform
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Suggest Username"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/user/v1/suggestUsername"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Suggest Username
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"firstName":{"type":"string","description":"First name of the user","maxLength":50},"middleName":{"type":"string","description":"Middle name of the user (optional)","maxLength":50},"lastName":{"type":"string","description":"Last name of the user","maxLength":50},"username":{"type":"string","description":"User Name"}},"required":["firstName","lastName"],"title":"SuggestUserDto"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Username suggestion generated successfully"},"400":{"description":"Invalid input parameters"}}}
+>
+  
+</StatusCodes>
+
+
+      

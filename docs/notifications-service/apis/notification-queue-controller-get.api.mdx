@@ -1,0 +1,71 @@
+---
+id: notification-queue-controller-get
+title: "Notification Queue List"
+description: "Notification Queue List"
+sidebar_label: "Notification Queue List"
+hide_title: true
+hide_table_of_contents: true
+api: eJyFVEtvGjEQ/ivWnJ2QVu1lb2mKKtQqSQPtBaHK7A7Yya69Gc8moWj/ezU2kCUPlQMs9ni++R7eLYQWybALflJBAZeB3cqVaeFnhx1eBM8U6hrpzxoZNLSGTIOMFKGYLzQQ3ncY+UuoNlBs019HWEHB1KGGMnhGz7Jl2rbetR7dxuBlLZYWGyNPvGkRCgjLWywTDslk7DDKbmmN91gPCiOT82vQgE+maWtZGjfG1aChwliSawUICrjIRxVbCt3aqkfrSqvYovIDsspFFdHzKfS7oZ/4P2i/x5ez12j5qAqrVxCpdWTDXRx0XoZQo/HD1lm5477TdO6dtr0e6D4/iPVM5IC70MCO0/xTNFTaZPLX2RX0fW4T2+BjFv3j2Zn8HA/yDVndYBmoimpFoVH30kGofXqrfPJgalepm5wSKfv8ZplnJG9qNUV6QFJjokCJGJu1JO0omScZc/FSpGGNSszUDxeFfoNsgwS8DTGnmC0UMEqNRnUuigl7l+uIZUeON1NJaNbDlCXGeMLhDv3AQdO677gBDU5msGgqJNDgTSO75x3bQO5vGioxkuzfPN+a8d72QcoPUT4k8RC3fYAkJL1grkKaZefqUIJX4ZxZVEcanV9P1LBEgwiQiz+cnu0GMKVcBRld1GtMIr+j977kR9AHsYTNqK2N85KFjtKVzm7MIduqIfmx0GDFrGIO2+3SRPxFdd/L8n2HtMkuPRhyZinM54te78Uv5lu4w83+Ono+mQm6lNddtuzFq6hfDDJyfTUVpZe7V1oTKjlD5hF0+i4ANITELOUirW2hNn7dmbXU5p7y+QdxR9zy
+sidebar_class_name: "post api-method"
+info_path: docs/notifications-service/apis/notification
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Notification Queue List"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/queue/list"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Notification Queue List
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"channel":{"type":"string","example":"Email","description":"Channel through which the notification is sent."},"context":{"type":"string","example":"EVENT","description":"Context of the notification."},"status":{"type":"boolean","example":true,"description":"Status of the notification."}},"required":["channel","context","status"],"title":"SearchQueueDTO"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Get Records from queue"},"400":{"description":"Ivalid Request"},"500":{"description":"Internal Server Error"}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -336,7 +336,8 @@
           "400": { "description": "Invalid request body" },
           "500": { "description": "Internal Server Error" }
         },
-        "tags": ["Create Event"]
+        "tags": ["Create Event"],
+        "security": [{ "access-token": [] }]
       }
     },
     "/event-service/event/v1/list": {
@@ -414,7 +415,8 @@
           "200": { "description": "Searched" },
           "500": { "description": "Internal Server Error" }
         },
-        "tags": ["Create Event"]
+        "tags": ["Create Event"],
+        "security": [{ "access-token": [] }]
       }
     },
     "/event-service/event/v1/{id}": {
@@ -614,21 +616,15 @@
           "200": { "description": "Event updated successfully" },
           "500": { "description": "Internal Server Error" }
         },
-        "tags": ["Create Event"]
+        "tags": ["Create Event"],
+        "security": [{ "access-token": [] }]
       }
     },
     "/event-service/attendance/v1/markeventattendance": {
       "post": {
-        "operationId": "MarkEventAttendance",
-        "parameters": [
-          {
-            "name": "userId",
-            "required": true,
-            "in": "query",
-            "description": "UserId Required",
-            "schema": { "example": "123e4567-e89b-12d3-a456-426614174000" }
-          }
-        ],
+        "operationId": "EventAttendance_markEventAttendance",
+        "summary": "Mark Event Attendance",
+        "parameters": [],
         "requestBody": {
           "required": true,
           "content": {
@@ -640,7 +636,72 @@
           }
         },
         "responses": { "201": { "description": "" } },
-        "tags": ["Event-Attendance"]
+        "tags": ["Event-Attendance"],
+        "security": [{ "access-token": [] }]
+      }
+    },
+    "/event-service/role-permission/create": {
+      "post": {
+        "operationId": "RolePermissionMappingController_createPermission",
+        "summary": "Create Role Permission",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RolePermissionCreateDto"
+              }
+            }
+          }
+        },
+        "responses": { "201": { "description": "" } },
+        "tags": ["RolePermissionMapping"]
+      }
+    },
+    "/event-service/role-permission/get": {
+      "post": {
+        "operationId": "RolePermissionMappingController_getPermission",
+        "summary": "Get Role Permission",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": { "application/json": { "schema": { "type": "string" } } }
+        },
+        "responses": { "201": { "description": "" } },
+        "tags": ["RolePermissionMapping"]
+      }
+    },
+    "/event-service/role-permission/update": {
+      "post": {
+        "operationId": "RolePermissionMappingController_updatePermission",
+        "summary": "Update Role Permission",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RolePermissionCreateDto"
+              }
+            }
+          }
+        },
+        "responses": { "201": { "description": "" } },
+        "tags": ["RolePermissionMapping"]
+      }
+    },
+    "/event-service/role-permission/delete": {
+      "delete": {
+        "operationId": "RolePermissionMappingController_deletePermission",
+        "summary": "Delete Role Permission",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": { "application/json": { "schema": { "type": "string" } } }
+        },
+        "responses": { "200": { "description": "" } },
+        "tags": ["RolePermissionMapping"]
       }
     }
   },
@@ -653,6 +714,13 @@
   "tags": [],
   "servers": [],
   "components": {
+    "securitySchemes": {
+      "access-token": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "Authorization"
+      }
+    },
     "schemas": {
       "MeetingDetailsDto": {
         "type": "object",
@@ -1003,7 +1071,7 @@
             "example": {
               "topic": "Java",
               "mentorId": "1244546647",
-              "subTopic": "Type of fetaures"
+              "subTopic": "Type of features"
             }
           },
           "metadata": {
@@ -1078,9 +1146,93 @@
           "onlineProvider"
         ]
       },
+      "EventAttendeesDTO": {
+        "type": "object",
+        "properties": {
+          "eventId": {
+            "type": "string",
+            "description": "",
+            "example": "bfec8878-623d-40ff-90aa-9bcaf6a73602"
+          },
+          "status": {
+            "type": "string",
+            "description": "Status",
+            "example": "published"
+          }
+        },
+        "required": ["eventId", "status"]
+      },
+      "SearchAttendeesDto": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "string",
+            "description": "The UUID of the user",
+            "example": "014b9a1b-cf76-4fee-8d14-f832bcac61b5"
+          },
+          "eventId": {
+            "type": "string",
+            "description": "The UUID of the event",
+            "example": "bfec8878-623d-40ff-90aa-9bcaf6a73602"
+          }
+        },
+        "required": ["userId", "eventId"]
+      },
+      "UpdateAttendeesDto": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "string",
+            "description": "The UUID of the user",
+            "example": "0050d1cb-64d0-4902-9ef0-a868aa7aa713"
+          },
+          "eventId": {
+            "type": "string",
+            "description": "The UUID of the event",
+            "example": "bfec8878-623d-40ff-90aa-9bcaf6a73602"
+          },
+          "status": {
+            "type": "string",
+            "description": "Status",
+            "example": "unpublished"
+          },
+          "isAttended": {
+            "type": "boolean",
+            "description": "isAttended",
+            "example": true
+          },
+          "duration": {
+            "type": "number",
+            "description": "Duration",
+            "example": 2000
+          },
+          "joinedLeftHistory": {
+            "type": "object",
+            "description": "joinedLeftHistory",
+            "example": {
+              "duration": 28,
+              "joinedDateTime": "2021-12-30 06:08:50.250",
+              "leftDateTime": "2021-12-30 06:09:18.393"
+            }
+          }
+        },
+        "required": [
+          "userId",
+          "eventId",
+          "status",
+          "isAttended",
+          "duration",
+          "joinedLeftHistory"
+        ]
+      },
       "MarkMeetingAttendanceDto": {
         "type": "object",
         "properties": {
+          "markAttendanceBy": {
+            "type": "string",
+            "description": "Mark attendance by email or username",
+            "example": "123e4567-e89b-12d3-a456-426614174000"
+          },
           "meetingId": {
             "type": "string",
             "description": "Meeting ID",
@@ -1107,13 +1259,15 @@
           }
         },
         "required": [
+          "markAttendanceBy",
           "meetingId",
           "eventRepetitionId",
           "attendanceDate",
           "scope",
           "tenantId"
         ]
-      }
+      },
+      "RolePermissionCreateDto": { "type": "object", "properties": {} }
     }
   }
 }

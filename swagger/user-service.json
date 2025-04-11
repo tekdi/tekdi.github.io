@@ -957,7 +957,37 @@
         "operationId": "UserController_checkUser",
         "summary": "Check User",
         "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/ExistUserDto" }
+            }
+          }
+        },
         "responses": { "201": { "description": "" } },
+        "tags": ["User"]
+      }
+    },
+    "/user/v1/suggestUsername": {
+      "post": {
+        "operationId": "UserController_suggestUsername",
+        "summary": "Suggest Username",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/SuggestUserDto" }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Username suggestion generated successfully"
+          },
+          "400": { "description": "Invalid input parameters" }
+        },
         "tags": ["User"]
       }
     },
@@ -1671,6 +1701,26 @@
         "tags": ["Fields"]
       }
     },
+    "/user/v1/fields/values/delete": {
+      "delete": {
+        "operationId": "FieldsController_deleteFieldValues",
+        "summary": "Delete Field Values",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/FieldValuesDeleteDto" }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Field Values deleted successfully." }
+        },
+        "tags": ["Fields"],
+        "security": [{ "access-token": [] }]
+      }
+    },
     "/user/v1/auth/login": {
       "post": {
         "operationId": "AuthController_login",
@@ -1740,6 +1790,7 @@
     "/user/v1/auth/rbac/token": {
       "get": {
         "operationId": "AuthRbacController_signInRbac",
+        "summary" : "Sign In Rbac",
         "parameters": [
           {
             "name": "tenantid",
@@ -1819,6 +1870,7 @@
     "/user/v1/tenant/search": {
       "post": {
         "operationId": "TenantController_searchTenants",
+        "summary": "Search Tenants",
         "parameters": [],
         "requestBody": {
           "required": true,
@@ -2175,7 +2227,26 @@
         "type": "object",
         "properties": {
           "username": { "type": "string" },
-          "name": { "type": "string" },
+          "firstName": {
+            "type": "string",
+            "description": "First name of the user",
+            "maxLength": 50
+          },
+          "middleName": {
+            "type": "string",
+            "description": "Middle name of the user (optional)",
+            "maxLength": 50
+          },
+          "lastName": {
+            "type": "string",
+            "description": "Last name of the user",
+            "maxLength": 50
+          },
+          "gender": {
+            "type": "string",
+            "description": "Gender of the user",
+            "enum": ["male", "female", "transgender"]
+          },
           "dob": {
             "type": "string",
             "description": "The date of Birth of the user"
@@ -2213,22 +2284,52 @@
             "items": { "$ref": "#/components/schemas/FieldValuesOptionDto" }
           }
         },
-        "required": ["username", "name", "password", "tenantCohortRoleMapping"]
+        "required": [
+          "username",
+          "firstName",
+          "lastName",
+          "gender",
+          "password",
+          "tenantCohortRoleMapping"
+        ]
       },
       "UserDataDTO": {
         "type": "object",
         "properties": {
           "username": { "type": "string" },
-          "name": { "type": "string" },
+          "firstName": {
+            "type": "string",
+            "description": "First name of the user",
+            "maxLength": 50
+          },
+          "middleName": {
+            "type": "string",
+            "description": "Middle name of the user (optional)",
+            "maxLength": 50
+          },
+          "lastName": {
+            "type": "string",
+            "description": "Last name of the user",
+            "maxLength": 50
+          },
+          "gender": {
+            "type": "string",
+            "description": "Gender of the user",
+            "enum": ["male", "female", "transgender"]
+          },
           "role": { "type": "string" },
-          "dob": { "type": "string" },
+          "dob": {
+            "type": "string",
+            "format": "date-time",
+            "example": "1990-01-01"
+          },
           "email": { "type": "string" },
           "district": { "type": "string" },
           "state": { "type": "string" },
           "address": { "type": "string" },
           "pincode": { "type": "string" },
-          "createdAt": { "type": "string" },
-          "updatedAt": { "type": "string" },
+          "createdAt": { "format": "date-time", "type": "string" },
+          "updatedAt": { "format": "date-time", "type": "string" },
           "createdBy": { "type": "string" },
           "updatedBy": { "type": "string" },
           "tenantId": { "type": "string" },
@@ -2239,7 +2340,9 @@
         },
         "required": [
           "username",
-          "name",
+          "firstName",
+          "lastName",
+          "gender",
           "role",
           "dob",
           "email",
@@ -2286,7 +2389,11 @@
           "district": { "type": "string", "description": "District" },
           "block": { "type": "string", "description": "Block" },
           "role": { "type": "string", "description": "Role" },
-          "username": { "type": "string", "description": "User Name" },
+          "username": {
+            "description": "User Name",
+            "type": "array",
+            "items": { "type": "string" }
+          },
           "userId": { "type": "string", "description": "User Id" },
           "email": {
             "description": "email Ids",
@@ -2377,18 +2484,66 @@
       "ForgotPasswordDto": {
         "type": "object",
         "properties": {
-          "newPassword": { "type": "string", "example": "12345" },
-          "token": { "type": "string", "example": "User services token" }
+          "newPassword": { "type": "string" },
+          "token": { "type": "string" }
         },
         "required": ["newPassword", "token"]
       },
       "ResetUserPasswordDto": {
         "type": "object",
         "properties": {
-          "userName": { "type": "string", "example": "user@987" },
-          "newPassword": { "type": "string", "example": "98765" }
+          "userName": { "type": "string" },
+          "newPassword": { "type": "string" }
         },
         "required": ["userName", "newPassword"]
+      },
+      "ExistUserDto": {
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "type": "string",
+            "description": "First name of the user",
+            "maxLength": 50
+          },
+          "middleName": {
+            "type": "string",
+            "description": "Middle name of the user (optional)",
+            "maxLength": 50
+          },
+          "lastName": {
+            "type": "string",
+            "description": "Middle name of the user (optional)",
+            "maxLength": 50
+          },
+          "email": { "type": "string" },
+          "mobile": {
+            "type": "string",
+            "description": "Mobile number of the user (optional)"
+          }
+        },
+        "required": ["firstName", "email", "mobile"]
+      },
+      "SuggestUserDto": {
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "type": "string",
+            "description": "First name of the user",
+            "maxLength": 50
+          },
+          "middleName": {
+            "type": "string",
+            "description": "Middle name of the user (optional)",
+            "maxLength": 50
+          },
+          "lastName": {
+            "type": "string",
+            "description": "Last name of the user",
+            "maxLength": 50
+          },
+          "username": { "type": "string", "description": "User Name" }
+        },
+        "required": ["firstName", "lastName"]
       },
       "OtpSendDTO": {
         "type": "object",
@@ -2449,7 +2604,9 @@
             "example": ""
           },
           "role": { "type": "string", "description": "Role", "example": "" },
-          "name": { "type": "string", "description": "Name", "example": "" },
+          "firstName": { "type": "string" },
+          "middleName": { "type": "string" },
+          "lastName": { "type": "string" },
           "status": {
             "description": "Status",
             "example": [],
@@ -2888,6 +3045,25 @@
           }
         },
         "required": ["fieldName"]
+      },
+      "FieldValueDto": {
+        "type": "object",
+        "properties": {
+          "fieldId": { "type": "string", "description": "fieldId" },
+          "itemId": { "type": "string", "description": "itemId" }
+        },
+        "required": ["fieldId", "itemId"]
+      },
+      "FieldValuesDeleteDto": {
+        "type": "object",
+        "properties": {
+          "fieldValues": {
+            "description": "Array of field values to delete",
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/FieldValueDto" }
+          }
+        },
+        "required": ["fieldValues"]
       },
       "AuthDto": {
         "type": "object",

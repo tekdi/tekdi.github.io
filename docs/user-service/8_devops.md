@@ -54,6 +54,11 @@ AWS_BUCKET_NAME = "add-here"
 AWS_ACCESS_KEY_ID = "add-here"
 AWS_SECRET_ACCESS_KEY= "add-here"
 AWS_REGION = "add-here"
+
+# sms for reset password and phone verification during signup
+SMS_KEY="add-here"
+OTP_EXPIRY="add-no-of-minutes"
+OTP_DIGITS="add-no-of-digits"
 ```
 
 #### 4. Run the Application

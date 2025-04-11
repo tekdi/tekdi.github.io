@@ -5,7 +5,7 @@ description: "Check User"
 sidebar_label: "Check User"
 hide_title: true
 hide_table_of_contents: true
-api: eJxlkUFvwjAMhf8KeudsrDv2htgF7TA0xgmhKQSzRLRN57horOp/n5wiNLZTFDt+7/NLj9gSWwmxWexRYp2I57ERjlVF/O48uaPWYNBatjUJcUK52RowpTY2iRLKHo8PhR57So5Dq3IogWEwEPuhA1kZW/PnyVwNJheHmsRHpWhjkuwoHiWmXSKenopppoFBIj5dMRK5joOcV85TPcJY5yilO4lHavQu55ZQwrbhmc4wCOrsye6za2Nr7c468ZHDd84ik4fmEPN4kEpfrHw4Jm8ny8rKIXKNf8u8rp8ms+UCBso3Fov7Bxi42Ih1grJXZd2vtpnt4n6Tw43qFV/oS6ZtZUODwaDjSntjRBt04+SpUK8c09bAa4zlBn2/s4nWXA2Dlj874vMY3slysDvdbrMdfn3A8mX1hmH4AV0cthg=
+api: eJydVMtu20AM/BWBpxbY1HGBXnRLkxQI+gryOBlGQUu0tfE+lF3KtWvo3wvuKrHctEBQH2SJojhDznD34FsKyNq7qxpKuI8Uzr3j4I2h8KNqqFpLDBS0GNASU4hQzuYKAj12FPmjr3dQ7tOjDlRDyaEjBZV3TI7lFbat0VUCmTxE7yQWq4Ysyh3vWoIS/OKBKhacIJRYU5S3Sx0if0NLo9TIQbsVKKgpVkG3UhhK+CSphUNLhV8W3FDRZeYWt1/IrbiB8sNpr8Dqujb0uqJfU+6LqsUbnzLQvP0LgMHXcv6v8mRRm5e1pTO/0OY1sCmvcJ1dUPgXcN+rkaqzkRRPFJ4B5wpYsyDD5VZHFstcsIe+z0Vi613Mgr4/ncrfMZ+ExbgSayUPSsXjlHOxYjF40RI3Xvza+pg8gzIcmEgLk810knwLCiKFzbNhI1Vd0Ly7FetlMlhVFOMJ+zW50dSw1Z9pBwq0IDeEdUJ1SVI467jxQf9Khk7MxdQ3h3W43KJtswwj+x60GPvvED2Y5hAblB59Ogg80ly7pU/cBwFuG72ODRbXBnnpg30h/vnN/UVxdn0FCmQ4OTh9dwp5abGSpZW2ZLgW02CG1o9EOKr6PDumLU9ag9oJuS4ko2Z9ZjAs5GYqWEmjuYJGNCxnsN8vMNJ9MH0v4ceOwi4rt8GgcSHdzea9ehKknO1hTTuhlc+akzuhIOmmyzL+ce7085F1rr/f3oGCxXB+WV/LNwF/gkrXEkBB3obklRTbg0G36nAlubmm/H4DXUzMlw==
 sidebar_class_name: "post api-method"
 info_path: docs/user-service/apis/shiksha-platform
 custom_edit_url: null
@@ -54,7 +54,7 @@ Check User
 
 <RequestSchema
   title={"Body"}
-  body={undefined}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"firstName":{"type":"string","description":"First name of the user","maxLength":50},"middleName":{"type":"string","description":"Middle name of the user (optional)","maxLength":50},"lastName":{"type":"string","description":"Middle name of the user (optional)","maxLength":50},"email":{"type":"string"},"mobile":{"type":"string","description":"Mobile number of the user (optional)"}},"required":["firstName","email","mobile"],"title":"ExistUserDto"}}}}}
 >
   
 </RequestSchema>

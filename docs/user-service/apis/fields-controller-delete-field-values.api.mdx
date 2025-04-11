@@ -1,0 +1,71 @@
+---
+id: fields-controller-delete-field-values
+title: "Delete Field Values"
+description: "Delete Field Values"
+sidebar_label: "Delete Field Values"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNVMtu2zAQ/BVhz0wU96ibG7tA0B6CPHoxjIKW1hZjSlTIlRtV4L8XS0ryIwmQiyAt9zEzO2IPpkErSZn6roAMfijUhbs1NVmjNdo/BWokDOHfUrfoQEAjrayQ0DrIVmsBFl9bdPTdFB1kffhUFgvIyLYoIDc1YU18JJtGqzyMS1+cqTnm8hIryW/UNQgZmM0L5sRzLIMjhY5PtycYsh4KdLlVDbeCDObWyi4x2yRkJYeQlpBJIn4QY3PJiSBAEVbui0NZmSnRkVX1DsQFgDHRx9ZfKRnyvBcnkq2mTlOjtQBSpHFcT9BgQQb8h6WDRB9WuUWQYygO1a4xtYtkv93M3isbipNYPahZJK7Nc3Ru22rdXQcGJHfshsFAPN1h3lpFHWSrHmTIvyKzx5pN49eXakRkyek4EFAhlYaNOe2xkVRCBmnr0KaHWRo4uzRuPJ3SHNrDZNARyiNbLXI9BzStSjbqJwZ/MKYSZYEWBNSy4tN5S6Wx6l8wcKDNJn442n/5JquGNb+w6+rESUc7jEYZI37N7qm3JgAalvdYqr0rZXKvJW2Nrd7Z6PbheZHM7+9AADOOwdn1DcQ/T+b85zHWxjiqZGA78PlY87P2kzKEb5Q2WqqaPd5azWdxGSvgZfD8GYhIlPscjg3DUtYCSuOI8/t+Ix0+W+09h19btF1c1UFaJTfMfMVqDBtgAffYMdt4mVw9MaphRtjbxcXCBpvMs1j+Wj4tQcBmuKIqU3CVlX9BhGcGIMAEzsEeIdaDlvWulTvOjV1ZR9ky6VPL7INlhhfGOh7V3QnGc/eIgRA/vfikpO+jIb2f8uPRpxWTZWM2b2vtvf8PKhEF5g==
+sidebar_class_name: "delete api-method"
+info_path: docs/user-service/apis/shiksha-platform
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete Field Values"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/user/v1/fields/values/delete"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Delete Field Values
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"fieldValues":{"description":"Array of field values to delete","type":"array","items":{"type":"object","properties":{"fieldId":{"type":"string","description":"fieldId"},"itemId":{"type":"string","description":"itemId"}},"required":["fieldId","itemId"],"title":"FieldValueDto"}}},"required":["fieldValues"],"title":"FieldValuesDeleteDto"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"201":{"description":"Field Values deleted successfully."}}}
+>
+  
+</StatusCodes>
+
+
+      
