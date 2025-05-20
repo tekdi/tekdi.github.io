@@ -19,6 +19,11 @@ Depending upon the project need or whether you are using React or Angular or Nod
 #### For TypeScript based projects:
 - [typescript-eslint](https://www.npmjs.com/package/typescript-eslint): Tooling which enables you to use TypeScript with ESLint
 
+#### For TypeScript based Nestjs (Nodejs) - projects
+- [eslint-plugin-jsdoc](https://www.npmjs.com/package/eslint-plugin-jsdoc): JSDoc linting rules for ESLint
+- [eslint-plugin-security](https://www.npmjs.com/package/eslint-plugin-security): ESLint rules for Node Security, helps identify potential security hotspots, but finds a lot of false positives which need triage by a human.
+- [eslint-plugin-sonarjs](https://www.npmjs.com/package/eslint-plugin-sonarjs): eslint-plugin-sonarjs is an ESLint plugin maintained by Sonar, designed to help developers write Clean Code. This plugin exposes to ESLint users all original JS/TS rules from SonarJS, an analyzer for JavaScript and TypeScript within the Sonar ecosystem.
+
 #### For React based projects:
 - [eslint-plugin-react](https://www.npmjs.com/package/eslint-plugin-react): Provides React specific linting rules for eslint
 - [eslint-plugin-react-hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks): This ESLint plugin enforces the Rules of Hooks.
@@ -48,8 +53,22 @@ Depending upon the project need or whether you are using React or Angular or Nod
 ```
 
 ### Installation for Nodejs - Nestjs projects
-```js
-@TODO
+Navigate to your project directory and install npm packages required for ESLint, ESLint plugins and configurations. 
+
+-  If using npm
+```sh
+npm install globals \
+eslint \
+@eslint/js \
+@eslint/eslintrc \
+typescript-eslint \
+eslint-plugin-jsdoc \
+eslint-plugin-security \
+eslint-plugin-sonarjs \
+prettier \
+eslint-config-prettier \
+eslint-plugin-prettier \
+--save-dev
 ```
 
 ### Installation for React projects using TypeScript
@@ -62,7 +81,7 @@ eslint @eslint/js typescript-eslint \
 eslint-plugin-react \
 eslint-plugin-react-hooks \
 eslint-plugin-react-refresh \
-eslint-plugin-jsx-a11y 
+eslint-plugin-jsx-a11y \
 prettier eslint-config-prettier eslint-plugin-prettier \
 --save-dev
 ```
@@ -105,7 +124,98 @@ Remember to save these as `devDependencies` in your project.
 
 ### Recommended ESLint configuration for Nodejs - Nestjs projects
 ```js
-@TODO
+// @ts-check
+import eslint from '@eslint/js';
+import jsdoc from 'eslint-plugin-jsdoc';
+import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
+import securityPlugin from 'eslint-plugin-security';
+import sonarjs from 'eslint-plugin-sonarjs';
+import globals from 'globals';
+import tseslint from 'typescript-eslint';
+const { configs: securityConfigs } = securityPlugin;
+
+export default tseslint.config(
+	{
+		ignores: [
+			'eslint.config.mjs',
+			'node_modules',
+			'**/node_modules/**',
+			'**/*.js',
+			'**/*.d.ts',
+		],
+	},
+	// ESLint Configs
+	eslint.configs.recommended,
+	...tseslint.configs.recommendedTypeChecked,
+
+	// ESLint Plugins
+	// Prettier plugin
+	eslintPluginPrettierRecommended,
+
+	// JSdoc plugin
+	jsdoc.configs['flat/recommended'],
+
+	// Security plugin
+	securityConfigs.recommended,
+
+	// Sonar plugin
+	sonarjs.configs.recommended,
+
+	// Globals
+	{
+		languageOptions: {
+			globals: {
+				...globals.node,
+				...globals.jest,
+			},
+			ecmaVersion: 5,
+			sourceType: 'module',
+			parserOptions: {
+				project: ['tsconfig.json', 'tsconfig.spec.json'],
+				projectService: true,
+				tsconfigRootDir: import.meta.dirname,
+			},
+		},
+	},
+	{
+		plugins: {},
+		rules: {
+			// TypeScript Rules
+			'@typescript-eslint/no-explicit-any': 'off',
+			'@typescript-eslint/no-floating-promises': 'warn',
+			'@typescript-eslint/no-unsafe-argument': 'warn',
+
+			// JSdoc Rules
+			'jsdoc/require-jsdoc': 'off',
+
+			// EOL, Linebreak, and Indentation Rules
+			'eol-last': ['error', 'always'],
+			'linebreak-style': ['error', 'unix'],
+			'no-trailing-spaces': 'error',
+			indent: ['error', 'tab', { SwitchCase: 1 }],
+
+			// Prettier and Indentation Rules
+			'prettier/prettier': [
+				'error',
+				{
+					arrowParens: 'always',
+					endOfLine: 'lf',
+					semi: true,
+					singleQuote: true,
+					tabWidth: 4,
+					trailingComma: 'es5',
+					useTabs: true,
+				},
+			],
+
+			// Security Rules
+			'security/detect-object-injection': 'warn',
+
+			// Sonar Rules
+			'sonarjs/no-duplicate-string': 'warn',
+		},
+	},
+);
 ```
 
 ### Recommended ESLint configuration for React projects using TypeScript
