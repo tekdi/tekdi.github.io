@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktekdi_docs=self.webpackChunktekdi_docs||[]).push([[5348],{67619:t=>{t.exports=JSON.parse('{"tag":{"label":"tools","permalink":"/docs/tags/tools","allTagsPath":"/docs/tags","count":1,"items":[{"id":"tools/common/prettier","title":"Prettier","description":"Prettier Config","permalink":"/docs/tools/common/prettier"}],"unlisted":false}}')}}]);
