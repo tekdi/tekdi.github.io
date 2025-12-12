@@ -9,7 +9,7 @@ title: Notification Service Features
 Seamlessly manage and distribute large volumes of notifications using RabbitMQ.
 
 ### 2. Multiple Delivery Modes
-Choose from various notification methods, including SMS, email, and push notifications.
+Choose from various notification methods, including SMS, email, inApp and push notifications.
 
 ### 3. Customizable Templates
 Personalize notifications with adaptable templates to meet specific needs.
