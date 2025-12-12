@@ -53,3 +53,23 @@ sidebar_position: 6
 | error       | character varying(255)   | Error message, if any                                                             |
 
 ![NotificationLogs](assets/notification_db2.png)
+#### InAppNotification ####
+
+| Column Name | Data Type                | Description                                                                       |
+|-------------|--------------------------|-----------------------------------------------------------------------------------|
+| id          | uuid                     | Unique identifier (Primary Key)                                                   |
+| userId      | uuid                     | ID of the user who is the recipient of the in-app notification.                                                        |
+| action_key   | character varying (255) | "Key associated with the action (e.g., references NotificationActionTemplates.key)."                                           |
+| org_code     | character varying(255)   | Optional organization code.                                                       |
+| context      | character varying(255)   | "Context or purpose of the notification (e.g., 'task_assignment')."                                           |
+| title     | character varying(255)   | Title of the in-app notification.                                                       |
+| message        | text   | Full content/body of the in-app notification.                                                  |
+| link        | character varying(500)   | Optional URL or link associated with the notification action                                                              |
+| metadata   | jsonb   | Optional JSON data for extra context or dynamic content.                                                     |
+| isRead       | boolean   | Flag indicating if the user has read the notification (default: false)                                                             |
+| createdAt       | timestamp with time zone   | Timestamp for when the notification was created.                                                             |
+| readAt       | timestamp with time zone   | Timestamp for when the notification was marked as read.                                                             |
+| expiresAt       | timestamp with time zone   | Optional timestamp after which the notification should be considered expired/removed.                                                             |
+
+
+![inAppNotification](assets/inappnotification_db.png)
