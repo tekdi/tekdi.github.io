@@ -386,7 +386,3 @@ services:
     ports:
       - '9200:9200'
 ```
-
-## Steps for Server Side Setup
-
-@TODO

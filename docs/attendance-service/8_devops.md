@@ -38,5 +38,3 @@ POSTGRES_DATABASE="add-here"
 npm run start:dev
 ```
 
-## Steps for Server Side Setup
-@TODO

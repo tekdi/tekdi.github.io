@@ -392,6 +392,3 @@ services:
     ports:
       - "6379:6379"
 ```
-
-## Steps for Server Side Setup
-@TODO
