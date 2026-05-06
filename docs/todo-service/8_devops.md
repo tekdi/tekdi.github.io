@@ -38,6 +38,3 @@ POSTGRES_SCHEMA="add-here"
 npm run start:dev
 ```
 
-## Steps for Server Side Setup
-
-@TODO

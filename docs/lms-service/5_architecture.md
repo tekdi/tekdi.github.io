@@ -32,7 +32,6 @@ graph TD
 ```
 
 ### Key Architectural Patterns
-
 1. **Repository Pattern**: Abstracting database operations through TypeORM repositories.
 2. **Dependency Injection**: Core to NestJS, ensuring loose coupling between components.
 3. **Global Interceptors**: Used for consistent response formatting and performance monitoring.
