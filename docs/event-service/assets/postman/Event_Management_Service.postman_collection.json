@@ -1,0 +1,638 @@
+{
+    "info": {
+        "_postman_id": "79a93445-13a8-4e54-91e9-503fcc081e36",
+        "name": "Event Management Service API",
+        "description": "Complete API collection for the Event Management Service with all endpoints, sample requests, and parameters",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "_exporter_id": "25088737",
+        "_collection_link": "https://restless-station-447428.postman.co/workspace/New-Team-Workspace~d482b4e0-4ee8-4441-8405-9ed0684e9ca4/collection/25088737-79a93445-13a8-4e54-91e9-503fcc081e36?action=share&source=collection_link&creator=25088737"
+    },
+    "item": [
+        {
+            "name": "Events",
+            "item": [
+                {
+                    "name": "Create Event",
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJKQWV0Z1E5d1c1X1ktaHBwV0lsb3pxb0ExZ3ctNnhvMi1MVzExNjlSblljIn0.eyJleHAiOjE3NTUxNzUzOTIsImlhdCI6MTc1NTA4ODk5MiwianRpIjoiNDYxNjhjNTgtYjAyOS00MTkxLTk4ZGItNjZkZjc5NzhmNTI5IiwiaXNzIjoiaHR0cHM6Ly9rZXljbG9hay1xYS5hc3BpcmVsZWFkZXJzLm9yZy9hdXRoL3JlYWxtcy9Bc3BpcmVMZWFkZXJEZXYiLCJzdWIiOiIzNTExM2JmYy1hZGNlLTQ3ZmMtYjg1ZC04NzFjYmNiMDBiY2MiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJBc3BpcmVMZWFkZXJEZXYiLCJzZXNzaW9uX3N0YXRlIjoiOTg5MWM2MzAtZGM2YS00YjMyLWJjZmMtY2JlOWU0ZGE0ODcwIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsImRlZmF1bHQtcm9sZXMtcHJhdGhhbSJdfSwic2NvcGUiOiJzc28tbWV0YWRhdGEgZW1haWwgcHJvZmlsZSBwcmF0aGFtLXJvbGUiLCJzaWQiOiI5ODkxYzYzMC1kYzZhLTRiMzItYmNmYy1jYmU5ZTRkYTQ4NzAiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsIm5hbWUiOiJWaW5heWFrIFAiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJ2aW5heWFrLnBhdGlsQHRla2RpdGVjaG5vbG9naWVzLmNvbSIsImdpdmVuX25hbWUiOiJWaW5heWFrIiwiZmFtaWx5X25hbWUiOiJQIiwiZW1haWwiOiJ2aW5heWFrLnBhdGlsQHRla2RpdGVjaG5vbG9naWVzLmNvbSJ9.UusSfIQdVQmklpEAy_xm3UPRhx-P_W_mmbYHNAXDfNZTx-2MEmukjCR_4dAz6oJVmX43U2swsIjgqiN4B34dp7XU-CQZKvnwgTg23_VLmDEPWM9QIBZNTte2cF-GexheIrLDsju0_pWbB_T1QsEdiSVBdgHzAoSpVYzQsz939_Ttxid8oKgsmKKeGRLSLb-r81eaBQ06eG7Chnv3MsIIuv9C_ZSogn6b7TswRotWvaE2AIvR9fP3s7ogtazIBE75gsqScMrN4dmOS12eCeAhTB-BT_vodjcbpqxz8obcstOE6n5iCBqUDZxt2VmcExVfs8CkXy36G9fvxKCWeuXlyA",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"title\": \"Auto-Create Zoom Webinar - leader\",\n  \"shortDescription\": \"This event will automatically create a Zoom Webinar\",\n  \"description\": \"This event demonstrates automatic Webinar creation\",\n  \"eventType\": \"online\",\n  \"isRestricted\": true,\n  \"startDatetime\": \"2025-09-13T10:07:00Z\",\n  \"endDatetime\": \"2025-09-13T11:08:00Z\",\n  \"onlineProvider\": \"Zoom\",\n  \"meetingType\": \"webinar\",\n  \"approvalType\": 0,\n  \"isMeetingNew\": true,\n  \"platformIntegration\" : true,\n  \"recordings\": {\n    \"url\": \"https://example.com/recording\"\n  },\n  \"status\": \"live\",\n  \"isRecurring\": false\n}"
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/event/v1/create",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "event",
+                                "v1",
+                                "create"
+                            ]
+                        },
+                        "description": "Create a new event. Supports both online and offline events with recurring patterns."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Search Events",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"limit\": 10,\n  \"offset\": 0,\n  \"filters\": {\n    \"status\": [\"live\"],\n    \"eventType\": [\"online\"],\n    \"title\": \"Sample Event\",\n    \"createdBy\": \"eff008a8-2573-466d-b877-fddf6a4fc13e\",\n    \"date\": {\n      \"after\": \"2024-07-24T00:00:00Z\",\n      \"before\": \"2024-07-27T23:59:59Z\"\n    }\n  }\n}"
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/event/v1/list",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "event",
+                                "v1",
+                                "list"
+                            ]
+                        },
+                        "description": "Search and filter events with pagination support."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update Event by eventRepetitionId",
+                    "request": {
+                        "method": "PATCH",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"title\": \"Updated Event Title\",\n  \"status\": \"live\",\n  \"isMainEvent\": true,\n  \"startDatetime\": \"2024-06-02T02:00:00Z\",\n  \"endDatetime\": \"2024-06-02T05:00:00Z\",\n  \"location\": \"Updated Event Location\",\n  \"latitude\": 18.508345134886994,\n  \"longitude\": 73.856255,\n  \"onlineProvider\": \"Zoom\",\n  \"onlineDetails\": {\n    \"url\": \"https://zoom.us/j/updated-meeting\",\n    \"id\": \"updated-meeting-id\"\n  },\n  \"metadata\": {\n    \"framework\": {\n      \"board\": \"\",\n      \"medium\": \"\",\n      \"grade\": \"\",\n      \"subject\": \"\",\n      \"topic\": \"\",\n      \"subTopic\": \"\",\n      \"teacherName\": \"Vivek Kasture\"\n    },\n    \"eventType\": \"PLANNED_SESSION\",\n    \"doId\": \"\",\n    \"cohortId\": \"71bdbed4-388a-4c79-bd69-65b08e857f1e\",\n    \"cycleId\": \"\",\n    \"tenant\": \"\"\n  },\n  \"erMetaData\": {\n    \"topic\": \"Java\",\n    \"mentorId\": \"1244546647\",\n    \"subTopic\": \"Type of features\"\n  }\n}"
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/event/v1/{{eventRepetitionId}}",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "event",
+                                "v1",
+                                "{{eventRepetitionId}}"
+                            ],
+                            "variable": [
+                                {
+                                    "key": "eventRepetitionId",
+                                    "value": "YOUR_EVENT_REPETITION_ID",
+                                    "description": "The ID of the event repetition to update"
+                                }
+                            ]
+                        },
+                        "description": "Update an existing event. Requires eventRepetitionId in the URL path."
+                    },
+                    "response": []
+                }
+            ],
+            "description": "Event management endpoints for creating, searching, and updating events"
+        },
+        {
+            "name": "Attendees",
+            "item": [
+                {
+                    "name": "Delete Enrollment",
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "{{AccessToken}}",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "tenantId",
+                                "value": "{{tenantId}}",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"eventId\": \"dec60d8a-d161-4882-8020-20c207ed496a\",\n  \"userId\": \"d5fec05a-d6ab-44be-bfa4-eaeef2ef8fe9\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/attendees/v1/enroll",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "attendees",
+                                "v1",
+                                "enroll"
+                            ]
+                        },
+                        "description": "Remove an attendee from an event. Requires both eventId and userId."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "New Request",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": ""
+                        }
+                    },
+                    "response": []
+                }
+            ],
+            "description": "Attendee management endpoints for managing event participants"
+        },
+        {
+            "name": "Attendance",
+            "item": [
+                {
+                    "name": "Mark Event Attendance Copy",
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJKQWV0Z1E5d1c1X1ktaHBwV0lsb3pxb0ExZ3ctNnhvMi1MVzExNjlSblljIn0.eyJleHAiOjE3NjUwMTE5MjIsImlhdCI6MTc2NDkyNTUyMiwianRpIjoiMTU3NDBhMGMtOTY4ZS00NGFmLWE4NDktNzc4MGY4NDBmMTUxIiwiaXNzIjoiaHR0cHM6Ly9rZXljbG9hay1xYS5hc3BpcmVsZWFkZXJzLm9yZy9hdXRoL3JlYWxtcy9Bc3BpcmVMZWFkZXJEZXYiLCJzdWIiOiJmYTAyM2U0NC03YmNmLTQzZmMtOTA5OS03Y2E0MTkzYTk4NWYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJBc3BpcmVMZWFkZXJEZXYiLCJzZXNzaW9uX3N0YXRlIjoiZDNhM2RmY2ItYWJjNi00YTg2LTk4MWQtNDRhNjhlMWUzNzI5IiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsImRlZmF1bHQtcm9sZXMtcHJhdGhhbSJdfSwic2NvcGUiOiJzc28tbWV0YWRhdGEgZW1haWwgcHJvZmlsZSBwcmF0aGFtLXJvbGUiLCJzaWQiOiJkM2EzZGZjYi1hYmM2LTRhODYtOTgxZC00NGE2OGUxZTM3MjkiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsIm5hbWUiOiJNYWhlc2ggTWFoYWphbiIsInByZWZlcnJlZF91c2VybmFtZSI6Im1haGVzaC5tYWhhamFuKzExK0B0ZWtkaXRlY2hub2xvZ2llcy5jb20iLCJnaXZlbl9uYW1lIjoiTWFoZXNoIiwiZmFtaWx5X25hbWUiOiJNYWhhamFuIiwiZW1haWwiOiJtYWhlc2gubWFoYWphbisxMStAdGVrZGl0ZWNobm9sb2dpZXMuY29tIn0.EGlUmvLMK1OckzJbC1_dWfmXCf3pTjn2eGPmQoltepa9afEoS0XrMB9SNmll6w3nrcg6OxiBRTLVICbM-0w2Pq4tiKGEjRNcffQnK2-vLVWlxPAMidc9kTu_nvYVttuxJVxgm8tZTkKGgswrRdycIfnvjdfcZtKV-I4Vb3RYtlF_GsjTKs3ftUZgr7GV2j7U1JwZ2u3dkYxKEyk1zOkfNkJOiz_lVeOtU4SXdECM1aKT5XfUue_chl43JOa2nE5NqF5RL_mUhhweF-vYfrCTLYLmYDgQa7Rvphqw2cj-eOYI1bD2qATV-qHEvKLSvPWE7ZdQuGT-vIAoj170UH-COQ",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "tenantid",
+                                "value": "ef99949b-7f3a-4a5f-806a-e67e683e38f3",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "localhost:4000/event-service/attendance/v1/mark-attendance",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "4000",
+                            "path": [
+                                "event-service",
+                                "attendance",
+                                "v1",
+                                "mark-attendance"
+                            ]
+                        },
+                        "description": "Mark attendance for meeting participants. Supports marking by email or username."
+                    },
+                    "response": []
+                }
+            ],
+            "description": "Attendance tracking endpoints for marking participant attendance"
+        },
+        {
+            "name": "Role Permission Mapping",
+            "item": [
+                {
+                    "name": "Create Permission",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"roleTitle\": \"admin\",\n  \"apiPath\": \"/event/v1/*\",\n  \"requestType\": \"POST,GET,PATCH,DELETE\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/role-permission/create",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "role-permission",
+                                "create"
+                            ]
+                        },
+                        "description": "Create a new role permission mapping for API access control."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Permission",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"roleTitle\": \"admin\",\n  \"apiPath\": \"/event/v1/*\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/role-permission/get",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "role-permission",
+                                "get"
+                            ]
+                        },
+                        "description": "Get permission details for a specific role and API path."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update Permission",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"roleTitle\": \"admin\",\n  \"permissionId\": \"permission-uuid-here\",\n  \"apiPath\": \"/event/v1/*\",\n  \"requestType\": \"POST,GET,PATCH,DELETE\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/role-permission/update",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "role-permission",
+                                "update"
+                            ]
+                        },
+                        "description": "Update an existing role permission mapping."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete Permission",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"rolePermissionId\": \"permission-uuid-here\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/role-permission/delete",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "role-permission",
+                                "delete"
+                            ]
+                        },
+                        "description": "Delete a role permission mapping by its ID."
+                    },
+                    "response": []
+                }
+            ],
+            "description": "Role-based access control endpoints for managing API permissions"
+        },
+        {
+            "name": "mark-attendance-by-userId",
+            "request": {
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJKQWV0Z1E5d1c1X1ktaHBwV0lsb3pxb0ExZ3ctNnhvMi1MVzExNjlSblljIn0.eyJleHAiOjE3NjU5NjEyMDcsImlhdCI6MTc2NTg3NDgwNywianRpIjoiMjg4ZDFmZjktNmQ2Yi00NDI3LWE1ZDUtNTRjOTgzNDFlOTAyIiwiaXNzIjoiaHR0cHM6Ly9rZXljbG9hay1wcm9kLmFzcGlyZWxlYWRlcnMub3JnL2F1dGgvcmVhbG1zL0FzcGlyZUxlYWRlclByb2QiLCJzdWIiOiIxMDBiYTc3Ny1jYTk5LTRjZWEtOGVjNy1jMWRkZDc2M2Q5N2IiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJBc3BpcmVMZWFkZXJQcm9kIiwic2Vzc2lvbl9zdGF0ZSI6IjEzYTFlYjU5LWQwZjMtNDk2NC05YjliLWYzODViZDM0MmQ2YiIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiLyoiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iLCJkZWZhdWx0LXJvbGVzLXByYXRoYW0iXX0sInNjb3BlIjoic3NvLW1ldGFkYXRhIGVtYWlsIHByb2ZpbGUgcHJhdGhhbS1yb2xlIiwic2lkIjoiMTNhMWViNTktZDBmMy00OTY0LTliOWItZjM4NWJkMzQyZDZiIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJuYW1lIjoiRG55YW5lc2ggS3Vsa2FybmkiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJkbnlhbmVzaC5rdWxrYXJuaUB0ZWtkaXRlY2hub2xvZ2llcy5jb20iLCJnaXZlbl9uYW1lIjoiRG55YW5lc2giLCJmYW1pbHlfbmFtZSI6Ikt1bGthcm5pIiwiZW1haWwiOiJkbnlhbmVzaC5rdWxrYXJuaUB0ZWtkaXRlY2hub2xvZ2llcy5jb20ifQ.Ia06xFMLRbhaMWRlQUYrTP8XYwjmLrMFJA2t0HzfSLkGwYPxkIuMPlpayxl_mrZP7u8COEpmf5pFUhask3_WH9Ev1lzhMWsL9bt4WPgYuvdmBQtAWgagETWBDqkr4SpbPI0hLKi-Sz8p2z0C5tAb5ij2qsF4efZQG4F6Y5CsUQ_HJXCd5Rv9bFDkMOeZfbR-0ophMHEhG3CxTLzs4HWC4XE89LsYtpEETzooGTCiz2-NPYuJg9MgtBcxfTIZH4j1Yj42_IHPuJ6umS7akVoMIxs8cfS_wK7EZGIOlGdZJ6WMih9kwUFoecxaNPot17eVobImK2WfD4_Zjg6H0EbOzQ",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    },
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJKQWV0Z1E5d1c1X1ktaHBwV0lsb3pxb0ExZ3ctNnhvMi1MVzExNjlSblljIn0.eyJleHAiOjE3NjI5MjQ0OTksImlhdCI6MTc2MjgzODA5OSwianRpIjoiMTNhYmVmZWUtY2Y2MC00ZmI4LWI0ZDEtNmU1MTk2MjVkNGI4IiwiaXNzIjoiaHR0cHM6Ly9rZXljbG9hay1xYS5hc3BpcmVsZWFkZXJzLm9yZy9hdXRoL3JlYWxtcy9Bc3BpcmVMZWFkZXJEZXYiLCJzdWIiOiJmYTAyM2U0NC03YmNmLTQzZmMtOTA5OS03Y2E0MTkzYTk4NWYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJBc3BpcmVMZWFkZXJEZXYiLCJzZXNzaW9uX3N0YXRlIjoiYWIzNDg5MTctYTJlNS00YjZkLTlkMjctOGU0Yzk5ZDlmNmFlIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsImRlZmF1bHQtcm9sZXMtcHJhdGhhbSJdfSwic2NvcGUiOiJzc28tbWV0YWRhdGEgZW1haWwgcHJvZmlsZSBwcmF0aGFtLXJvbGUiLCJzaWQiOiJhYjM0ODkxNy1hMmU1LTRiNmQtOWQyNy04ZTRjOTlkOWY2YWUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsIm5hbWUiOiJNYWhlc2ggTWFoYWphbiIsInByZWZlcnJlZF91c2VybmFtZSI6Im1haGVzaC5tYWhhamFuKzExK0B0ZWtkaXRlY2hub2xvZ2llcy5jb20iLCJnaXZlbl9uYW1lIjoiTWFoZXNoIiwiZmFtaWx5X25hbWUiOiJNYWhhamFuIiwiZW1haWwiOiJtYWhlc2gubWFoYWphbisxMStAdGVrZGl0ZWNobm9sb2dpZXMuY29tIn0.D_ZmM0c6zcrMadTpBvAmllCA1aLh71WptX8KkwpCNJxc-FuDLVPMUdRBSg_9J1hrY5koHpSX4GiaOFj78BX4k9GJ-IyuKZNJxVaTdYAOg1gzLROvMnRfhv-PmZPHzi2Ifs87BJ-nKSAUqMUlnBDiz3THP8GndwX5o4J2Rc3vSDuNY-vJDF-SSr-I0pIp03ocCl2_GFK4ktcpFsVz9FousjuxWahEJTioxwTUKGJzDtv3eSlyt5_Kb8dCOsX2LAYt_OolIt5bfoN3oH2ly3ZJ5FKz7epAv4MTm5JXR7l7VF2am1XfNBZqdHOVIL18OTIHS4cpUKoGrshNokDCg8Dd1Q",
+                        "disabled": true
+                    },
+                    {
+                        "key": "tenantid",
+                        "value": "ef99949b-7f3a-4a5f-806a-e67e683e38f3"
+                    },
+                    {
+                        "key": "organisationid",
+                        "value": "d36d9079-0f42-4ba3-be03-26c9e79509ee"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"userIds\": [\"{{userId}}\"\n    ],\n    \"eventRepetitionId\": \"{{eventrepetationid}}\",\n    \"eventId\": \"{{eventid}}\",\n    \"attendanceDate\": \"2025-12-16\",\n    \"scope\": \"self\",\n    \"tenantId\": \"ef99949b-7f3a-4a5f-806a-e67e683e38f3\",\n    \"timeSpent\": {{time}}\n  }"
+                },
+                "url": {
+                    "raw": "https://middleware-prod.leaders.org/event-service/attendance/v1/mark-attendance-by-userId",
+                    "protocol": "https",
+                    "host": [
+                        "middleware-prod",
+                        "leaders",
+                        "org"
+                    ],
+                    "path": [
+                        "event-service",
+                        "attendance",
+                        "v1",
+                        "mark-attendance-by-userId"
+                    ],
+                    "query": [
+                        {
+                            "key": "userId",
+                            "value": "fa023e44-7bcf-43fc-9099-7ca4193a985f",
+                            "disabled": true
+                        }
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "mark-attendance-by-userId Copy",
+            "request": {
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJKQWV0Z1E5d1c1X1ktaHBwV0lsb3pxb0ExZ3ctNnhvMi1MVzExNjlSblljIn0.eyJleHAiOjE3NjQ5MTAwMjIsImlhdCI6MTc2NDgyMzYyMiwianRpIjoiNzYxNDgwMDAtNGM2Ni00Nzc3LTgyNWYtMDVlYjExYmUzNTRjIiwiaXNzIjoiaHR0cHM6Ly9rZXljbG9hay1xYS5hc3BpcmVsZWFkZXJzLm9yZy9hdXRoL3JlYWxtcy9Bc3BpcmVMZWFkZXJEZXYiLCJzdWIiOiJmYTAyM2U0NC03YmNmLTQzZmMtOTA5OS03Y2E0MTkzYTk4NWYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJBc3BpcmVMZWFkZXJEZXYiLCJzZXNzaW9uX3N0YXRlIjoiNzM0ZGQ2ZTAtNzYyNC00NTZhLWJmNDUtMjM1NDM0ZDdlNTNiIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsImRlZmF1bHQtcm9sZXMtcHJhdGhhbSJdfSwic2NvcGUiOiJzc28tbWV0YWRhdGEgZW1haWwgcHJvZmlsZSBwcmF0aGFtLXJvbGUiLCJzaWQiOiI3MzRkZDZlMC03NjI0LTQ1NmEtYmY0NS0yMzU0MzRkN2U1M2IiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsIm5hbWUiOiJNYWhlc2ggTWFoYWphbiIsInByZWZlcnJlZF91c2VybmFtZSI6Im1haGVzaC5tYWhhamFuKzExK0B0ZWtkaXRlY2hub2xvZ2llcy5jb20iLCJnaXZlbl9uYW1lIjoiTWFoZXNoIiwiZmFtaWx5X25hbWUiOiJNYWhhamFuIiwiZW1haWwiOiJtYWhlc2gubWFoYWphbisxMStAdGVrZGl0ZWNobm9sb2dpZXMuY29tIn0.d_BxaAFCwHG5zq7ouP3zqXaNFgHvuAeSRMpkumx9BdsVLtp6qCUzEA2ETE85A3ni_SLzL7lB_kA8vLkc8P4Y7hJQDeb3naBaPBmuh1ENDoWH5fixyZxoJJbpxKd4cqj3QYNUtUkto3jr0pqw-en1eqMqbU7Y9ssom0DR69wLMt--8Q-HgaTJYPseq8Uz3u7yQ6kLJ8vSyLW829ZrGrcu757Q1YgMBHMgEBpT7u_wfQyfleb8WXfoB1wpdTAKD15K7pmxkcnacSlcfbjCVl8cx-rWVT66EWti4awTOPkGgyGxGH90xfj9ZxTQhY_aRdV31_QpGBTOn-Mjr3Tzlb_wfg",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    },
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJKQWV0Z1E5d1c1X1ktaHBwV0lsb3pxb0ExZ3ctNnhvMi1MVzExNjlSblljIn0.eyJleHAiOjE3NjI5MjQ0OTksImlhdCI6MTc2MjgzODA5OSwianRpIjoiMTNhYmVmZWUtY2Y2MC00ZmI4LWI0ZDEtNmU1MTk2MjVkNGI4IiwiaXNzIjoiaHR0cHM6Ly9rZXljbG9hay1xYS5hc3BpcmVsZWFkZXJzLm9yZy9hdXRoL3JlYWxtcy9Bc3BpcmVMZWFkZXJEZXYiLCJzdWIiOiJmYTAyM2U0NC03YmNmLTQzZmMtOTA5OS03Y2E0MTkzYTk4NWYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJBc3BpcmVMZWFkZXJEZXYiLCJzZXNzaW9uX3N0YXRlIjoiYWIzNDg5MTctYTJlNS00YjZkLTlkMjctOGU0Yzk5ZDlmNmFlIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsImRlZmF1bHQtcm9sZXMtcHJhdGhhbSJdfSwic2NvcGUiOiJzc28tbWV0YWRhdGEgZW1haWwgcHJvZmlsZSBwcmF0aGFtLXJvbGUiLCJzaWQiOiJhYjM0ODkxNy1hMmU1LTRiNmQtOWQyNy04ZTRjOTlkOWY2YWUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsIm5hbWUiOiJNYWhlc2ggTWFoYWphbiIsInByZWZlcnJlZF91c2VybmFtZSI6Im1haGVzaC5tYWhhamFuKzExK0B0ZWtkaXRlY2hub2xvZ2llcy5jb20iLCJnaXZlbl9uYW1lIjoiTWFoZXNoIiwiZmFtaWx5X25hbWUiOiJNYWhhamFuIiwiZW1haWwiOiJtYWhlc2gubWFoYWphbisxMStAdGVrZGl0ZWNobm9sb2dpZXMuY29tIn0.D_ZmM0c6zcrMadTpBvAmllCA1aLh71WptX8KkwpCNJxc-FuDLVPMUdRBSg_9J1hrY5koHpSX4GiaOFj78BX4k9GJ-IyuKZNJxVaTdYAOg1gzLROvMnRfhv-PmZPHzi2Ifs87BJ-nKSAUqMUlnBDiz3THP8GndwX5o4J2Rc3vSDuNY-vJDF-SSr-I0pIp03ocCl2_GFK4ktcpFsVz9FousjuxWahEJTioxwTUKGJzDtv3eSlyt5_Kb8dCOsX2LAYt_OolIt5bfoN3oH2ly3ZJ5FKz7epAv4MTm5JXR7l7VF2am1XfNBZqdHOVIL18OTIHS4cpUKoGrshNokDCg8Dd1Q",
+                        "disabled": true
+                    },
+                    {
+                        "key": "tenantid",
+                        "value": "ef99949b-7f3a-4a5f-806a-e67e683e38f3"
+                    },
+                    {
+                        "key": "organisationid",
+                        "value": "d36d9079-0f42-4ba3-be03-26c9e79509ee"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"userIds\": [\"4379ce9e-b4f0-42b9-a70f-85a63ef8bf75\"\n    ],\n   \"eventRepetitionId\": \"cc4d332d-5cc5-4a91-a6d2-9fc0dac03a2d\",\n    \"eventId\": \"03f031d3-cc26-451a-ab3a-84a1642595c3\",\n    \"attendanceDate\": \"2025-11-11\",\n    \"scope\": \"self\",\n    \"tenantId\": \"ef99949b-7f3a-4a5f-806a-e67e683e38f3\",\n    \"timeSpent\": 720\n  }"
+                },
+                "url": {
+                    "raw": "localhost:4000/event-service/attendance/v1/mark-attendance-by-userId",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "4000",
+                    "path": [
+                        "event-service",
+                        "attendance",
+                        "v1",
+                        "mark-attendance-by-userId"
+                    ],
+                    "query": [
+                        {
+                            "key": "userId",
+                            "value": "fa023e44-7bcf-43fc-9099-7ca4193a985f",
+                            "disabled": true
+                        }
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "https://middleware-qa.leaders.org/event-service/attendance/v1/mark-attendance",
+            "request": {
+                "auth": {
+                    "type": "noauth"
+                },
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJKQWV0Z1E5d1c1X1ktaHBwV0lsb3pxb0ExZ3ctNnhvMi1MVzExNjlSblljIn0.eyJleHAiOjE3NzE0OTA0NjksImlhdCI6MTc3MTQwNDA2OSwianRpIjoiMDMyOTRmMzctMmE0Yi00NzU1LTlmNTQtOWM5NDVhZGY2MjEzIiwiaXNzIjoiaHR0cHM6Ly9rZXljbG9hay1wcm9kLmFzcGlyZWxlYWRlcnMub3JnL2F1dGgvcmVhbG1zL0FzcGlyZUxlYWRlclByb2QiLCJzdWIiOiI5MjQ0Yjc2MS1lOTEzLTQ3MWItYjU3OS02MzgyNzBkOGIyMzQiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJBc3BpcmVMZWFkZXJQcm9kIiwic2Vzc2lvbl9zdGF0ZSI6ImYwNGQ3MTc0LTliNzMtNDZkZi1iNGZjLWY4NWIzNzZiZTk4OSIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiLyoiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iLCJkZWZhdWx0LXJvbGVzLXByYXRoYW0iXX0sInNjb3BlIjoic3NvLW1ldGFkYXRhIGVtYWlsIHByb2ZpbGUgcHJhdGhhbS1yb2xlIiwic2lkIjoiZjA0ZDcxNzQtOWI3My00NmRmLWI0ZmMtZjg1YjM3NmJlOTg5IiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJuYW1lIjoiU3V2YXJuYSBLYWxlIiwicHJlZmVycmVkX3VzZXJuYW1lIjoic3V2YXJuYS5rYWxlQHRla2RpdGVjaG5vbG9naWVzLmNvbSIsImdpdmVuX25hbWUiOiJTdXZhcm5hIiwiZmFtaWx5X25hbWUiOiJLYWxlIiwiZW1haWwiOiJzdXZhcm5hLmthbGVAdGVrZGl0ZWNobm9sb2dpZXMuY29tIn0.RK__1ht_Nf6ZQdowC6HwRE82irj6k0bZ-GBOHGqGbliqOquOuOM5Q1_fH2UnT5K4M4aNCAO5CUxhKgMNorZ0eLNXePcCAHJsIOBt2tN0RapypCev9kusCT2x7cYOX7WEqY63tNYQ1oiMGFdJnHiSOe25mE7dLMNAEbklUITAeNIGUgM0gHHX61JLsanIITHEiyuvbWytRASXRaAHPixKHlpNVI44BanXpQFb1psAXgvvhIOTV9cxJNHsNbCrHrdNwEl3sy1JPHUJqcTn4e7vG08kUuZi-wxz07c4SixZHuQFfiCfTEPnH0Fs8oyfoRKdb47XvarwREOBahlPN3_g8Q"
+                    },
+                    {
+                        "key": "userId",
+                        "value": "239fb199-ff43-45ae-9936-6b3b121fe38b"
+                    },
+                    {
+                        "key": "tenantid",
+                        "value": "ef99949b-7f3a-4a5f-806a-e67e683e38f3"
+                    },
+                    {
+                        "key": "Cookie",
+                        "value": "AWSALB=1MAtK8eS5zzcNNPSYslV79zchZuvFfjXtk4+pNkkqK5hA1Ls4llqbUfOi8Y+BB7EpG+SSLXd/fVErcmTB8n9x/Q2XpevWGkvrnaHDOdFNchiXF2KCEB40JJAc6wO; AWSALBCORS=1MAtK8eS5zzcNNPSYslV79zchZuvFfjXtk4+pNkkqK5hA1Ls4llqbUfOi8Y+BB7EpG+SSLXd/fVErcmTB8n9x/Q2XpevWGkvrnaHDOdFNchiXF2KCEB40JJAc6wO"
+                    }
+                ],
+                "body": {
+                    "mode": "formdata",
+                    "formdata": [
+                        {
+                            "key": "eventRepetitionId",
+                            "value": "202ed345-1830-4000-90e1-37ce71aa42ed",
+                            "type": "text"
+                        },
+                        {
+                            "key": "useMockData",
+                            "value": "true",
+                            "type": "text",
+                            "disabled": true
+                        },
+                        {
+                            "key": "mockDataFile",
+                            "type": "file",
+                            "src": [],
+                            "disabled": true
+                        }
+                    ]
+                },
+                "url": {
+                    "raw": "https://middleware-prod.leaders.org/event-service/attendance/v1/mark-attendance",
+                    "protocol": "https",
+                    "host": [
+                        "middleware-prod",
+                        "leaders",
+                        "org"
+                    ],
+                    "path": [
+                        "event-service",
+                        "attendance",
+                        "v1",
+                        "mark-attendance"
+                    ]
+                },
+                "description": "Generated from cURL: curl --location 'https://middleware-qa.leaders.org/event-service/attendance/v1/mark-attendance' \\\n--header 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJKQWV0Z1E5d1c1X1ktaHBwV0lsb3pxb0ExZ3ctNnhvMi1MVzExNjlSblljIn0.eyJleHAiOjE3Njg2NTE5MTksImlhdCI6MTc2ODU2NTUxOSwianRpIjoiMjhiNzM2ZDktMDE0NS00YzIxLWI5ZjgtMTA0OWJjYzA4ZWNmIiwiaXNzIjoiaHR0cHM6Ly9rZXljbG9hay1xYS5hc3BpcmVsZWFkZXJzLm9yZy9hdXRoL3JlYWxtcy9Bc3BpcmVMZWFkZXJEZXYiLCJhdWQiOiJyZWFsbS1tYW5hZ2VtZW50Iiwic3ViIjoiZmEwMjNlNDQtN2JjZi00M2ZjLTkwOTktN2NhNDE5M2E5ODVmIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiQXNwaXJlTGVhZGVyRGV2Iiwic2Vzc2lvbl9zdGF0ZSI6IjhjYjg0NDJjLTJkOTEtNDdiOC1iM2E2LTk1ZThlOTU4M2MxZCIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiLyoiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iLCJkZWZhdWx0LXJvbGVzLXByYXRoYW0iXX0sInJlc291cmNlX2FjY2VzcyI6eyJyZWFsbS1tYW5hZ2VtZW50Ijp7InJvbGVzIjpbIm1hbmFnZS11c2VycyJdfX0sInNjb3BlIjoic3NvLW1ldGFkYXRhIGVtYWlsIHByb2ZpbGUgcHJhdGhhbS1yb2xlIiwic2lkIjoiOGNiODQ0MmMtMmQ5MS00N2I4LWIzYTYtOTVlOGU5NTgzYzFkIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJuYW1lIjoiTWFoZXNoIE1haGFqYW4iLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJtYWhlc2gubWFoYWphbisxMStAdGVrZGl0ZWNobm9sb2dpZXMuY29tIiwiZ2l2ZW5fbmFtZSI6Ik1haGVzaCIsImZhbWlseV9uYW1lIjoiTWFoYWphbiIsImVtYWlsIjoibWFoZXNoLm1haGFqYW4rMTErQHRla2RpdGVjaG5vbG9naWVzLmNvbSJ9.BUBkLvK87jHIExqdzIdmzL2SROnVm6bna0-2gzBMXBuw5MtmxZZXPXGuK2dSW7oQkb0Fxyrs9Et5UrW8pEQirJAhNqpAImUNY_r33iBWmDYYmPEbwvnaRb-nFkib8Yyhkxxy_6um0iZN4NLNqIEXQSHuIqLCS79qvs7dba9NSufVKhtkkntiEqIyUDI-9hG6O7rogHPnN6D90TppS5febr4Blb6TTQHKFz-stz56rrZtfDgA6MIxECav72EC7IN347xOHrUbSD0nJv136ES1ubvTemF0QRujwsHG5gYZaAOP_hV7IuufqPA2Q9zxzBMzuTeUFaIZT7SXciZhZnseiA' \\\n--header 'userId: fa023e44-7bcf-43fc-9099-7ca4193a985f' \\\n--header 'tenantid: ef99949b-7f3a-4a5f-806a-e67e683e38f3' \\\n--header 'Cookie: AWSALB=1MAtK8eS5zzcNNPSYslV79zchZuvFfjXtk4+pNkkqK5hA1Ls4llqbUfOi8Y+BB7EpG+SSLXd/fVErcmTB8n9x/Q2XpevWGkvrnaHDOdFNchiXF2KCEB40JJAc6wO; AWSALBCORS=1MAtK8eS5zzcNNPSYslV79zchZuvFfjXtk4+pNkkqK5hA1Ls4llqbUfOi8Y+BB7EpG+SSLXd/fVErcmTB8n9x/Q2XpevWGkvrnaHDOdFNchiXF2KCEB40JJAc6wO' \\\n--form 'eventRepetitionId=\"baba8509-cf10-4eb7-b5f5-96febac419a5\"' \\\n--form 'useMockData=\"true\"' \\\n--form 'mockDataFile=@\"/C:/Users/tekdi/Desktop/mock-webinar-participants.json\"'"
+            },
+            "response": []
+        },
+        {
+            "name": "https://middleware-prod.leaders.org/event-service/attendance/v1/mark-attendance",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJKQWV0Z1E5d1c1X1ktaHBwV0lsb3pxb0ExZ3ctNnhvMi1MVzExNjlSblljIn0.eyJleHAiOjE3NzEwNzUxMTEsImlhdCI6MTc3MDk4ODcxMSwianRpIjoiZTZkZjk1MzUtYWI5Yi00ZGUzLWEzYTctMjAzNWM3ZDFhNGM0IiwiaXNzIjoiaHR0cHM6Ly9rZXljbG9hay1wcm9kLmFzcGlyZWxlYWRlcnMub3JnL2F1dGgvcmVhbG1zL0FzcGlyZUxlYWRlclByb2QiLCJzdWIiOiI5MjQ0Yjc2MS1lOTEzLTQ3MWItYjU3OS02MzgyNzBkOGIyMzQiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJBc3BpcmVMZWFkZXJQcm9kIiwic2Vzc2lvbl9zdGF0ZSI6IjQ5NGFhZDVjLTZlZjAtNGYwNC05YjRkLTQ3Yjk3ZWQ3MjU1NCIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiLyoiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iLCJkZWZhdWx0LXJvbGVzLXByYXRoYW0iXX0sInNjb3BlIjoic3NvLW1ldGFkYXRhIGVtYWlsIHByb2ZpbGUgcHJhdGhhbS1yb2xlIiwic2lkIjoiNDk0YWFkNWMtNmVmMC00ZjA0LTliNGQtNDdiOTdlZDcyNTU0IiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJuYW1lIjoiU3V2YXJuYSBLYWxlIiwicHJlZmVycmVkX3VzZXJuYW1lIjoic3V2YXJuYS5rYWxlQHRla2RpdGVjaG5vbG9naWVzLmNvbSIsImdpdmVuX25hbWUiOiJTdXZhcm5hIiwiZmFtaWx5X25hbWUiOiJLYWxlIiwiZW1haWwiOiJzdXZhcm5hLmthbGVAdGVrZGl0ZWNobm9sb2dpZXMuY29tIn0.SD_-fw10Vm05bFojaYMgP0TA9ZghU3WZwL0elV6mpZg2mfBYF6viw03sRuC9tqsahlyWplPGn7EgRC2Vp0nOKYM_qwmgEbg6CevVSNv6GHKGqtYElFDdHXbWP79r72jDxCcrh5ix38psCyL_HxaCt-t7HAgNsXrKrWibQ9wdHWeMAQ4e-b7MPki-z0SRmAXar8tuE1n1fADhhuPOAcb4Jy4MVEnBFFKUx2fJ_P_DqU7hmt3fwirdR90ZsyQmIyLd995KwTDGQv231sfsydxxNQ3965if-dbSjgb77FHqjxHALi0_ljxBk1uqKk2O22bZTOFGIu7blv8P0unrwk-hDw"
+                    },
+                    {
+                        "key": "userId",
+                        "value": "239fb199-ff43-45ae-9936-6b3b121fe38b"
+                    },
+                    {
+                        "key": "tenantid",
+                        "value": "ef99949b-7f3a-4a5f-806a-e67e683e38f3"
+                    },
+                    {
+                        "key": "Cookie",
+                        "value": "AWSALB=1MAtK8eS5zzcNNPSYslV79zchZuvFfjXtk4+pNkkqK5hA1Ls4llqbUfOi8Y+BB7EpG+SSLXd/fVErcmTB8n9x/Q2XpevWGkvrnaHDOdFNchiXF2KCEB40JJAc6wO; AWSALBCORS=1MAtK8eS5zzcNNPSYslV79zchZuvFfjXtk4+pNkkqK5hA1Ls4llqbUfOi8Y+BB7EpG+SSLXd/fVErcmTB8n9x/Q2XpevWGkvrnaHDOdFNchiXF2KCEB40JJAc6wO; AWSALB=BXznJp3TZxJaQ03RpdvuZWTBA2zJ8k++QBHb+6uE7HcSKKOyo+CMhC9/u4nkH5zCniFTMuH6npZIEWxjjT7JNzZSMd2J/AZPf1y7mCyYC4Uv/mjzTm5jypO0MKJ+; AWSALBCORS=BXznJp3TZxJaQ03RpdvuZWTBA2zJ8k++QBHb+6uE7HcSKKOyo+CMhC9/u4nkH5zCniFTMuH6npZIEWxjjT7JNzZSMd2J/AZPf1y7mCyYC4Uv/mjzTm5jypO0MKJ+"
+                    }
+                ],
+                "body": {
+                    "mode": "formdata",
+                    "formdata": [
+                        {
+                            "key": "eventRepetitionId",
+                            "value": "094c9e6d-b92d-43af-8d6f-265fca235841",
+                            "type": "text"
+                        }
+                    ]
+                },
+                "url": {
+                    "raw": "https://middleware-prod.leaders.org/event-service/attendance/v1/mark-attendance",
+                    "protocol": "https",
+                    "host": [
+                        "middleware-prod",
+                        "leaders",
+                        "org"
+                    ],
+                    "path": [
+                        "event-service",
+                        "attendance",
+                        "v1",
+                        "mark-attendance"
+                    ]
+                },
+                "description": "Generated from cURL: curl --location 'https://middleware-prod.leaders.org/event-service/attendance/v1/mark-attendance' \\\n--header 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJKQWV0Z1E5d1c1X1ktaHBwV0lsb3pxb0ExZ3ctNnhvMi1MVzExNjlSblljIn0.eyJleHAiOjE3NzEwNzUxMTEsImlhdCI6MTc3MDk4ODcxMSwianRpIjoiZTZkZjk1MzUtYWI5Yi00ZGUzLWEzYTctMjAzNWM3ZDFhNGM0IiwiaXNzIjoiaHR0cHM6Ly9rZXljbG9hay1wcm9kLmFzcGlyZWxlYWRlcnMub3JnL2F1dGgvcmVhbG1zL0FzcGlyZUxlYWRlclByb2QiLCJzdWIiOiI5MjQ0Yjc2MS1lOTEzLTQ3MWItYjU3OS02MzgyNzBkOGIyMzQiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJBc3BpcmVMZWFkZXJQcm9kIiwic2Vzc2lvbl9zdGF0ZSI6IjQ5NGFhZDVjLTZlZjAtNGYwNC05YjRkLTQ3Yjk3ZWQ3MjU1NCIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiLyoiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iLCJkZWZhdWx0LXJvbGVzLXByYXRoYW0iXX0sInNjb3BlIjoic3NvLW1ldGFkYXRhIGVtYWlsIHByb2ZpbGUgcHJhdGhhbS1yb2xlIiwic2lkIjoiNDk0YWFkNWMtNmVmMC00ZjA0LTliNGQtNDdiOTdlZDcyNTU0IiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJuYW1lIjoiU3V2YXJuYSBLYWxlIiwicHJlZmVycmVkX3VzZXJuYW1lIjoic3V2YXJuYS5rYWxlQHRla2RpdGVjaG5vbG9naWVzLmNvbSIsImdpdmVuX25hbWUiOiJTdXZhcm5hIiwiZmFtaWx5X25hbWUiOiJLYWxlIiwiZW1haWwiOiJzdXZhcm5hLmthbGVAdGVrZGl0ZWNobm9sb2dpZXMuY29tIn0.SD_-fw10Vm05bFojaYMgP0TA9ZghU3WZwL0elV6mpZg2mfBYF6viw03sRuC9tqsahlyWplPGn7EgRC2Vp0nOKYM_qwmgEbg6CevVSNv6GHKGqtYElFDdHXbWP79r72jDxCcrh5ix38psCyL_HxaCt-t7HAgNsXrKrWibQ9wdHWeMAQ4e-b7MPki-z0SRmAXar8tuE1n1fADhhuPOAcb4Jy4MVEnBFFKUx2fJ_P_DqU7hmt3fwirdR90ZsyQmIyLd995KwTDGQv231sfsydxxNQ3965if-dbSjgb77FHqjxHALi0_ljxBk1uqKk2O22bZTOFGIu7blv8P0unrwk-hDw' \\\n--header 'userId: 239fb199-ff43-45ae-9936-6b3b121fe38b' \\\n--header 'tenantid: ef99949b-7f3a-4a5f-806a-e67e683e38f3' \\\n--header 'Cookie: AWSALB=1MAtK8eS5zzcNNPSYslV79zchZuvFfjXtk4+pNkkqK5hA1Ls4llqbUfOi8Y+BB7EpG+SSLXd/fVErcmTB8n9x/Q2XpevWGkvrnaHDOdFNchiXF2KCEB40JJAc6wO; AWSALBCORS=1MAtK8eS5zzcNNPSYslV79zchZuvFfjXtk4+pNkkqK5hA1Ls4llqbUfOi8Y+BB7EpG+SSLXd/fVErcmTB8n9x/Q2XpevWGkvrnaHDOdFNchiXF2KCEB40JJAc6wO; AWSALB=BXznJp3TZxJaQ03RpdvuZWTBA2zJ8k++QBHb+6uE7HcSKKOyo+CMhC9/u4nkH5zCniFTMuH6npZIEWxjjT7JNzZSMd2J/AZPf1y7mCyYC4Uv/mjzTm5jypO0MKJ+; AWSALBCORS=BXznJp3TZxJaQ03RpdvuZWTBA2zJ8k++QBHb+6uE7HcSKKOyo+CMhC9/u4nkH5zCniFTMuH6npZIEWxjjT7JNzZSMd2J/AZPf1y7mCyYC4Uv/mjzTm5jypO0MKJ+' \\\n--form 'eventRepetitionId=\"094c9e6d-b92d-43af-8d6f-265fca235841\"'"
+            },
+            "response": []
+        }
+    ],
+    "event": [
+        {
+            "listen": "prerequest",
+            "script": {
+                "type": "text/javascript",
+                "requests": {},
+                "exec": [
+                    "// Set default headers for all requests",
+                    "pm.request.headers.add({",
+                    "    key: 'Authorization',",
+                    "    value: pm.collectionVariables.get('authToken')",
+                    "});"
+                ]
+            }
+        },
+        {
+            "listen": "test",
+            "script": {
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {},
+                "exec": [
+                    ""
+                ]
+            }
+        }
+    ],
+    "variable": [
+        {
+            "key": "baseUrl",
+            "value": "http://localhost:3001/event-service"
+        },
+        {
+            "key": "meetingId",
+            "value": "84328080737"
+        },
+        {
+            "key": "baseUrli",
+            "value": "https://middleware-dev.leaders.org/event-service"
+        }
+    ]
+}

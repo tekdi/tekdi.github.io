@@ -4,6 +4,9 @@ sidebar_position: 7
 
 # API Docs
 
+You can download the comprehensive Postman Collection for this service here:  
+[![Download Postman Collection](https://img.shields.io/badge/Download-Postman_Collection-orange?logo=postman)](./assets/postman/Event_Management_Service.postman_collection.json)
+
 **1. Create Event API:**
 **Method:** POST  
 **URL:** `{{url}}/event-service/event/v1/create`  

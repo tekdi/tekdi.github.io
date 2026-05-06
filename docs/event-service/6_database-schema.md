@@ -82,4 +82,35 @@ sidebar_position: 6
 | updatedBy         | uuid                     |                                                          |
 | eventId           | uuid                     | FOREIGN KEY from "Events" ("eventId")                    |
 
+### Table: RolePermission
+
+| Column Name      | Data Type                | Constraints                                              |
+| ---------------- | ------------------------ | -------------------------------------------------------- |
+| rolePermissionId | uuid                     | NOT NULL, DEFAULT gen_random_uuid(), PRIMARY KEY         |
+| roleTitle        | character varying        | NOT NULL                                                 |
+| module           | character varying        | NOT NULL                                                 |
+| requestType      | character varying        | NOT NULL                                                 |
+| apiPath          | character varying        | NOT NULL                                                 |
+| createdBy        | uuid                     | NOT NULL                                                 |
+| updatedBy        | uuid                     | NOT NULL                                                 |
+| createdAt        | timestamp with time zone | DEFAULT now() NOT NULL                                   |
+| updatedAt        | timestamp with time zone | DEFAULT now() NOT NULL                                   |
+
+### Table: attendance_jobs
+
+| Column Name         | Data Type                   | Constraints                                              |
+| ------------------- | --------------------------- | -------------------------------------------------------- |
+| id                  | uuid                        | NOT NULL, DEFAULT gen_random_uuid(), PRIMARY KEY         |
+| job_id              | character varying(255)      | NOT NULL, UNIQUE                                         |
+| event_repetition_id | uuid                        |                                                          |
+| status              | character varying(50)       | NOT NULL, DEFAULT 'pending'                              |
+| progress            | integer                     | NOT NULL, DEFAULT 0                                      |
+| error_message       | text                        |                                                          |
+| result              | jsonb                       |                                                          |
+| started_at          | timestamp without time zone |                                                          |
+| completed_at        | timestamp without time zone |                                                          |
+| created_at          | timestamp without time zone | DEFAULT CURRENT_TIMESTAMP NOT NULL                       |
+| updated_at          | timestamp without time zone | DEFAULT CURRENT_TIMESTAMP NOT NULL                       |
+| contextType         | character varying(255)      |                                                          |
+
 ![NotificationLogs](assets/events_public_EventRepetition.png)
